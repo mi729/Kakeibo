@@ -1,0 +1,760 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1424CB91266F99AB00B90411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CB90266F99AB00B90411 /* AppDelegate.swift */; };
+		1424CB93266F99AB00B90411 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CB92266F99AB00B90411 /* SceneDelegate.swift */; };
+		1424CB95266F99AB00B90411 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CB94266F99AB00B90411 /* ViewController.swift */; };
+		1424CB98266F99AB00B90411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1424CB96266F99AB00B90411 /* Main.storyboard */; };
+		1424CB9A266F99AB00B90411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1424CB99266F99AB00B90411 /* Assets.xcassets */; };
+		1424CB9D266F99AB00B90411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1424CB9B266F99AB00B90411 /* LaunchScreen.storyboard */; };
+		1424CBA8266F99AB00B90411 /* WeeklyKakeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CBA7266F99AB00B90411 /* WeeklyKakeiboTests.swift */; };
+		1424CBB3266F99AB00B90411 /* WeeklyKakeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CBB2266F99AB00B90411 /* WeeklyKakeiboUITests.swift */; };
+		14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14386A5C2677A3AD002EDA51 /* InputViewController.swift */; };
+		143C65F326762C56008856A2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143C65F226762C56008856A2 /* Models.swift */; };
+		295C10C9EE1CA18460A7E549 /* Pods_WeeklyKakeibo_WeeklyKakeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13285BDFED5C78FB66CA20F /* Pods_WeeklyKakeibo_WeeklyKakeiboUITests.framework */; };
+		54A2DDDC8337ABF9B95EEE3D /* Pods_WeeklyKakeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D77289183BE4FA149367F /* Pods_WeeklyKakeibo.framework */; };
+		575EF5789DEF23CFEFCA9EB7 /* Pods_WeeklyKakeiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9487BF9DB6044FCC0DD6B5E5 /* Pods_WeeklyKakeiboTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1424CBA4266F99AB00B90411 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1424CB85266F99AB00B90411 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1424CB8C266F99AB00B90411;
+			remoteInfo = WeeklyKakeibo;
+		};
+		1424CBAF266F99AB00B90411 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1424CB85266F99AB00B90411 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1424CB8C266F99AB00B90411;
+			remoteInfo = WeeklyKakeibo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1424CB8D266F99AB00B90411 /* WeeklyKakeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeklyKakeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1424CB90266F99AB00B90411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1424CB92266F99AB00B90411 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1424CB94266F99AB00B90411 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1424CB97266F99AB00B90411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1424CB99266F99AB00B90411 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1424CB9C266F99AB00B90411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1424CB9E266F99AB00B90411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1424CBA3266F99AB00B90411 /* WeeklyKakeiboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeeklyKakeiboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1424CBA7266F99AB00B90411 /* WeeklyKakeiboTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyKakeiboTests.swift; sourceTree = "<group>"; };
+		1424CBA9266F99AB00B90411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1424CBAE266F99AB00B90411 /* WeeklyKakeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeeklyKakeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1424CBB2266F99AB00B90411 /* WeeklyKakeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyKakeiboUITests.swift; sourceTree = "<group>"; };
+		1424CBB4266F99AB00B90411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14386A5C2677A3AD002EDA51 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		143C65F226762C56008856A2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		25FBED0D05EE882E45632900 /* Pods-WeeklyKakeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyKakeibo.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyKakeibo/Pods-WeeklyKakeibo.debug.xcconfig"; sourceTree = "<group>"; };
+		494AEB47A368F50A699F13AC /* Pods-WeeklyKakeiboTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyKakeiboTests.release.xcconfig"; path = "Target Support Files/Pods-WeeklyKakeiboTests/Pods-WeeklyKakeiboTests.release.xcconfig"; sourceTree = "<group>"; };
+		9487BF9DB6044FCC0DD6B5E5 /* Pods_WeeklyKakeiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyKakeiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96E9A92AAB44B535E2DC6C8B /* Pods-WeeklyKakeibo-WeeklyKakeiboUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyKakeibo-WeeklyKakeiboUITests.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyKakeibo-WeeklyKakeiboUITests/Pods-WeeklyKakeibo-WeeklyKakeiboUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D289FD2B975019E5B5778F9 /* Pods-WeeklyKakeiboTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyKakeiboTests.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyKakeiboTests/Pods-WeeklyKakeiboTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF7D77289183BE4FA149367F /* Pods_WeeklyKakeibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyKakeibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E13285BDFED5C78FB66CA20F /* Pods_WeeklyKakeibo_WeeklyKakeiboUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyKakeibo_WeeklyKakeiboUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E43A439173C4A2427AF493B4 /* Pods-WeeklyKakeibo-WeeklyKakeiboUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyKakeibo-WeeklyKakeiboUITests.release.xcconfig"; path = "Target Support Files/Pods-WeeklyKakeibo-WeeklyKakeiboUITests/Pods-WeeklyKakeibo-WeeklyKakeiboUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F15FFE07C51A528697A86290 /* Pods-WeeklyKakeibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyKakeibo.release.xcconfig"; path = "Target Support Files/Pods-WeeklyKakeibo/Pods-WeeklyKakeibo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1424CB8A266F99AB00B90411 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54A2DDDC8337ABF9B95EEE3D /* Pods_WeeklyKakeibo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1424CBA0266F99AB00B90411 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				575EF5789DEF23CFEFCA9EB7 /* Pods_WeeklyKakeiboTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1424CBAB266F99AB00B90411 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				295C10C9EE1CA18460A7E549 /* Pods_WeeklyKakeibo_WeeklyKakeiboUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D69AD9DE75859EE496252E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25FBED0D05EE882E45632900 /* Pods-WeeklyKakeibo.debug.xcconfig */,
+				F15FFE07C51A528697A86290 /* Pods-WeeklyKakeibo.release.xcconfig */,
+				96E9A92AAB44B535E2DC6C8B /* Pods-WeeklyKakeibo-WeeklyKakeiboUITests.debug.xcconfig */,
+				E43A439173C4A2427AF493B4 /* Pods-WeeklyKakeibo-WeeklyKakeiboUITests.release.xcconfig */,
+				9D289FD2B975019E5B5778F9 /* Pods-WeeklyKakeiboTests.debug.xcconfig */,
+				494AEB47A368F50A699F13AC /* Pods-WeeklyKakeiboTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1424CB84266F99AB00B90411 = {
+			isa = PBXGroup;
+			children = (
+				1424CB8F266F99AB00B90411 /* WeeklyKakeibo */,
+				1424CBA6266F99AB00B90411 /* WeeklyKakeiboTests */,
+				1424CBB1266F99AB00B90411 /* WeeklyKakeiboUITests */,
+				1424CB8E266F99AB00B90411 /* Products */,
+				0D69AD9DE75859EE496252E7 /* Pods */,
+				C2A7CE3E7E76B9464196700C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1424CB8E266F99AB00B90411 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1424CB8D266F99AB00B90411 /* WeeklyKakeibo.app */,
+				1424CBA3266F99AB00B90411 /* WeeklyKakeiboTests.xctest */,
+				1424CBAE266F99AB00B90411 /* WeeklyKakeiboUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1424CB8F266F99AB00B90411 /* WeeklyKakeibo */ = {
+			isa = PBXGroup;
+			children = (
+				1424CB90266F99AB00B90411 /* AppDelegate.swift */,
+				1424CB92266F99AB00B90411 /* SceneDelegate.swift */,
+				143C65F226762C56008856A2 /* Models.swift */,
+				1424CB94266F99AB00B90411 /* ViewController.swift */,
+				1424CB96266F99AB00B90411 /* Main.storyboard */,
+				14386A5C2677A3AD002EDA51 /* InputViewController.swift */,
+				1424CB99266F99AB00B90411 /* Assets.xcassets */,
+				1424CB9B266F99AB00B90411 /* LaunchScreen.storyboard */,
+				1424CB9E266F99AB00B90411 /* Info.plist */,
+			);
+			path = WeeklyKakeibo;
+			sourceTree = "<group>";
+		};
+		1424CBA6266F99AB00B90411 /* WeeklyKakeiboTests */ = {
+			isa = PBXGroup;
+			children = (
+				1424CBA7266F99AB00B90411 /* WeeklyKakeiboTests.swift */,
+				1424CBA9266F99AB00B90411 /* Info.plist */,
+			);
+			path = WeeklyKakeiboTests;
+			sourceTree = "<group>";
+		};
+		1424CBB1266F99AB00B90411 /* WeeklyKakeiboUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1424CBB2266F99AB00B90411 /* WeeklyKakeiboUITests.swift */,
+				1424CBB4266F99AB00B90411 /* Info.plist */,
+			);
+			path = WeeklyKakeiboUITests;
+			sourceTree = "<group>";
+		};
+		C2A7CE3E7E76B9464196700C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF7D77289183BE4FA149367F /* Pods_WeeklyKakeibo.framework */,
+				E13285BDFED5C78FB66CA20F /* Pods_WeeklyKakeibo_WeeklyKakeiboUITests.framework */,
+				9487BF9DB6044FCC0DD6B5E5 /* Pods_WeeklyKakeiboTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1424CB8C266F99AB00B90411 /* WeeklyKakeibo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1424CBB7266F99AB00B90411 /* Build configuration list for PBXNativeTarget "WeeklyKakeibo" */;
+			buildPhases = (
+				341A538D13762FAB151CCE6A /* [CP] Check Pods Manifest.lock */,
+				1424CB89266F99AB00B90411 /* Sources */,
+				1424CB8A266F99AB00B90411 /* Frameworks */,
+				1424CB8B266F99AB00B90411 /* Resources */,
+				B15CDE88188FA1CFAB204C5F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeeklyKakeibo;
+			productName = WeeklyKakeibo;
+			productReference = 1424CB8D266F99AB00B90411 /* WeeklyKakeibo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1424CBA2266F99AB00B90411 /* WeeklyKakeiboTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1424CBBA266F99AB00B90411 /* Build configuration list for PBXNativeTarget "WeeklyKakeiboTests" */;
+			buildPhases = (
+				EF7CE9CA828E43B4F385F61B /* [CP] Check Pods Manifest.lock */,
+				1424CB9F266F99AB00B90411 /* Sources */,
+				1424CBA0266F99AB00B90411 /* Frameworks */,
+				1424CBA1266F99AB00B90411 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1424CBA5266F99AB00B90411 /* PBXTargetDependency */,
+			);
+			name = WeeklyKakeiboTests;
+			productName = WeeklyKakeiboTests;
+			productReference = 1424CBA3266F99AB00B90411 /* WeeklyKakeiboTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1424CBAD266F99AB00B90411 /* WeeklyKakeiboUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1424CBBD266F99AB00B90411 /* Build configuration list for PBXNativeTarget "WeeklyKakeiboUITests" */;
+			buildPhases = (
+				3F42CC75CDCFE1E73758115A /* [CP] Check Pods Manifest.lock */,
+				1424CBAA266F99AB00B90411 /* Sources */,
+				1424CBAB266F99AB00B90411 /* Frameworks */,
+				1424CBAC266F99AB00B90411 /* Resources */,
+				2A180CF4F591E9BAD62C1003 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1424CBB0266F99AB00B90411 /* PBXTargetDependency */,
+			);
+			name = WeeklyKakeiboUITests;
+			productName = WeeklyKakeiboUITests;
+			productReference = 1424CBAE266F99AB00B90411 /* WeeklyKakeiboUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1424CB85266F99AB00B90411 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					1424CB8C266F99AB00B90411 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					1424CBA2266F99AB00B90411 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 1424CB8C266F99AB00B90411;
+					};
+					1424CBAD266F99AB00B90411 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 1424CB8C266F99AB00B90411;
+					};
+				};
+			};
+			buildConfigurationList = 1424CB88266F99AB00B90411 /* Build configuration list for PBXProject "WeeklyKakeibo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1424CB84266F99AB00B90411;
+			productRefGroup = 1424CB8E266F99AB00B90411 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1424CB8C266F99AB00B90411 /* WeeklyKakeibo */,
+				1424CBA2266F99AB00B90411 /* WeeklyKakeiboTests */,
+				1424CBAD266F99AB00B90411 /* WeeklyKakeiboUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1424CB8B266F99AB00B90411 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1424CB9D266F99AB00B90411 /* LaunchScreen.storyboard in Resources */,
+				1424CB9A266F99AB00B90411 /* Assets.xcassets in Resources */,
+				1424CB98266F99AB00B90411 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1424CBA1266F99AB00B90411 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1424CBAC266F99AB00B90411 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A180CF4F591E9BAD62C1003 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeeklyKakeibo-WeeklyKakeiboUITests/Pods-WeeklyKakeibo-WeeklyKakeiboUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeeklyKakeibo-WeeklyKakeiboUITests/Pods-WeeklyKakeibo-WeeklyKakeiboUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeeklyKakeibo-WeeklyKakeiboUITests/Pods-WeeklyKakeibo-WeeklyKakeiboUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		341A538D13762FAB151CCE6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeeklyKakeibo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F42CC75CDCFE1E73758115A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeeklyKakeibo-WeeklyKakeiboUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B15CDE88188FA1CFAB204C5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeeklyKakeibo/Pods-WeeklyKakeibo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WeeklyKakeibo/Pods-WeeklyKakeibo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WeeklyKakeibo/Pods-WeeklyKakeibo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF7CE9CA828E43B4F385F61B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeeklyKakeiboTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1424CB89266F99AB00B90411 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1424CB95266F99AB00B90411 /* ViewController.swift in Sources */,
+				14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */,
+				1424CB91266F99AB00B90411 /* AppDelegate.swift in Sources */,
+				1424CB93266F99AB00B90411 /* SceneDelegate.swift in Sources */,
+				143C65F326762C56008856A2 /* Models.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1424CB9F266F99AB00B90411 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1424CBA8266F99AB00B90411 /* WeeklyKakeiboTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1424CBAA266F99AB00B90411 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1424CBB3266F99AB00B90411 /* WeeklyKakeiboUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1424CBA5266F99AB00B90411 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1424CB8C266F99AB00B90411 /* WeeklyKakeibo */;
+			targetProxy = 1424CBA4266F99AB00B90411 /* PBXContainerItemProxy */;
+		};
+		1424CBB0266F99AB00B90411 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1424CB8C266F99AB00B90411 /* WeeklyKakeibo */;
+			targetProxy = 1424CBAF266F99AB00B90411 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1424CB96266F99AB00B90411 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1424CB97266F99AB00B90411 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1424CB9B266F99AB00B90411 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1424CB9C266F99AB00B90411 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1424CBB5266F99AB00B90411 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1424CBB6266F99AB00B90411 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1424CBB8266F99AB00B90411 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25FBED0D05EE882E45632900 /* Pods-WeeklyKakeibo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KLJUJCKPYD;
+				INFOPLIST_FILE = WeeklyKakeibo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mpen729.WeeklyKakeibo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1424CBB9266F99AB00B90411 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F15FFE07C51A528697A86290 /* Pods-WeeklyKakeibo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KLJUJCKPYD;
+				INFOPLIST_FILE = WeeklyKakeibo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mpen729.WeeklyKakeibo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1424CBBB266F99AB00B90411 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D289FD2B975019E5B5778F9 /* Pods-WeeklyKakeiboTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KLJUJCKPYD;
+				INFOPLIST_FILE = WeeklyKakeiboTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mpen729.WeeklyKakeiboTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeeklyKakeibo.app/WeeklyKakeibo";
+			};
+			name = Debug;
+		};
+		1424CBBC266F99AB00B90411 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 494AEB47A368F50A699F13AC /* Pods-WeeklyKakeiboTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KLJUJCKPYD;
+				INFOPLIST_FILE = WeeklyKakeiboTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mpen729.WeeklyKakeiboTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WeeklyKakeibo.app/WeeklyKakeibo";
+			};
+			name = Release;
+		};
+		1424CBBE266F99AB00B90411 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96E9A92AAB44B535E2DC6C8B /* Pods-WeeklyKakeibo-WeeklyKakeiboUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KLJUJCKPYD;
+				INFOPLIST_FILE = WeeklyKakeiboUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mpen729.WeeklyKakeiboUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WeeklyKakeibo;
+			};
+			name = Debug;
+		};
+		1424CBBF266F99AB00B90411 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E43A439173C4A2427AF493B4 /* Pods-WeeklyKakeibo-WeeklyKakeiboUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KLJUJCKPYD;
+				INFOPLIST_FILE = WeeklyKakeiboUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mpen729.WeeklyKakeiboUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WeeklyKakeibo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1424CB88266F99AB00B90411 /* Build configuration list for PBXProject "WeeklyKakeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1424CBB5266F99AB00B90411 /* Debug */,
+				1424CBB6266F99AB00B90411 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1424CBB7266F99AB00B90411 /* Build configuration list for PBXNativeTarget "WeeklyKakeibo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1424CBB8266F99AB00B90411 /* Debug */,
+				1424CBB9266F99AB00B90411 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1424CBBA266F99AB00B90411 /* Build configuration list for PBXNativeTarget "WeeklyKakeiboTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1424CBBB266F99AB00B90411 /* Debug */,
+				1424CBBC266F99AB00B90411 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1424CBBD266F99AB00B90411 /* Build configuration list for PBXNativeTarget "WeeklyKakeiboUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1424CBBE266F99AB00B90411 /* Debug */,
+				1424CBBF266F99AB00B90411 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1424CB85266F99AB00B90411 /* Project object */;
+}

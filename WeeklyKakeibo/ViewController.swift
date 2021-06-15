@@ -17,18 +17,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        do {
-            realm = try Realm()
-            itemList = realm.objects(Item.self)
-            tableView.reloadData()
-        }catch{
-            
-        }
+        tableView.delegate = self
+        tableView.dataSource = self
+        realm = try! Realm()
+        itemList = realm.objects(Item.self)
+        print(itemList ?? "itemlist is null")
+        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
 
     func deleteItem(at index: Int) {
@@ -50,9 +49,21 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Cell")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+        
         let object = itemList[indexPath.row]
         cell.textLabel?.text = object.title
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            let realm = try! Realm()
+            try! realm.write {
+                realm.delete(self.itemList[indexPath.row])
+            }
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            tableView.reloadData()
+        }
     }
 }

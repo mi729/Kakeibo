@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         }
                     }
                 }
-                config.schemaVersion = 1
+                config.schemaVersion = 2
                 Realm.Configuration.defaultConfiguration = config
          
         return true

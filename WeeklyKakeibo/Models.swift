@@ -21,6 +21,7 @@ class Item: Object {
     @objc dynamic var title: String = ""
     @objc dynamic var cost: Int = 0
     @objc dynamic var date: Date = Date()
+    @objc dynamic var week: Int = 1
 //    let users = LinkingObjects(fromType: User.self, property: "items")
 //    override static func primaryKey() -> String? {
 //        return "_id"

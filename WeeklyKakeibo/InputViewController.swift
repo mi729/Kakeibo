@@ -15,24 +15,53 @@ class InputViewController: UIViewController {
             titleLabel.text = "家計簿を追加"
         }
     }
+    @IBOutlet weak var weekLabel: UILabel! {
+        didSet {
+            weekLabel.text = "週"
+        }
+    }
     
-
+    @IBOutlet weak var weekTextField: UITextField! {
+        didSet {
+            weekTextField.keyboardType = UIKeyboardType.numberPad
+        }
+    }
+    
     @IBOutlet weak var naiyouLabel: UILabel! {
         didSet {
             naiyouLabel.text = "内容"
         }
     }
     
+    @IBOutlet weak var costLabel: UILabel! {
+        didSet {
+            costLabel.text = "金額"
+        }
+    }
+    @IBOutlet weak var costTextField: UITextField! {
+        didSet {
+            costTextField.keyboardType = UIKeyboardType.numberPad
+        }
+    }
+    
     @IBOutlet weak var selectedDate: UIDatePicker!
     @IBOutlet weak var titleTextField: UITextField!
     
+    @IBOutlet weak var addButton: UIButton! {
+        didSet {
+            addButton.setTitle("追加する", for: .normal)
+        }
+    }
     @IBAction func addButtonTapped(_ sender: Any) {
         let newItem = Item()
-        guard let title = titleTextField.text else {
+        guard !(titleTextField.text ?? "").isEmpty, !(weekTextField.text ?? "").isEmpty, !(costTextField.text ?? "").isEmpty else {
+        alert(message: "未入力です")
             return
         }
-        newItem.title = title
+        newItem.title = titleTextField.text!
         newItem.date = selectedDate.date
+        newItem.week = Int(weekTextField.text!)!
+        newItem.cost = Int(costTextField.text!)!
         
         do{
             let realm = try Realm()
@@ -49,11 +78,18 @@ class InputViewController: UIViewController {
     }
     
     func aleart() {
-        let dialog = UIAlertController(title: "追加", message: "追加できました！", preferredStyle: .alert)
+        let dialog = UIAlertController(title: "", message: "追加できました！", preferredStyle: .alert)
         dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             self.dismiss(animated: true, completion: nil)
         }))
         self.present(dialog, animated: true, completion: nil)
+    }
+    
+    private func alert(message: String) {
+        let dialog = UIAlertController(title: "",message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        dialog.addAction(action)
+        present(dialog, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

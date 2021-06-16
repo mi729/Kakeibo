@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     private var realm: Realm!
     private var itemList: Results<Item>!
     private var token: NotificationToken!
+    let sectionTitle = ["1週目", "2週目", "3週目", "4週目", "5週目"]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -45,8 +46,17 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    // Sectionの週のItemだけ表示する
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemList.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitle[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

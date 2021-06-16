@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
         realm = try! Realm()
         itemList = realm.objects(Item.self)
         print(itemList ?? "itemlist is null")
@@ -49,11 +50,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        
-        let object = itemList[indexPath.row]
-        cell.textLabel?.text = object.title
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? ItemCell {
+            let object = itemList[indexPath.row]
+            cell.nameLabel.text = object.title
+            cell.costLabel.text = "\(object.cost)円"
+            return cell
+        }
+        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

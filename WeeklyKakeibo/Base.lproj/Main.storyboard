@@ -34,7 +34,7 @@
                                 <rect key="frame" x="175" y="755" width="76" height="94"/>
                                 <state key="normal" title="+" image="plus" catalog="system"/>
                                 <connections>
-                                    <segue destination="ZeT-K8-8Jy" kind="show" id="obb-kQ-ctl"/>
+                                    <segue destination="ZeT-K8-8Jy" kind="presentation" identifier="toInputView" modalPresentationStyle="fullScreen" id="obb-kQ-ctl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,11 +64,11 @@
             <objects>
                 <viewController id="ZeT-K8-8Jy" customClass="InputViewController" customModule="WeeklyKakeibo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Exc-Zc-KKb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nWp-Fk-TiX">
-                                <rect key="frame" x="16" y="150" width="382" height="358"/>
+                                <rect key="frame" x="16" y="204" width="382" height="358"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyl-Fn-0c6">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="36"/>

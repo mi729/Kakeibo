@@ -53,6 +53,18 @@ class InputViewController: UIViewController {
         }
     }
     @IBAction func addButtonTapped(_ sender: Any) {
+        addItem()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGR.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGR)
+    }
+
+    private func addItem() {
         let newItem = Item()
         guard !(titleTextField.text ?? "").isEmpty, !(weekTextField.text ?? "").isEmpty, !(costTextField.text ?? "").isEmpty else {
         alert(message: "未入力です")
@@ -73,8 +85,6 @@ class InputViewController: UIViewController {
         }catch {
             print("save failed")
         }
-        
-        
     }
     
     func aleart() {
@@ -90,14 +100,6 @@ class InputViewController: UIViewController {
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         dialog.addAction(action)
         present(dialog, animated: true, completion: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tapGR.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tapGR)
     }
     
     @objc func dismissKeyboard() {

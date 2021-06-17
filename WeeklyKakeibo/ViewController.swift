@@ -22,7 +22,15 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
         realm = try! Realm()
-        itemList = realm.objects(Item.self)
+        
+        let calendar = Calendar.current
+        let comps = calendar.dateComponents([.year, .month], from: Date())
+        let firstDayOfMonth = calendar.date(from: comps)
+        
+        let predicate = NSPredicate("date", fromDate: firstDayOfMonth as NSDate?, toDate: nil)
+        
+        itemList = realm.objects(Item.self).filter(predicate)
+        
         print(itemList ?? "itemlist is null")
         tableView.reloadData()
     }
@@ -48,7 +56,13 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     // Sectionの週のItemだけ表示する
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itemList.count
+        
+        realm = try! Realm()
+        let week = section + 1
+        let predicate = NSPredicate(format: "week == %d", week)
+        print(predicate)
+        let weekItemList = realm.objects(Item.self).filter(predicate)
+        return weekItemList.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

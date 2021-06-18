@@ -18,26 +18,30 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
+        tableViewSettings()
+        
         realm = try! Realm()
-        
-        let calendar = Calendar.current
-        let comps = calendar.dateComponents([.year, .month], from: Date())
-        let firstDayOfMonth = calendar.date(from: comps)
-        
-        let predicate = NSPredicate("date", fromDate: firstDayOfMonth as NSDate?, toDate: nil)
-        
+        let predicate = NSPredicate("date", fromDate: getfirstDayOfMonth() as NSDate?, toDate: nil)
         itemList = realm.objects(Item.self).filter(predicate)
-        
-        print(itemList ?? "itemlist is null")
         tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+    }
+    
+    func tableViewSettings() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
+    }
+    
+    func getfirstDayOfMonth() -> Date? {
+        let calendar = Calendar.current
+        let comps = calendar.dateComponents([.year, .month], from: Date())
+        let firstDayOfMonth = calendar.date(from: comps)
+        return firstDayOfMonth
     }
 
     func deleteItem(at index: Int) {
@@ -53,8 +57,7 @@ class ViewController: UIViewController {
     func getWeekItemList(week: Int) -> Results<Item> {
         self.realm = try! Realm()
         let predicate = NSPredicate(format: "week == %d", week)
-        let weekItemList = self.realm.objects(Item.self).filter(predicate)
-        
+        let weekItemList = itemList.filter(predicate)
         return weekItemList
     }
     

@@ -49,19 +49,21 @@ class ViewController: UIViewController {
     func reload() {
         tableView.reloadData()
     }
-
-
+    
+    func getWeekItemList(week: Int) -> Results<Item> {
+        self.realm = try! Realm()
+        let predicate = NSPredicate(format: "week == %d", week)
+        let weekItemList = self.realm.objects(Item.self).filter(predicate)
+        
+        return weekItemList
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    // Sectionの週のItemだけ表示する
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        realm = try! Realm()
         let week = section + 1
-        let predicate = NSPredicate(format: "week == %d", week)
-        print(predicate)
-        let weekItemList = realm.objects(Item.self).filter(predicate)
+        let weekItemList = self.getWeekItemList(week: week)
         return weekItemList.count
     }
     
@@ -74,10 +76,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let week = indexPath.section + 1
+        let weekItemList = self.getWeekItemList(week: week)
         if let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? ItemCell {
-            let object = itemList[indexPath.row]
-            cell.nameLabel.text = object.title
-            cell.costLabel.text = "\(object.cost)円"
+            let item = weekItemList[indexPath.row]
+            cell.nameLabel.text = item.title
+            cell.costLabel.text = "\(item.cost)円"
             return cell
         }
         return UITableViewCell()

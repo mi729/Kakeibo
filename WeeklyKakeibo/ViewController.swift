@@ -81,6 +81,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let week = indexPath.section + 1
         let weekItemList = self.getWeekItemList(week: week)
+        
+        let sum: Int = weekItemList.sum(ofProperty: "cost")
+        print(sum)
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? ItemCell {
             let item = weekItemList[indexPath.row]
             cell.nameLabel.text = item.title

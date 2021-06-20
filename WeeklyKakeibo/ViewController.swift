@@ -8,11 +8,12 @@
 import UIKit
 import RealmSwift
 
+
 class ViewController: UIViewController {
     private var realm: Realm!
     private var itemList: Results<Item>!
     private var token: NotificationToken!
-    let sectionTitle = ["1週目", "2週目", "3週目", "4週目", "5週目"]
+    let sectionTitleList = ["1週目", "2週目", "3週目", "4週目", "5週目"]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,13 +36,25 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
+        tableView.register(TableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
     }
     
     func getfirstDayOfMonth() -> Date? {
         let calendar = Calendar.current
         let comps = calendar.dateComponents([.year, .month], from: Date())
         let firstDayOfMonth = calendar.date(from: comps)
+        print("\(firstDayOfMonth)")
         return firstDayOfMonth
+    }
+    
+    func getSumOfWeeks() -> [Int] {
+        var sumOfWeeks:[Int] = []
+        for (index, _) in sectionTitleList.enumerated() {
+            let weekItemList = self.getWeekItemList(week: index+1)
+            let sum: Int = weekItemList.sum(ofProperty: "cost")
+            sumOfWeeks.append(sum)
+        }
+        return sumOfWeeks
     }
 
     func deleteItem(at index: Int) {
@@ -64,18 +77,25 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionTitleList.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? TableHeader
+        let sum = getSumOfWeeks()[section]
+        header?.configure(title: sectionTitleList[section], sum: sum)
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return getSumOfWeeks()[section] != 0 ? 50 : 0
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let week = section + 1
         let weekItemList = self.getWeekItemList(week: week)
         return weekItemList.count
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitle[section]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

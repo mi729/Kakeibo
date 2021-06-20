@@ -2,7 +2,7 @@
 //  InputViewController.swift
 //  WeeklyKakeibo
 //
-//  Created by fuchihashi on 2021/06/14.
+//  Created by mi729 on 2021/06/14.
 //
 
 import UIKit

@@ -31,8 +31,8 @@ class ViewController: UIViewController {
         tableViewSettings()
         setMonthLabel()
         
-        let firstDay: NSDate? = getDayOfMonth().firstDay as NSDate?
-        let lastDay: NSDate? = getDayOfMonth().lastDay as NSDate?
+        let firstDay: NSDate? = Date().startOfMonth as NSDate?
+        let lastDay: NSDate? = Date().endOfMonth as NSDate?
         realm = try! Realm()
         
         let predicate = NSPredicate("date", fromDate: firstDay, toDate:  lastDay)
@@ -59,21 +59,10 @@ class ViewController: UIViewController {
         monthLabel.text = "\(month)月"
     }
     
-    func getDayOfMonth() -> (firstDay: Date?, lastDay: Date?) {
-        let calendar = Calendar.current
-        let comps = calendar.dateComponents([.year, .month], from: Date())
-        let firstDay = calendar.date(from: comps)
-        
-        let add = DateComponents(month: 1, day: -1)
-        let lastDay = calendar.date(byAdding: add, to: firstDay!)
-        
-        return (firstDay, lastDay)
-    }
-    
     func getSumOfWeeks() -> [Int] {
         var sumOfWeeks:[Int] = []
         for (index, _) in sectionTitleList.enumerated() {
-            let weekItemList = self.getWeekItemList(week: index+1)
+            let weekItemList = self.getWeekItemList(week: index + 1)
             let sum: Int = weekItemList.sum(ofProperty: "cost")
             sumOfWeeks.append(sum)
         }

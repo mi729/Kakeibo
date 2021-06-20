@@ -19,6 +19,7 @@
 		143029F9267F16E70039B31E /* ViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143029F8267F16E70039B31E /* ViewController+TableViewDelegate.swift */; };
 		14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14386A5C2677A3AD002EDA51 /* InputViewController.swift */; };
 		143C65F326762C56008856A2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143C65F226762C56008856A2 /* Models.swift */; };
+		144CCD60267F7DEF006F609C /* Date+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144CCD5F267F7DEF006F609C /* Date+Addition.swift */; };
 		14C49C29267B8B6700A67CAF /* NSPredicate+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */; };
 		14F7A432267A4E0700A1D3B5 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7A430267A4E0700A1D3B5 /* ItemCell.swift */; };
 		14F7A433267A4E0700A1D3B5 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F7A431267A4E0700A1D3B5 /* ItemCell.xib */; };
@@ -63,6 +64,7 @@
 		143029F8267F16E70039B31E /* ViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		14386A5C2677A3AD002EDA51 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		143C65F226762C56008856A2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		144CCD5F267F7DEF006F609C /* Date+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Addition.swift"; sourceTree = "<group>"; };
 		14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Initializers.swift"; sourceTree = "<group>"; };
 		14F7A430267A4E0700A1D3B5 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		14F7A431267A4E0700A1D3B5 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				1424CB92266F99AB00B90411 /* SceneDelegate.swift */,
 				143C65F226762C56008856A2 /* Models.swift */,
 				1424CB94266F99AB00B90411 /* ViewController.swift */,
+				144CCD5F267F7DEF006F609C /* Date+Addition.swift */,
 				143029F8267F16E70039B31E /* ViewController+TableViewDelegate.swift */,
 				14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */,
 				143029F3267F0F080039B31E /* TableHeaderView.swift */,
@@ -279,6 +282,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 1424CB84266F99AB00B90411;
 			productRefGroup = 1424CB8E266F99AB00B90411 /* Products */;
@@ -433,6 +437,7 @@
 				14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */,
 				14F7A432267A4E0700A1D3B5 /* ItemCell.swift in Sources */,
 				14C49C29267B8B6700A67CAF /* NSPredicate+Initializers.swift in Sources */,
+				144CCD60267F7DEF006F609C /* Date+Addition.swift in Sources */,
 				143029F4267F0F080039B31E /* TableHeaderView.swift in Sources */,
 				1424CB91266F99AB00B90411 /* AppDelegate.swift in Sources */,
 				1424CB93266F99AB00B90411 /* SceneDelegate.swift in Sources */,
@@ -495,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -556,6 +562,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

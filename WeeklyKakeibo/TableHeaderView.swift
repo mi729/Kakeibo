@@ -32,7 +32,7 @@ import UIKit
             super.init(reuseIdentifier: reuseIdentifier)
             contentView.addSubview(titleLabel)
             contentView.addSubview(sumLabel)
-            contentView.backgroundColor = .systemYellow
+            contentView.backgroundColor = UIColor {_ in return #colorLiteral(red: 0.3445842266, green: 0.7374812961, blue: 0.7090910673, alpha: 1)}
         }
         
         required init?(coder: NSCoder) {

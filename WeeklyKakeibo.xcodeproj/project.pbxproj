@@ -16,6 +16,7 @@
 		1424CBA8266F99AB00B90411 /* WeeklyKakeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CBA7266F99AB00B90411 /* WeeklyKakeiboTests.swift */; };
 		1424CBB3266F99AB00B90411 /* WeeklyKakeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CBB2266F99AB00B90411 /* WeeklyKakeiboUITests.swift */; };
 		143029F4267F0F080039B31E /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143029F3267F0F080039B31E /* TableHeaderView.swift */; };
+		143029F9267F16E70039B31E /* ViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143029F8267F16E70039B31E /* ViewController+TableViewDelegate.swift */; };
 		14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14386A5C2677A3AD002EDA51 /* InputViewController.swift */; };
 		143C65F326762C56008856A2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143C65F226762C56008856A2 /* Models.swift */; };
 		14C49C29267B8B6700A67CAF /* NSPredicate+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */; };
@@ -59,6 +60,7 @@
 		1424CBB2266F99AB00B90411 /* WeeklyKakeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyKakeiboUITests.swift; sourceTree = "<group>"; };
 		1424CBB4266F99AB00B90411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		143029F3267F0F080039B31E /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
+		143029F8267F16E70039B31E /* ViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		14386A5C2677A3AD002EDA51 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		143C65F226762C56008856A2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Initializers.swift"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				1424CB92266F99AB00B90411 /* SceneDelegate.swift */,
 				143C65F226762C56008856A2 /* Models.swift */,
 				1424CB94266F99AB00B90411 /* ViewController.swift */,
+				143029F8267F16E70039B31E /* ViewController+TableViewDelegate.swift */,
 				14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */,
 				143029F3267F0F080039B31E /* TableHeaderView.swift */,
 				1424CB96266F99AB00B90411 /* Main.storyboard */,
@@ -425,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143029F9267F16E70039B31E /* ViewController+TableViewDelegate.swift in Sources */,
 				1424CB95266F99AB00B90411 /* ViewController.swift in Sources */,
 				14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */,
 				14F7A432267A4E0700A1D3B5 /* ItemCell.swift in Sources */,

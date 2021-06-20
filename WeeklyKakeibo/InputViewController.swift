@@ -9,12 +9,6 @@ import UIKit
 import RealmSwift
 
 class InputViewController: UIViewController {
-    
-    @IBOutlet weak var titleLabel: UILabel! {
-        didSet {
-            titleLabel.text = "家計簿を追加"
-        }
-    }
     @IBOutlet weak var weekLabel: UILabel! {
         didSet {
             weekLabel.text = "週"
@@ -47,11 +41,28 @@ class InputViewController: UIViewController {
     @IBOutlet weak var selectedDate: UIDatePicker!
     @IBOutlet weak var titleTextField: UITextField!
     
+    @IBOutlet weak var cancelButton: UIButton! {
+        didSet {
+            cancelButton.setTitle("キャンセル", for: .normal)
+            cancelButton.setTitleColor(UIColor.white, for: .normal)
+            cancelButton.backgroundColor = UIColor.systemGray2
+            cancelButton.layer.cornerRadius = 10.0
+        }
+    }
+
     @IBOutlet weak var addButton: UIButton! {
         didSet {
             addButton.setTitle("追加する", for: .normal)
+            addButton.setTitleColor(UIColor.white, for: .normal)
+            addButton.backgroundColor = UIColor {_ in return #colorLiteral(red: 0.3445842266, green: 0.7374812961, blue: 0.7090910673, alpha: 1)}
+            addButton.layer.cornerRadius = 10.0
         }
     }
+
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
     @IBAction func addButtonTapped(_ sender: Any) {
         addItem()
     }

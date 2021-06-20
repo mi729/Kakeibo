@@ -15,14 +15,27 @@ class ViewController: UIViewController {
     var itemList: Results<Item>!
     let sectionTitleList = ["1週目", "2週目", "3週目", "4週目", "5週目"]
     
+    @IBOutlet weak var monthLabel: UILabel!
+
+    @IBOutlet weak var plusButton: UIButton! {
+        didSet {
+            plusButton.setTitleColor(UIColor.white, for: .normal)
+            plusButton.backgroundColor = UIColor {_ in return #colorLiteral(red: 0.3445842266, green: 0.7374812961, blue: 0.7090910673, alpha: 1)}
+            plusButton.layer.cornerRadius = 40.0
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSettings()
+        setMonthLabel()
         
+        let firstDay: NSDate? = getDayOfMonth().firstDay as NSDate?
+        let lastDay: NSDate? = getDayOfMonth().lastDay as NSDate?
         realm = try! Realm()
-        let predicate = NSPredicate("date", fromDate: getfirstDayOfMonth() as NSDate?, toDate: nil)
+        
+        let predicate = NSPredicate("date", fromDate: firstDay, toDate:  lastDay)
         itemList = realm.objects(Item.self).filter(predicate)
         tableView.reloadData()
     }
@@ -39,12 +52,22 @@ class ViewController: UIViewController {
         tableView.register(TableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
     }
     
-    func getfirstDayOfMonth() -> Date? {
+    func setMonthLabel() {
+        let current = Calendar.current
+        let month = current.component(.month, from: Date())
+        print(month)
+        monthLabel.text = "\(month)月"
+    }
+    
+    func getDayOfMonth() -> (firstDay: Date?, lastDay: Date?) {
         let calendar = Calendar.current
         let comps = calendar.dateComponents([.year, .month], from: Date())
-        let firstDayOfMonth = calendar.date(from: comps)
-        print("\(firstDayOfMonth)")
-        return firstDayOfMonth
+        let firstDay = calendar.date(from: comps)
+        
+        let add = DateComponents(month: 1, day: -1)
+        let lastDay = calendar.date(byAdding: add, to: firstDay!)
+        
+        return (firstDay, lastDay)
     }
     
     func getSumOfWeeks() -> [Int] {

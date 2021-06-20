@@ -12,14 +12,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitleList.count
     }
-    
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? TableHeader
         let sum = getSumOfWeeks()[section]
         header?.configure(title: sectionTitleList[section], sum: sum)
         return header
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return getSumOfWeeks()[section] != 0 ? 50 : 0
     }
@@ -29,14 +29,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let weekItemList = self.getWeekItemList(week: week)
         return weekItemList.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let week = indexPath.section + 1
         let weekItemList = self.getWeekItemList(week: week)
-        
-        let sum: Int = weekItemList.sum(ofProperty: "cost")
-        print(sum)
-        
+
         if let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? ItemCell {
             let item = weekItemList[indexPath.row]
             cell.nameLabel.text = item.title
@@ -45,6 +42,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 44
+        }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {

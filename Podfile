@@ -6,7 +6,19 @@ target 'WeeklyKakeibo' do
   use_frameworks!
   pod 'RealmSwift'
 
+
+  # Add the Firebase pod for Google Analytics
   # Pods for WeeklyKakeibo
+  pod 'Firebase/Analytics'
+
+  # For Analytics without IDFA collection capability, use this pod instead
+  # pod ‘Firebase/AnalyticsWithoutAdIdSupport’
+
+  # Add the pods for any other Firebase products you want to use in your app
+  # For example, to use Firebase Authentication and Cloud Firestore
+  # pod 'Firebase/Auth'
+  # pod 'Firebase/Firestore'
+  pod 'Firebase/Crashlytics'
 
   target 'WeeklyKakeiboTests' do
     inherit! :search_paths

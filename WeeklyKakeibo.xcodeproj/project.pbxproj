@@ -20,6 +20,9 @@
 		14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14386A5C2677A3AD002EDA51 /* InputViewController.swift */; };
 		143C65F326762C56008856A2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143C65F226762C56008856A2 /* Models.swift */; };
 		144CCD60267F7DEF006F609C /* Date+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144CCD5F267F7DEF006F609C /* Date+Addition.swift */; };
+		145A200826821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
+		145A200926821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
+		145A200A26821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
 		14C49C29267B8B6700A67CAF /* NSPredicate+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */; };
 		14F7A432267A4E0700A1D3B5 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7A430267A4E0700A1D3B5 /* ItemCell.swift */; };
 		14F7A433267A4E0700A1D3B5 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F7A431267A4E0700A1D3B5 /* ItemCell.xib */; };
@@ -65,6 +68,7 @@
 		14386A5C2677A3AD002EDA51 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		143C65F226762C56008856A2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		144CCD5F267F7DEF006F609C /* Date+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Addition.swift"; sourceTree = "<group>"; };
+		145A200726821E81009A585B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Initializers.swift"; sourceTree = "<group>"; };
 		14F7A430267A4E0700A1D3B5 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		14F7A431267A4E0700A1D3B5 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		1424CB84266F99AB00B90411 = {
 			isa = PBXGroup;
 			children = (
+				145A200726821E81009A585B /* GoogleService-Info.plist */,
 				1424CB8F266F99AB00B90411 /* WeeklyKakeibo */,
 				1424CBA6266F99AB00B90411 /* WeeklyKakeiboTests */,
 				1424CBB1266F99AB00B90411 /* WeeklyKakeiboUITests */,
@@ -204,6 +209,7 @@
 				1424CB8A266F99AB00B90411 /* Frameworks */,
 				1424CB8B266F99AB00B90411 /* Resources */,
 				B15CDE88188FA1CFAB204C5F /* [CP] Embed Pods Frameworks */,
+				145A2021268223CC009A585B /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -303,6 +309,7 @@
 			files = (
 				14F7A433267A4E0700A1D3B5 /* ItemCell.xib in Resources */,
 				1424CB9D266F99AB00B90411 /* LaunchScreen.storyboard in Resources */,
+				145A200826821E82009A585B /* GoogleService-Info.plist in Resources */,
 				1424CB9A266F99AB00B90411 /* Assets.xcassets in Resources */,
 				1424CB98266F99AB00B90411 /* Main.storyboard in Resources */,
 			);
@@ -312,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145A200926821E82009A585B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,12 +327,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145A200A26821E82009A585B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		145A2021268223CC009A585B /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		2A180CF4F591E9BAD62C1003 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -23,14 +23,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if lanchIsFirstTime() {
-            logFirstLanch()
+//        if lanchIsFirstTime() {
+//            logFirstLanch()
             let vc = storyboard.instantiateViewController(identifier: "firstView")
             window.rootViewController = vc
-        } else {
-            let vc = storyboard.instantiateViewController(identifier: "mainView")
-            window.rootViewController = vc
-        }
+//        } else {
+//            let vc = storyboard.instantiateViewController(identifier: "mainView")
+//            window.rootViewController = vc
+//        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

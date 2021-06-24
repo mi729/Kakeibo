@@ -86,14 +86,12 @@ class FirstView: UIView {
     @objc func addButtonTapped(_ sender: UIButton) {
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
             self.view.center.y += self.frame.height
-        }, completion: {_ in
-            self.view.removeFromSuperview()
-        })
+        }, completion: nil)
         
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
             self.backgroundView.center.y += self.frame.height
         }, completion: {_ in
-            self.backgroundView.removeFromSuperview()
+            self.removeFromSuperview()
             self.logFirstLanch()
         })
     }

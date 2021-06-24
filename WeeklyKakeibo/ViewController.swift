@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     var itemList: Results<Item>!
     let sectionTitleList = ["1週目", "2週目", "3週目", "4週目", "5週目"]
     
+    private let STORED_KEY = "lanched"
+    
     @IBOutlet weak var monthLabel: UILabel!
 
     @IBOutlet weak var plusButton: UIButton! {
@@ -30,6 +32,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableViewSettings()
         setMonthLabel()
+        
+        if lanchIsFirstTime() {
+            setFirstView()
+        }
         
         let firstDay: NSDate? = Date().startOfMonth as NSDate?
         let lastDay: NSDate? = Date().endOfMonth as NSDate?
@@ -84,5 +90,14 @@ class ViewController: UIViewController {
     
     func reload() {
         tableView.reloadData()
+    }
+    
+    func setFirstView() {
+        let firstView = FirstView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        self.view.addSubview(firstView)
+    }
+    
+    func lanchIsFirstTime() -> Bool {
+        return !UserDefaults.standard.bool(forKey: STORED_KEY)
     }
 }

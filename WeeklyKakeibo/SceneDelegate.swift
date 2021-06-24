@@ -10,7 +10,6 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    private let STORED_KEY = "lanched"
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -23,14 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-//        if lanchIsFirstTime() {
-//            logFirstLanch()
-            let vc = storyboard.instantiateViewController(identifier: "firstView")
-            window.rootViewController = vc
-//        } else {
-//            let vc = storyboard.instantiateViewController(identifier: "mainView")
-//            window.rootViewController = vc
-//        }
+        let vc = storyboard.instantiateViewController(identifier: "mainView")
+        window.rootViewController = vc
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -59,13 +52,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-    }
-
-    func logFirstLanch() {
-        return UserDefaults.standard.set(true, forKey: STORED_KEY)
-    }
-    func lanchIsFirstTime() -> Bool {
-        return !UserDefaults.standard.bool(forKey: STORED_KEY)
     }
 }
 

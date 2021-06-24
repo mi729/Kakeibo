@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fP0-kn-Jnc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -193,56 +193,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nlj-Ls-Ask" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="840.57971014492762" y="75.669642857142847"/>
-        </scene>
-        <!--First View Controller-->
-        <scene sceneID="Dae-4E-zEz">
-            <objects>
-                <viewController storyboardIdentifier="firstView" id="fP0-kn-Jnc" customClass="FirstViewController" customModule="WeeklyKakeibo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0gU-kB-dQu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOH-yZ-5tW">
-                                <rect key="frame" x="16" y="84" width="382" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="IV3-n9-eAX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DD-Sq-xNc">
-                                <rect key="frame" x="32" y="726" width="350" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="YgW-AS-9tv"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="xMx-Wb-jFY"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="bgU-tR-ASI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="OOH-yZ-5tW" firstAttribute="centerX" secondItem="bgU-tR-ASI" secondAttribute="centerX" id="FZ2-wp-We9"/>
-                            <constraint firstItem="OOH-yZ-5tW" firstAttribute="top" secondItem="bgU-tR-ASI" secondAttribute="top" constant="40" id="KoH-yf-28z"/>
-                            <constraint firstItem="OOH-yZ-5tW" firstAttribute="leading" secondItem="bgU-tR-ASI" secondAttribute="leading" constant="16" id="a3z-bL-d5J"/>
-                            <constraint firstItem="bgU-tR-ASI" firstAttribute="trailing" secondItem="OOH-yZ-5tW" secondAttribute="trailing" constant="16" id="dRT-AU-CmD"/>
-                            <constraint firstItem="9DD-Sq-xNc" firstAttribute="centerX" secondItem="bgU-tR-ASI" secondAttribute="centerX" id="fix-eH-USh"/>
-                            <constraint firstItem="bgU-tR-ASI" firstAttribute="bottom" secondItem="9DD-Sq-xNc" secondAttribute="bottom" constant="88" id="sT4-g7-hT4"/>
-                            <constraint firstItem="9DD-Sq-xNc" firstAttribute="leading" secondItem="bgU-tR-ASI" secondAttribute="leading" constant="32" id="uIh-aQ-uCq"/>
-                            <constraint firstItem="bgU-tR-ASI" firstAttribute="trailing" secondItem="9DD-Sq-xNc" secondAttribute="trailing" constant="32" id="yHp-Ld-f1L"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="button" destination="9DD-Sq-xNc" id="TnJ-ki-1Y3"/>
-                        <outlet property="label" destination="OOH-yZ-5tW" id="k1E-dn-Sjw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a9r-Hu-bwg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="66.666666666666671" y="-615.40178571428567"/>
         </scene>
     </scenes>
     <resources>

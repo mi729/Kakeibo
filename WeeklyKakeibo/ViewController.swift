@@ -24,12 +24,10 @@ class ViewController: UIViewController {
     
     @IBAction func prevButton(_ sender: Any) {
         prevMonth()
-        print("tapped \(monthCounter)")
     }
     
     @IBAction func nextButton(_ sender: Any) {
         nextMonth()
-        print("tapped \(monthCounter)")
     }
     
     @IBOutlet weak var plusButton: UIButton! {

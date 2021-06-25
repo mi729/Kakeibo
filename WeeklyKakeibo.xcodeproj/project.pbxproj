@@ -24,6 +24,7 @@
 		145A200926821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
 		145A200A26821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
 		14C49C29267B8B6700A67CAF /* NSPredicate+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */; };
+		14E5FA24268603EB0052A92E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FA23268603EB0052A92E /* Keyboard.swift */; };
 		14EB88E926836F91009A93EE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB88E826836F91009A93EE /* FirstViewController.swift */; };
 		14F7A432267A4E0700A1D3B5 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F7A430267A4E0700A1D3B5 /* ItemCell.swift */; };
 		14F7A433267A4E0700A1D3B5 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F7A431267A4E0700A1D3B5 /* ItemCell.xib */; };
@@ -71,6 +72,7 @@
 		144CCD5F267F7DEF006F609C /* Date+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Addition.swift"; sourceTree = "<group>"; };
 		145A200726821E81009A585B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Initializers.swift"; sourceTree = "<group>"; };
+		14E5FA23268603EB0052A92E /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		14EB88E826836F91009A93EE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		14F7A430267A4E0700A1D3B5 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		14F7A431267A4E0700A1D3B5 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				14C49C28267B8B6700A67CAF /* NSPredicate+Initializers.swift */,
 				143029F3267F0F080039B31E /* TableHeaderView.swift */,
 				1424CB96266F99AB00B90411 /* Main.storyboard */,
+				14E5FA23268603EB0052A92E /* Keyboard.swift */,
 				14EB88E826836F91009A93EE /* FirstViewController.swift */,
 				14F7A430267A4E0700A1D3B5 /* ItemCell.swift */,
 				14F7A431267A4E0700A1D3B5 /* ItemCell.xib */,
@@ -473,6 +476,7 @@
 				1424CB91266F99AB00B90411 /* AppDelegate.swift in Sources */,
 				1424CB93266F99AB00B90411 /* SceneDelegate.swift in Sources */,
 				143C65F326762C56008856A2 /* Models.swift in Sources */,
+				14E5FA24268603EB0052A92E /* Keyboard.swift in Sources */,
 				14EB88E926836F91009A93EE /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

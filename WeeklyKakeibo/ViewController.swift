@@ -10,19 +10,32 @@ import RealmSwift
 
 
 class ViewController: UIViewController {
+    private lazy var date = getDate()
     private var realm: Realm!
     private var token: NotificationToken!
+    private let current = Calendar.current
+    private var monthCounter: Int = 0
+    private let STORED_KEY = "lanched"
+    
     var itemList: Results<Item>!
     let sectionTitleList = ["1週目", "2週目", "3週目", "4週目", "5週目"]
     
-    private let STORED_KEY = "lanched"
+    @IBOutlet weak var navTitle: UINavigationItem!
     
-    @IBOutlet weak var monthLabel: UILabel!
-
+    @IBAction func prevButton(_ sender: Any) {
+        prevMonth()
+        print("tapped \(monthCounter)")
+    }
+    
+    @IBAction func nextButton(_ sender: Any) {
+        nextMonth()
+        print("tapped \(monthCounter)")
+    }
+    
     @IBOutlet weak var plusButton: UIButton! {
         didSet {
             plusButton.setTitleColor(UIColor.white, for: .normal)
-            plusButton.backgroundColor = UIColor {_ in return #colorLiteral(red: 0.3445842266, green: 0.7374812961, blue: 0.7090910673, alpha: 1)}
+            plusButton.backgroundColor = UIColor {_ in return #colorLiteral(red: 0.3450980392, green: 0.737254902, blue: 0.7098039216, alpha: 1)}
             plusButton.layer.cornerRadius = 40.0
         }
     }
@@ -31,38 +44,82 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSettings()
-        setMonthLabel()
+        setNavBar()
         
         if lanchIsFirstTime() {
             setFirstView()
         }
-        
-        let firstDay: NSDate? = Date().startOfMonth as NSDate?
-        let lastDay: NSDate? = Date().endOfMonth as NSDate?
-        realm = try! Realm()
-        
-        let predicate = NSPredicate("date", fromDate: firstDay, toDate:  lastDay)
-        itemList = realm.objects(Item.self).filter(predicate)
-        tableView.reloadData()
+        reload()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.reloadData()
+        reload()
     }
     
-    func tableViewSettings() {
+    private func tableViewSettings() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
         tableView.register(TableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
     }
     
-    func setMonthLabel() {
-        let current = Calendar.current
-        let month = current.component(.month, from: Date())
-        print(month)
-        monthLabel.text = "\(month)月"
+    private func deleteItem(at index: Int) {
+        try! realm.write {
+            realm.delete(itemList[index])
+        }
+    }
+    
+    private func reload() {
+        date = getDate()
+        
+        let firstDay: NSDate? = date.startOfMonth as NSDate?
+        let lastDay: NSDate? = date.endOfMonth as NSDate?
+        realm = try! Realm()
+        
+        let predicate = NSPredicate("date", fromDate: firstDay, toDate:  lastDay)
+
+        itemList = realm.objects(Item.self).filter(predicate)
+        
+        setNavBar()
+        tableView.reloadData()
+    }
+    
+    private func setNavBar() {
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = UIColor {_ in return #colorLiteral(red: 0.3445842266, green: 0.7374812961, blue: 0.7090910673, alpha: 1)}
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        let month = current.component(.month, from: date)
+        navTitle.title = "\(month)月"
+        self.navigationController?.setNavigationBarHidden(false, animated:true)
+    }
+    
+    private func setFirstView() {
+        let firstView = FirstView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        self.view.addSubview(firstView)
+    }
+    
+    private func lanchIsFirstTime() -> Bool {
+        return !UserDefaults.standard.bool(forKey: STORED_KEY)
+    }
+    
+    private func nextMonth() {
+        monthCounter += 1
+        reload()
+    }
+
+    private func prevMonth() {
+        monthCounter -= 1
+        reload()
+    }
+    
+    private func getDate() -> Date {
+        let currentDate = Date()
+        let displayDate = Calendar.current.date(byAdding: .month, value: monthCounter, to: currentDate)!
+        return displayDate
     }
     
     func getSumOfWeeks() -> [Int] {
@@ -80,24 +137,5 @@ class ViewController: UIViewController {
         let predicate = NSPredicate(format: "week == %d", week)
         let weekItemList = itemList.filter(predicate)
         return weekItemList
-    }
-    
-    func deleteItem(at index: Int) {
-        try! realm.write {
-            realm.delete(itemList[index])
-        }
-    }
-    
-    func reload() {
-        tableView.reloadData()
-    }
-    
-    func setFirstView() {
-        let firstView = FirstView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        self.view.addSubview(firstView)
-    }
-    
-    func lanchIsFirstTime() -> Bool {
-        return !UserDefaults.standard.bool(forKey: STORED_KEY)
     }
 }

@@ -23,7 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(identifier: "mainView")
-        window.rootViewController = vc
+        let navigationViewController = UINavigationController(rootViewController: vc)
+        window.rootViewController = navigationViewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

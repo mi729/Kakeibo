@@ -14,7 +14,7 @@ import UIKit
             let label = UILabel()
             label.text = "Week"
             label.font = .systemFont(ofSize: 22, weight: .semibold)
-            label.textColor = .white
+            label.textColor = UIColor.darkGray
             label.textAlignment = .left
             return label
         }()
@@ -23,7 +23,7 @@ import UIKit
             let label = UILabel()
             label.text = "10000円"
             label.font = .systemFont(ofSize: 22, weight: .semibold)
-            label.textColor = .white
+            label.textColor = UIColor.darkGray
             label.textAlignment = .right
             return label
         }()
@@ -32,7 +32,7 @@ import UIKit
             super.init(reuseIdentifier: reuseIdentifier)
             contentView.addSubview(titleLabel)
             contentView.addSubview(sumLabel)
-            contentView.backgroundColor = UIColor {_ in return #colorLiteral(red: 0.3445842266, green: 0.7374812961, blue: 0.7090910673, alpha: 1)}
+            contentView.backgroundColor = #colorLiteral(red: 0.8901960784, green: 0.8901960784, blue: 0.8901960784, alpha: 1)
         }
         
         required init?(coder: NSCoder) {

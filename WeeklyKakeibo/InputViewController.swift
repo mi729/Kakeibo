@@ -15,7 +15,7 @@ class InputViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var weekTextField: UITextField! {
+    @IBOutlet weak var weekTextField: DoneTextFierd! {
         didSet {
             weekTextField.keyboardType = UIKeyboardType.numberPad
         }
@@ -32,14 +32,14 @@ class InputViewController: UIViewController {
             costLabel.text = "金額"
         }
     }
-    @IBOutlet weak var costTextField: UITextField! {
+    @IBOutlet weak var costTextField: DoneTextFierd! {
         didSet {
             costTextField.keyboardType = UIKeyboardType.numberPad
         }
     }
     
     @IBOutlet weak var selectedDate: UIDatePicker!
-    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var titleTextField: DoneTextFierd!
     
     @IBOutlet weak var cancelButton: UIButton! {
         didSet {

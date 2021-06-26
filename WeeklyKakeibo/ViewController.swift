@@ -62,12 +62,6 @@ class ViewController: UIViewController {
         tableView.register(TableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
     }
     
-    private func deleteItem(at index: Int) {
-        try! realm.write {
-            realm.delete(itemList[index])
-        }
-    }
-    
     private func reload() {
         date = getDate()
         

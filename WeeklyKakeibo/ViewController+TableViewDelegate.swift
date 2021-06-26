@@ -48,10 +48,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let week = indexPath.section + 1
+        let weekItemList = self.getWeekItemList(week: week)
+        let targetItem = weekItemList[indexPath.row]
         if editingStyle == UITableViewCell.EditingStyle.delete {
             let realm = try! Realm()
             try! realm.write {
-                realm.delete(self.itemList[indexPath.row])
+                realm.delete(targetItem)
             }
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
             tableView.reloadData()

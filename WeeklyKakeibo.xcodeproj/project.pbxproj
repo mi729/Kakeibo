@@ -26,8 +26,11 @@
 		1464326D2688688E00163864 /* ViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464326A2688688E00163864 /* ViewController+TableViewDelegate.swift */; };
 		14643298268868CC00163864 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14643296268868CC00163864 /* ItemCell.xib */; };
 		14643299268868CC00163864 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14643297268868CC00163864 /* ItemCell.swift */; };
+		146432BF2688723600163864 /* SetGoalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146432BD2688723600163864 /* SetGoalCollectionViewController.swift */; };
+		146432C02688723600163864 /* SetGoalCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146432BE2688723600163864 /* SetGoalCollectionViewController.xib */; };
+		146432C92688793B00163864 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146432C82688793B00163864 /* CustomButton.swift */; };
 		14E5FA24268603EB0052A92E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FA23268603EB0052A92E /* Keyboard.swift */; };
-		14EB88E926836F91009A93EE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB88E826836F91009A93EE /* FirstViewController.swift */; };
+		14EB88E926836F91009A93EE /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB88E826836F91009A93EE /* FirstView.swift */; };
 		295C10C9EE1CA18460A7E549 /* Pods_WeeklyKakeibo_WeeklyKakeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13285BDFED5C78FB66CA20F /* Pods_WeeklyKakeibo_WeeklyKakeiboUITests.framework */; };
 		54A2DDDC8337ABF9B95EEE3D /* Pods_WeeklyKakeibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D77289183BE4FA149367F /* Pods_WeeklyKakeibo.framework */; };
 		575EF5789DEF23CFEFCA9EB7 /* Pods_WeeklyKakeiboTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9487BF9DB6044FCC0DD6B5E5 /* Pods_WeeklyKakeiboTests.framework */; };
@@ -74,8 +77,11 @@
 		1464326A2688688E00163864 /* ViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		14643296268868CC00163864 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		14643297268868CC00163864 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		146432BD2688723600163864 /* SetGoalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalCollectionViewController.swift; sourceTree = "<group>"; };
+		146432BE2688723600163864 /* SetGoalCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetGoalCollectionViewController.xib; sourceTree = "<group>"; };
+		146432C82688793B00163864 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		14E5FA23268603EB0052A92E /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
-		14EB88E826836F91009A93EE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		14EB88E826836F91009A93EE /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		25FBED0D05EE882E45632900 /* Pods-WeeklyKakeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyKakeibo.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyKakeibo/Pods-WeeklyKakeibo.debug.xcconfig"; sourceTree = "<group>"; };
 		494AEB47A368F50A699F13AC /* Pods-WeeklyKakeiboTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyKakeiboTests.release.xcconfig"; path = "Target Support Files/Pods-WeeklyKakeiboTests/Pods-WeeklyKakeiboTests.release.xcconfig"; sourceTree = "<group>"; };
 		9487BF9DB6044FCC0DD6B5E5 /* Pods_WeeklyKakeiboTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeeklyKakeiboTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +165,9 @@
 				146432842688689E00163864 /* Extension */,
 				146432A026886A4C00163864 /* Model */,
 				14E5FA23268603EB0052A92E /* Keyboard.swift */,
+				14EB88E826836F91009A93EE /* FirstView.swift */,
+				146432C82688793B00163864 /* CustomButton.swift */,
+				146432C42688723C00163864 /* SetGoalCollectionView */,
 				143029F3267F0F080039B31E /* TableHeaderView.swift */,
 				1424CB96266F99AB00B90411 /* Main.storyboard */,
 				14643295268868CC00163864 /* ItemCell */,
@@ -193,7 +202,6 @@
 			children = (
 				1424CB94266F99AB00B90411 /* ViewController.swift */,
 				14386A5C2677A3AD002EDA51 /* InputViewController.swift */,
-				14EB88E826836F91009A93EE /* FirstViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -223,6 +231,15 @@
 				143C65F226762C56008856A2 /* Models.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		146432C42688723C00163864 /* SetGoalCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				146432BD2688723600163864 /* SetGoalCollectionViewController.swift */,
+				146432BE2688723600163864 /* SetGoalCollectionViewController.xib */,
+			);
+			path = SetGoalCollectionView;
 			sourceTree = "<group>";
 		};
 		C2A7CE3E7E76B9464196700C /* Frameworks */ = {
@@ -345,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				146432C02688723600163864 /* SetGoalCollectionViewController.xib in Resources */,
 				1424CB9D266F99AB00B90411 /* LaunchScreen.storyboard in Resources */,
 				145A200826821E82009A585B /* GoogleService-Info.plist in Resources */,
 				14643298268868CC00163864 /* ItemCell.xib in Resources */,
@@ -502,14 +520,16 @@
 				1424CB95266F99AB00B90411 /* ViewController.swift in Sources */,
 				14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */,
 				143029F4267F0F080039B31E /* TableHeaderView.swift in Sources */,
+				146432C92688793B00163864 /* CustomButton.swift in Sources */,
 				1424CB91266F99AB00B90411 /* AppDelegate.swift in Sources */,
 				1424CB93266F99AB00B90411 /* SceneDelegate.swift in Sources */,
+				146432BF2688723600163864 /* SetGoalCollectionViewController.swift in Sources */,
 				143C65F326762C56008856A2 /* Models.swift in Sources */,
 				14E5FA24268603EB0052A92E /* Keyboard.swift in Sources */,
 				1464326D2688688E00163864 /* ViewController+TableViewDelegate.swift in Sources */,
 				1464326C2688688E00163864 /* Date+Addition.swift in Sources */,
 				1464326B2688688E00163864 /* NSPredicate+Initializers.swift in Sources */,
-				14EB88E926836F91009A93EE /* FirstViewController.swift in Sources */,
+				14EB88E926836F91009A93EE /* FirstView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     private let current = Calendar.current
     private var monthCounter: Int = 0
     private let STORED_KEY = "lanched"
+    let notificationCenter = NotificationCenter.default
     
     var itemList: Results<Item>!
     let sectionTitleList = ["1週目", "2週目", "3週目", "4週目", "5週目"]
@@ -41,6 +42,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        notificationCenter.addObserver(self, selector: #selector(updateUI), name: .startButtonTapped, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(moveToSettingView), name: .settingButtonTapped, object: nil)
         tableViewSettings()
         setNavBar()
         
@@ -48,6 +52,22 @@ class ViewController: UIViewController {
             setFirstView()
         }
         reload()
+    }
+    
+    @objc func updateUI() {
+        self.navigationController?.setNavigationBarHidden(false, animated:false)
+    }
+    
+    @objc func moveToSettingView() {
+        let vc = SetGoalCollectionViewController()
+        
+        /* layout info --- */
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width:view.frame.width, height:view.frame.height)
+        vc.collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        /* --- */
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,13 +87,12 @@ class ViewController: UIViewController {
         
         let firstDay: NSDate? = date.startOfMonth as NSDate?
         let lastDay: NSDate? = date.endOfMonth as NSDate?
-        realm = try! Realm()
         
+        realm = try! Realm()
         let predicate = NSPredicate("date", fromDate: firstDay, toDate:  lastDay)
-
         itemList = realm.objects(Item.self).filter(predicate)
         
-        setNavBar()
+        setNavTitle()
         tableView.reloadData()
     }
     
@@ -83,15 +102,19 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
+        setNavTitle()
+        self.navigationController?.setNavigationBarHidden(false, animated:true)
+    }
+    
+    private func setNavTitle() {
         let month = current.component(.month, from: date)
         navTitle.title = "\(month)月"
-        self.navigationController?.setNavigationBarHidden(false, animated:true)
     }
     
     private func setFirstView() {
         let firstView = FirstView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(firstView)
+        self.navigationController?.setNavigationBarHidden(true, animated:true)
     }
     
     private func lanchIsFirstTime() -> Bool {

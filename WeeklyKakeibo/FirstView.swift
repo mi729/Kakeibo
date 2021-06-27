@@ -12,6 +12,9 @@ class FirstView: UIView {
     
     var backgroundView: UIView!
     var view: UIView!
+    var settingButton: CustomButton!
+    var startButton: CustomButton!
+    let notificationCenter = NotificationCenter.default
     
     private let STORED_KEY = "lanched"
     
@@ -31,7 +34,8 @@ class FirstView: UIView {
         self.view.frame.size = self.frame.size
         self.setGradient(view: view)
         self.addLabel(view: view)
-        self.addbutton(view: view, view2: backgroundView)
+//        settingButton = setSettingButton()
+        startButton = setStartButton()
         self.addSubview(view)
     }
     
@@ -64,13 +68,10 @@ class FirstView: UIView {
         label.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
     }
     
-    func addbutton(view: UIView, view2: UIView) {
-        let button = UIButton()
+    func setSettingButton() -> CustomButton{
+        let button = CustomButton()
         button.frame = view.frame
-        button.setTitle("はじめる", for: .normal)
-        button.setTitleColor(UIColor.white, for: .normal)
-        button.backgroundColor = UIColor {_ in return #colorLiteral(red: 0.3445842266, green: 0.7374812961, blue: 0.7090910673, alpha: 1)}
-        button.layer.cornerRadius = 10.0
+        button.setTitle("貯金額を設定する", for: .normal)
         view.addSubview(button)
         
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -78,12 +79,32 @@ class FirstView: UIView {
         button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32.0).isActive = true
         
         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -140).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        button.addTarget(self, action: #selector(addButtonTapped(_:)), for: .touchUpInside)
+        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -184).isActive = true
+        button.addTarget(self, action: #selector(settingButtonTapped(_:)), for: .touchUpInside)
+        return button
+        
     }
     
-    @objc func addButtonTapped(_ sender: UIButton) {
+    func setStartButton() -> CustomButton {
+        let button = CustomButton()
+        button.frame = view.frame
+//        button.setTitle("設定せずにはじめる", for: .normal)
+//        button.backgroundColor = UIColor.systemGray2
+        button.setTitle("はじめる", for: .normal)
+        view.addSubview(button)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32.0).isActive = true
+        button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32.0).isActive = true
+        
+        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -120).isActive = true
+        button.addTarget(self, action: #selector(startButtonTapped(_:)), for: .touchUpInside)
+        return button
+    }
+    
+    @objc func startButtonTapped(_ sender: UIButton) {
+        notificationCenter.post(name: .startButtonTapped, object: nil)
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
             self.view.center.y += self.frame.height
         }, completion: nil)
@@ -96,8 +117,17 @@ class FirstView: UIView {
         })
     }
     
+    @objc func settingButtonTapped(_ sender: UIButton) {
+        notificationCenter.post(name: .settingButtonTapped, object: nil)
+    }
+    
     func logFirstLanch() {
         return UserDefaults.standard.set(true, forKey: STORED_KEY)
     }
     
+}
+
+extension Notification.Name {
+    static let startButtonTapped = Notification.Name("startButtonTapped")
+    static let settingButtonTapped = Notification.Name("settingButtonTapped")
 }

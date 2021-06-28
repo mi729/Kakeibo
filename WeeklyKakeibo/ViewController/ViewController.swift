@@ -59,14 +59,7 @@ class ViewController: UIViewController {
     }
     
     @objc func moveToSettingView() {
-        let vc = SetGoalCollectionViewController()
-        
-        /* layout info --- */
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width:view.frame.width, height:view.frame.height)
-        vc.collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        /* --- */
-        
+        let vc = SetSavingAmountViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

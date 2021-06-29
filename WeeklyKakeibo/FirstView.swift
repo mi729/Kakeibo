@@ -36,7 +36,7 @@ class FirstView: UIView {
         self.addLabel(view: view)
 //        settingButton = setSettingButton()
         startButton = setStartButton()
-        self.addSubview(view)
+        self.backgroundView.addSubview(view)
     }
     
     func setGradient(view: UIView) {
@@ -105,9 +105,6 @@ class FirstView: UIView {
     
     @objc func startButtonTapped(_ sender: UIButton) {
         notificationCenter.post(name: .startButtonTapped, object: nil)
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
-            self.view.center.y += self.frame.height
-        }, completion: nil)
         
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
             self.backgroundView.center.y += self.frame.height

@@ -18,19 +18,33 @@ class SetSavingAmountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setGradient(view: view)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setGradient(view: UIView) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        let color1 = UIColor(red: 88/256.0, green: 188/256.0, blue: 181/256.0, alpha: 1).cgColor
+        let color2 = UIColor.white
+        gradientLayer.colors = [color1, color2]
+        gradientLayer.startPoint = CGPoint.init(x: 0.5, y: 0)
+        gradientLayer.endPoint = CGPoint.init(x: 0.5 , y:1 )
+        view.layer.insertSublayer(gradientLayer,at:0)
     }
-    */
-
+    
+//    @objc func startButtonTapped(_ sender: UIButton) {
+//        notificationCenter.post(name: .startButtonTapped, object: nil)
+//        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
+//            self.view.center.y += self.frame.height
+//        }, completion: nil)
+//        
+//        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
+//            self.backgroundView.center.y += self.frame.height
+//        }, completion: {_ in
+//            self.removeFromSuperview()
+//            self.logFirstLanch()
+//        })
+//    }
+    
 }

@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     private var monthCounter: Int = 0
     private let STORED_KEY = "lanched"
     let notificationCenter = NotificationCenter.default
+    private var firstView = FirstView()
     
     var itemList: Results<Item>!
     let sectionTitleList = ["1週目", "2週目", "3週目", "4週目", "5週目"]
@@ -105,7 +106,7 @@ class ViewController: UIViewController {
     }
     
     private func setFirstView() {
-        let firstView = FirstView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        firstView = FirstView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(firstView)
         self.navigationController?.setNavigationBarHidden(true, animated:true)
     }

@@ -9,7 +9,32 @@
 import UIKit
 
 class SetSavingAmountViewController: UIViewController {
-
+    @IBAction func skipButton(_ sender: Any) {
+        skipButtonTapped()
+    }
+    
+    @IBAction func okButton(_ sender: Any) {
+        okButtonTapped()
+    }
+    
+    @IBOutlet weak var incomeTextField: UITextField!
+    
+    @IBOutlet weak var rentTextField: UITextField!
+    
+    @IBOutlet weak var utilityTextField: UITextField!
+    
+    
+    @IBOutlet weak var netTextField: UITextField!
+    
+    @IBOutlet weak var waterTextField: UITextField!
+    
+    @IBOutlet weak var otherTextField: UITextField!
+    
+    @IBOutlet weak var otherTextField2: UITextField!
+    
+    let notificationCenter = NotificationCenter.default
+    private let STORED_KEY = "lanched"
+    
     override func loadView() {
         if let view = UINib(nibName: "SetSavingAmountView", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
         self.view = view
@@ -19,6 +44,17 @@ class SetSavingAmountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setGradient(view: view)
+        incomeTextField.delegate = self
+        rentTextField.delegate = self
+        utilityTextField.delegate = self
+        netTextField.delegate = self
+        waterTextField.delegate = self
+        otherTextField.delegate = self
+        otherTextField2.delegate = self
+        
+        let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGR.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGR)
         
     }
     
@@ -33,18 +69,36 @@ class SetSavingAmountViewController: UIViewController {
         view.layer.insertSublayer(gradientLayer,at:0)
     }
     
-//    @objc func startButtonTapped(_ sender: UIButton) {
-//        notificationCenter.post(name: .startButtonTapped, object: nil)
-//        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
-//            self.view.center.y += self.frame.height
-//        }, completion: nil)
-//        
-//        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
-//            self.backgroundView.center.y += self.frame.height
-//        }, completion: {_ in
-//            self.removeFromSuperview()
-//            self.logFirstLanch()
-//        })
-//    }
+    func skipButtonTapped() {
+        notificationCenter.post(name: .startButtonTapped, object: nil)
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
+            self.view.center.y += self.view.frame.height
+        }, completion: {_ in
+            self.view.removeFromSuperview()
+            self.logFirstLanch()
+        })
+    }
     
+    func okButtonTapped() {
+        
+    }
+    
+    func logFirstLanch() {
+        return UserDefaults.standard.set(true, forKey: STORED_KEY)
+    }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+}
+
+extension SetSavingAmountViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        let nextTag = textField.tag + 1
+        if let nextTextField = self.view.viewWithTag(nextTag) {
+            nextTextField.becomeFirstResponder()
+        }
+        return true
+    }
 }

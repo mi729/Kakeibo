@@ -55,18 +55,13 @@ class ViewController: UIViewController {
         reload()
     }
     
-    @objc func updateUI() {
-        self.navigationController?.setNavigationBarHidden(false, animated:false)
-    }
-    
-    @objc func moveToSettingView() {
-        let vc = SetSavingAmountViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reload()
+        
+        if !firstView.isDescendant(of: self.view) {
+            self.navigationController?.setNavigationBarHidden(false, animated:true)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -152,5 +147,14 @@ class ViewController: UIViewController {
         let predicate = NSPredicate(format: "week == %d", week)
         let weekItemList = itemList.filter(predicate)
         return weekItemList
+    }
+    
+    @objc func updateUI() {
+        self.navigationController?.setNavigationBarHidden(false, animated:false)
+    }
+    
+    @objc func moveToSettingView() {
+        let vc = SetSavingAmountViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

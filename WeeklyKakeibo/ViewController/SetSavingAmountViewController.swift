@@ -32,6 +32,13 @@ class SetSavingAmountViewController: UIViewController {
     
     @IBOutlet weak var otherTextField2: UITextField!
     
+    @IBOutlet weak var skipButton: CustomButton! {
+        didSet {
+            
+        }
+    }
+    @IBOutlet weak var okButton: CustomButton!
+    
     let notificationCenter = NotificationCenter.default
     private let STORED_KEY = "lanched"
     
@@ -44,13 +51,6 @@ class SetSavingAmountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setGradient(view: view)
-        incomeTextField.delegate = self
-        rentTextField.delegate = self
-        utilityTextField.delegate = self
-        netTextField.delegate = self
-        waterTextField.delegate = self
-        otherTextField.delegate = self
-        otherTextField2.delegate = self
         
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGR.cancelsTouchesInView = false
@@ -70,8 +70,7 @@ class SetSavingAmountViewController: UIViewController {
     }
     
     func skipButtonTapped() {
-        let vc = ViewController()
-        self.navigationController?.popToViewController(vc, animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
         self.logFirstLanch()
     }
     

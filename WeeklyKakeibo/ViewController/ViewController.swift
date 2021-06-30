@@ -69,6 +69,12 @@ class ViewController: UIViewController {
         reload()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        if firstView.isDescendant(of: self.view) {
+            self.firstView.removeFromSuperview()
+        }
+    }
+    
     private func tableViewSettings() {
         tableView.delegate = self
         tableView.dataSource = self

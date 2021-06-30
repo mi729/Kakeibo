@@ -70,17 +70,13 @@ class SetSavingAmountViewController: UIViewController {
     }
     
     func skipButtonTapped() {
-        notificationCenter.post(name: .startButtonTapped, object: nil)
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
-            self.view.center.y += self.view.frame.height
-        }, completion: {_ in
-            self.view.removeFromSuperview()
-            self.logFirstLanch()
-        })
+        let vc = ViewController()
+        self.navigationController?.popToViewController(vc, animated: true)
+        self.logFirstLanch()
     }
     
     func okButtonTapped() {
-        
+        self.logFirstLanch()
     }
     
     func logFirstLanch() {

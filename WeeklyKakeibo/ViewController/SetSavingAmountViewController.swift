@@ -55,7 +55,7 @@ class SetSavingAmountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = #colorLiteral(red: 0.9537400778, green: 0.9537400778, blue: 0.9537400778, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
         
         notificationCenter.addObserver(self, selector: #selector(backToView), name: .okButtonTapped, object: nil)
         

@@ -34,7 +34,7 @@ class FirstView: UIView {
         self.view.frame.size = self.frame.size
         self.setGradient(view: view)
         self.addLabel(view: view)
-//        settingButton = setSettingButton()
+        settingButton = setSettingButton()
         startButton = setStartButton()
         self.backgroundView.addSubview(view)
     }
@@ -88,9 +88,8 @@ class FirstView: UIView {
     func setStartButton() -> CustomButton {
         let button = CustomButton()
         button.frame = view.frame
-//        button.setTitle("設定せずにはじめる", for: .normal)
-//        button.backgroundColor = UIColor.systemGray2
-        button.setTitle("はじめる", for: .normal)
+        button.setTitle("設定せずにはじめる", for: .normal)
+        button.backgroundColor = UIColor.systemGray2
         view.addSubview(button)
         
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -127,4 +126,5 @@ class FirstView: UIView {
 extension Notification.Name {
     static let startButtonTapped = Notification.Name("startButtonTapped")
     static let settingButtonTapped = Notification.Name("settingButtonTapped")
+    static let okButtonTapped = Notification.Name("okButtonTapped")
 }

@@ -41,21 +41,16 @@ class InputViewController: UIViewController {
     @IBOutlet weak var selectedDate: UIDatePicker!
     @IBOutlet weak var titleTextField: DoneTextFierd!
     
-    @IBOutlet weak var cancelButton: UIButton! {
+    @IBOutlet weak var cancelButton: CustomButton! {
         didSet {
             cancelButton.setTitle("キャンセル", for: .normal)
-            cancelButton.setTitleColor(UIColor.white, for: .normal)
-            cancelButton.backgroundColor = UIColor.systemGray2
-            cancelButton.layer.cornerRadius = 10.0
+            cancelButton.backgroundColor = .systemGray2
         }
     }
 
-    @IBOutlet weak var addButton: UIButton! {
+    @IBOutlet weak var addButton: CustomButton! {
         didSet {
             addButton.setTitle("追加する", for: .normal)
-            addButton.setTitleColor(UIColor.white, for: .normal)
-            addButton.backgroundColor = UIColor {_ in return #colorLiteral(red: 0.3445842266, green: 0.7374812961, blue: 0.7090910673, alpha: 1)}
-            addButton.layer.cornerRadius = 10.0
         }
     }
 
@@ -92,14 +87,14 @@ class InputViewController: UIViewController {
             try realm.write({ () -> Void in
                 realm.add(newItem)
                 print("item saved")
-                aleart()
+                alert()
             })
         }catch {
             print("save failed")
         }
     }
     
-    func aleart() {
+    func alert() {
         let dialog = UIAlertController(title: "", message: "追加できました！", preferredStyle: .alert)
         dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             self.dismiss(animated: true, completion: nil)

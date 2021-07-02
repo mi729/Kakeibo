@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     private var monthCounter: Int = 0
     private let STORED_KEY = "lanched"
     let notificationCenter = NotificationCenter.default
+    private var firstView = FirstView()
     
     var itemList: Results<Item>!
     let sectionTitleList = ["1週目", "2週目", "3週目", "4週目", "5週目"]
@@ -54,25 +55,19 @@ class ViewController: UIViewController {
         reload()
     }
     
-    @objc func updateUI() {
-        self.navigationController?.setNavigationBarHidden(false, animated:false)
-    }
-    
-    @objc func moveToSettingView() {
-        let vc = SetGoalCollectionViewController()
-        
-        /* layout info --- */
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width:view.frame.width, height:view.frame.height)
-        vc.collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        /* --- */
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reload()
+        
+        if !firstView.isDescendant(of: self.view) {
+            self.navigationController?.setNavigationBarHidden(false, animated:true)
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if firstView.isDescendant(of: self.view) {
+            self.firstView.removeFromSuperview()
+        }
     }
     
     private func tableViewSettings() {
@@ -112,7 +107,7 @@ class ViewController: UIViewController {
     }
     
     private func setFirstView() {
-        let firstView = FirstView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        firstView = FirstView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(firstView)
         self.navigationController?.setNavigationBarHidden(true, animated:true)
     }
@@ -152,5 +147,14 @@ class ViewController: UIViewController {
         let predicate = NSPredicate(format: "week == %d", week)
         let weekItemList = itemList.filter(predicate)
         return weekItemList
+    }
+    
+    @objc func updateUI() {
+        self.navigationController?.setNavigationBarHidden(false, animated:false)
+    }
+    
+    @objc func moveToSettingView() {
+        let vc = SetSavingAmountViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

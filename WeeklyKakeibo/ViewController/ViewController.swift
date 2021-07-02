@@ -49,9 +49,9 @@ class ViewController: UIViewController {
         tableViewSettings()
         setNavBar()
         
-//        if lanchIsFirstTime() {
+        if lanchIsFirstTime() {
             setFirstView()
-//        }
+        }
         reload()
     }
     

@@ -52,7 +52,7 @@ class FirstView: UIView {
     
     func addLabel(view: UIView) {
         let label = UILabel()
-        label.text = "Weekly家計簿は\n\n1週間分の費用を決めて記録する\n\n「お金の管理が苦手な人」\n\nのためのアプリです"
+        label.text = "Weekly家計簿は\n\n1週間分の予算を決めて記録する\n\n「お金の管理が苦手な人」\n\nのためのアプリです"
         label.textColor = UIColor.white
         label.lineBreakMode = .byWordWrapping
         label.adjustsFontSizeToFitWidth = true
@@ -71,7 +71,7 @@ class FirstView: UIView {
     func setSettingButton() -> CustomButton{
         let button = CustomButton()
         button.frame = view.frame
-        button.setTitle("貯金額を設定する", for: .normal)
+        button.setTitle("予算を設定する", for: .normal)
         view.addSubview(button)
         
         button.translatesAutoresizingMaskIntoConstraints = false

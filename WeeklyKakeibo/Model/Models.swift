@@ -21,3 +21,15 @@ class Item: Object {
     }
 }
 
+class Money: Object {
+    @objc dynamic var income: Int = 0
+    @objc dynamic var savings: Int = 0
+    @objc dynamic var rent: Int = 0
+    @objc dynamic var utility: Int = 0
+    @objc dynamic var water: Int = 0
+    @objc dynamic var internet: Int = 0
+    @objc dynamic var insurance: Int = 0
+    @objc dynamic var other1: Int = 0
+    @objc dynamic var other2: Int = 0
+}
+

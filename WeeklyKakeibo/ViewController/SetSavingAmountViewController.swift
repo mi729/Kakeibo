@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SetSavingAmountViewController: UIViewController {
     @IBAction func skipButton(_ sender: Any) {
@@ -18,6 +19,8 @@ class SetSavingAmountViewController: UIViewController {
     }
     
     @IBOutlet weak var incomeTextField: UITextField!
+    
+    @IBOutlet weak var savingsTextField: UITextField!
     
     @IBOutlet weak var rentTextField: UITextField!
     
@@ -34,9 +37,10 @@ class SetSavingAmountViewController: UIViewController {
     
     @IBOutlet weak var skipButton: CustomButton! {
         didSet {
-            
+            skipButton.backgroundColor = .systemGray2
         }
     }
+
     @IBOutlet weak var okButton: CustomButton!
     
     let notificationCenter = NotificationCenter.default
@@ -50,7 +54,10 @@ class SetSavingAmountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setGradient(view: view)
+        
+        self.view.backgroundColor = #colorLiteral(red: 0.9537400778, green: 0.9537400778, blue: 0.9537400778, alpha: 1)
+        
+        notificationCenter.addObserver(self, selector: #selector(backToView), name: .okButtonTapped, object: nil)
         
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGR.cancelsTouchesInView = false
@@ -58,28 +65,65 @@ class SetSavingAmountViewController: UIViewController {
         
     }
     
-    func setGradient(view: UIView) {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
-        let color1 = UIColor(red: 88/256.0, green: 188/256.0, blue: 181/256.0, alpha: 1).cgColor
-        let color2 = UIColor.white
-        gradientLayer.colors = [color1, color2]
-        gradientLayer.startPoint = CGPoint.init(x: 0.5, y: 0)
-        gradientLayer.endPoint = CGPoint.init(x: 0.5 , y:1 )
-        view.layer.insertSublayer(gradientLayer,at:0)
-    }
-    
-    func skipButtonTapped() {
-        self.navigationController?.popToRootViewController(animated: true)
+    private func skipButtonTapped() {
+        self.backToView()
         self.logFirstLanch()
     }
     
-    func okButtonTapped() {
+    private func okButtonTapped() {
+        setCosts()
         self.logFirstLanch()
     }
     
-    func logFirstLanch() {
+    private func logFirstLanch() {
         return UserDefaults.standard.set(true, forKey: STORED_KEY)
+    }
+    
+    private func setCosts() {
+        let money = Money()
+        guard !(incomeTextField.text ?? "").isEmpty else {
+        alert(message: "手取りが未入力です")
+            return
+        }
+        money.income = Int(incomeTextField.text!)!
+        money.savings = Int(savingsTextField.text ?? "") ?? 0
+        money.rent = Int(rentTextField.text ?? "") ?? 0
+        money.utility = Int(utilityTextField.text ?? "") ?? 0
+        money.water = Int(waterTextField.text ?? "") ?? 0
+        money.internet = Int(netTextField.text ?? "") ?? 0
+        money.other1 = Int(otherTextField.text ?? "") ?? 0
+        money.other2 = Int(otherTextField.text ?? "") ?? 0
+
+        do{
+            let realm = try Realm()
+            try realm.write({ () -> Void in
+                realm.add(money)
+                print("item saved")
+                alert()
+            })
+        }catch {
+            print("save failed")
+        }
+    }
+
+    private func alert(message: String) {
+        let dialog = UIAlertController(title: "",message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        dialog.addAction(action)
+        
+        present(dialog, animated: true, completion: nil)
+    }
+    
+    private func alert() {
+        let storyboard = UIStoryboard(name: "Alert", bundle: nil)
+        let alertViewController = storyboard.instantiateViewController(identifier: "alert")
+        alertViewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        alertViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(alertViewController, animated: true, completion: nil)
+    }
+    
+    @objc func backToView() {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @objc func dismissKeyboard() {

@@ -126,4 +126,5 @@ class FirstView: UIView {
 extension Notification.Name {
     static let startButtonTapped = Notification.Name("startButtonTapped")
     static let settingButtonTapped = Notification.Name("settingButtonTapped")
+    static let okButtonTapped = Notification.Name("okButtonTapped")
 }

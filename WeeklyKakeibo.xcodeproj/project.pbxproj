@@ -21,6 +21,9 @@
 		145704C8268F350300213945 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145704C7268F350300213945 /* Alert.storyboard */; };
 		145704CD268F351000213945 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145704CC268F351000213945 /* AlertViewController.swift */; };
 		145704E8269143E600213945 /* UITextField+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145704E7269143E600213945 /* UITextField+Addition.swift */; };
+		145704F2269156B800213945 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145704F0269156B800213945 /* SettingViewController.swift */; };
+		145704F3269156B800213945 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145704F1269156B800213945 /* SettingViewController.xib */; };
+		1457051B2691586B00213945 /* SetSavingAmountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1457051A2691586B00213945 /* SetSavingAmountViewController.xib */; };
 		145A200826821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
 		145A200926821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
 		145A200A26821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
@@ -30,9 +33,6 @@
 		14643298268868CC00163864 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14643296268868CC00163864 /* ItemCell.xib */; };
 		14643299268868CC00163864 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14643297268868CC00163864 /* ItemCell.swift */; };
 		146432C92688793B00163864 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146432C82688793B00163864 /* CustomButton.swift */; };
-		14A05F2D268A178A00431FE7 /* SetSavingAmountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A05F2C268A178A00431FE7 /* SetSavingAmountView.xib */; };
-		14A05F2E268A178A00431FE7 /* SetSavingAmountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A05F2C268A178A00431FE7 /* SetSavingAmountView.xib */; };
-		14A05F2F268A178A00431FE7 /* SetSavingAmountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A05F2C268A178A00431FE7 /* SetSavingAmountView.xib */; };
 		14A05F34268A180A00431FE7 /* SetSavingAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A05F33268A180A00431FE7 /* SetSavingAmountViewController.swift */; };
 		14E5FA24268603EB0052A92E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FA23268603EB0052A92E /* Keyboard.swift */; };
 		14EB88E926836F91009A93EE /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB88E826836F91009A93EE /* FirstView.swift */; };
@@ -79,6 +79,9 @@
 		145704C7268F350300213945 /* Alert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		145704CC268F351000213945 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		145704E7269143E600213945 /* UITextField+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Addition.swift"; sourceTree = "<group>"; };
+		145704F0269156B800213945 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		145704F1269156B800213945 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		1457051A2691586B00213945 /* SetSavingAmountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetSavingAmountViewController.xib; sourceTree = "<group>"; };
 		145A200726821E81009A585B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		146432682688688E00163864 /* NSPredicate+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Initializers.swift"; sourceTree = "<group>"; };
 		146432692688688E00163864 /* Date+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Addition.swift"; sourceTree = "<group>"; };
@@ -86,7 +89,6 @@
 		14643296268868CC00163864 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		14643297268868CC00163864 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		146432C82688793B00163864 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		14A05F2C268A178A00431FE7 /* SetSavingAmountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetSavingAmountView.xib; sourceTree = "<group>"; };
 		14A05F33268A180A00431FE7 /* SetSavingAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSavingAmountViewController.swift; sourceTree = "<group>"; };
 		14E5FA23268603EB0052A92E /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		14EB88E826836F91009A93EE /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
@@ -170,18 +172,15 @@
 			children = (
 				1424CB90266F99AB00B90411 /* AppDelegate.swift */,
 				1424CB92266F99AB00B90411 /* SceneDelegate.swift */,
+				1424CB96266F99AB00B90411 /* Main.storyboard */,
 				146432842688689E00163864 /* Extension */,
 				146432A026886A4C00163864 /* Model */,
-				14E5FA23268603EB0052A92E /* Keyboard.swift */,
-				14EB88E826836F91009A93EE /* FirstView.swift */,
-				146432C82688793B00163864 /* CustomButton.swift */,
-				143029F3267F0F080039B31E /* TableHeaderView.swift */,
-				1424CB96266F99AB00B90411 /* Main.storyboard */,
-				145704C7268F350300213945 /* Alert.storyboard */,
-				145704CC268F351000213945 /* AlertViewController.swift */,
-				14A05F2C268A178A00431FE7 /* SetSavingAmountView.xib */,
-				14643295268868CC00163864 /* ItemCell */,
 				146432592688674C00163864 /* ViewController */,
+				145705002691573800213945 /* SetSavingAmountViewController */,
+				145704FA269156C000213945 /* SettingViewController */,
+				145704EC2691568100213945 /* AlertViewController */,
+				14643295268868CC00163864 /* ItemCell */,
+				145704FB269156DD00213945 /* CustomView */,
 				1424CB99266F99AB00B90411 /* Assets.xcassets */,
 				1424CB9B266F99AB00B90411 /* LaunchScreen.storyboard */,
 				1424CB9E266F99AB00B90411 /* Info.plist */,
@@ -207,10 +206,47 @@
 			path = WeeklyKakeiboUITests;
 			sourceTree = "<group>";
 		};
+		145704EC2691568100213945 /* AlertViewController */ = {
+			isa = PBXGroup;
+			children = (
+				145704CC268F351000213945 /* AlertViewController.swift */,
+				145704C7268F350300213945 /* Alert.storyboard */,
+			);
+			path = AlertViewController;
+			sourceTree = "<group>";
+		};
+		145704FA269156C000213945 /* SettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				145704F0269156B800213945 /* SettingViewController.swift */,
+				145704F1269156B800213945 /* SettingViewController.xib */,
+			);
+			path = SettingViewController;
+			sourceTree = "<group>";
+		};
+		145704FB269156DD00213945 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				14E5FA23268603EB0052A92E /* Keyboard.swift */,
+				143029F3267F0F080039B31E /* TableHeaderView.swift */,
+				146432C82688793B00163864 /* CustomButton.swift */,
+				14EB88E826836F91009A93EE /* FirstView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		145705002691573800213945 /* SetSavingAmountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1457051A2691586B00213945 /* SetSavingAmountViewController.xib */,
+				14A05F33268A180A00431FE7 /* SetSavingAmountViewController.swift */,
+			);
+			path = SetSavingAmountViewController;
+			sourceTree = "<group>";
+		};
 		146432592688674C00163864 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				14A05F33268A180A00431FE7 /* SetSavingAmountViewController.swift */,
 				1424CB94266F99AB00B90411 /* ViewController.swift */,
 				14386A5C2677A3AD002EDA51 /* InputViewController.swift */,
 			);
@@ -368,10 +404,11 @@
 				1424CB9D266F99AB00B90411 /* LaunchScreen.storyboard in Resources */,
 				145A200826821E82009A585B /* GoogleService-Info.plist in Resources */,
 				14643298268868CC00163864 /* ItemCell.xib in Resources */,
-				14A05F2D268A178A00431FE7 /* SetSavingAmountView.xib in Resources */,
+				1457051B2691586B00213945 /* SetSavingAmountViewController.xib in Resources */,
 				1424CB9A266F99AB00B90411 /* Assets.xcassets in Resources */,
 				145704C8268F350300213945 /* Alert.storyboard in Resources */,
 				1424CB98266F99AB00B90411 /* Main.storyboard in Resources */,
+				145704F3269156B800213945 /* SettingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +417,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				145A200926821E82009A585B /* GoogleService-Info.plist in Resources */,
-				14A05F2E268A178A00431FE7 /* SetSavingAmountView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +425,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				145A200A26821E82009A585B /* GoogleService-Info.plist in Resources */,
-				14A05F2F268A178A00431FE7 /* SetSavingAmountView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +562,7 @@
 				14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */,
 				145704E8269143E600213945 /* UITextField+Addition.swift in Sources */,
 				143029F4267F0F080039B31E /* TableHeaderView.swift in Sources */,
+				145704F2269156B800213945 /* SettingViewController.swift in Sources */,
 				146432C92688793B00163864 /* CustomButton.swift in Sources */,
 				1424CB91266F99AB00B90411 /* AppDelegate.swift in Sources */,
 				1424CB93266F99AB00B90411 /* SceneDelegate.swift in Sources */,

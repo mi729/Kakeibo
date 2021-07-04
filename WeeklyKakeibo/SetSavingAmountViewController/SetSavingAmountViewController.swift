@@ -47,7 +47,7 @@ class SetSavingAmountViewController: UIViewController {
     private let STORED_KEY = "lanched"
     
     override func loadView() {
-        if let view = UINib(nibName: "SetSavingAmountView", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
+        if let view = UINib(nibName: "SetSavingAmountViewController", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
         self.view = view
       }
     }

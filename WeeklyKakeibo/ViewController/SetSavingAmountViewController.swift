@@ -62,7 +62,6 @@ class SetSavingAmountViewController: UIViewController {
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGR.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tapGR)
-        
     }
     
     private func skipButtonTapped() {
@@ -85,14 +84,14 @@ class SetSavingAmountViewController: UIViewController {
         alert(message: "手取りが未入力です")
             return
         }
-        money.income = Int(incomeTextField.text!)!
-        money.savings = Int(savingsTextField.text ?? "") ?? 0
-        money.rent = Int(rentTextField.text ?? "") ?? 0
-        money.utility = Int(utilityTextField.text ?? "") ?? 0
-        money.water = Int(waterTextField.text ?? "") ?? 0
-        money.internet = Int(netTextField.text ?? "") ?? 0
-        money.other1 = Int(otherTextField.text ?? "") ?? 0
-        money.other2 = Int(otherTextField.text ?? "") ?? 0
+        money.income = incomeTextField.textToInt
+        money.savings = savingsTextField.textToInt
+        money.rent = rentTextField.textToInt
+        money.utility = utilityTextField.textToInt
+        money.water = waterTextField.textToInt
+        money.internet = netTextField.textToInt
+        money.other1 = otherTextField.textToInt
+        money.other2 = otherTextField2.textToInt
 
         do{
             let realm = try Realm()

@@ -22,8 +22,8 @@ class SettingViewController: UIViewController {
             return money
     }()
     
-    lazy var base = ["1ヶ月の手取り":money?.income, "貯金額":money?.savings]
-    lazy var cost =  ["家賃":money?.rent, "光熱費":money?.utility, "水道代":money?.water, "ネット・スマホ代":money?.internet, "保険":money?.insurance, "その他1":money?.other1, "その他2":money?.other2]
+    lazy var base: KeyValuePairs = ["1ヶ月の手取り":money?.income, "貯金額":money?.savings]
+    lazy var cost: KeyValuePairs =  ["家賃":money?.rent, "光熱費":money?.utility, "水道代":money?.water, "ネット・スマホ代":money?.internet, "保険":money?.insurance, "その他1":money?.other1, "その他2":money?.other2]
         
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -71,7 +71,6 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? ItemCell {
             for (key,value) in array {
-                print(key,value)
                 keyArray.append(key)
                 valueArray.append(value ?? 0)
             }

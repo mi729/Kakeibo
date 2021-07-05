@@ -16,7 +16,7 @@ class FirstView: UIView {
     var startButton: CustomButton!
     let notificationCenter = NotificationCenter.default
     
-    private let STORED_KEY = "lanched"
+    private let STORED_KEY = "launched"
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -27,7 +27,7 @@ class FirstView: UIView {
         
         backgroundView = UIView()
         backgroundView.frame.size = self.frame.size
-        backgroundView.backgroundColor = UIColor.white
+        backgroundView.backgroundColor = .white
         self.addSubview(backgroundView)
 
         view = UIView()
@@ -53,7 +53,7 @@ class FirstView: UIView {
     func addLabel(view: UIView) {
         let label = UILabel()
         label.text = "Weekly家計簿は\n\n1週間分の予算を決めて記録する\n\n「お金の管理が苦手な人」\n\nのためのアプリです"
-        label.textColor = UIColor.white
+        label.textColor = .white
         label.lineBreakMode = .byWordWrapping
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
@@ -89,7 +89,7 @@ class FirstView: UIView {
         let button = CustomButton()
         button.frame = view.frame
         button.setTitle("設定せずにはじめる", for: .normal)
-        button.backgroundColor = UIColor.systemGray2
+        button.backgroundColor = .systemGray2
         view.addSubview(button)
         
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -109,7 +109,7 @@ class FirstView: UIView {
             self.backgroundView.center.y += self.frame.height
         }, completion: {_ in
             self.removeFromSuperview()
-            self.logFirstLanch()
+            self.logFirstLaunch()
         })
     }
     
@@ -117,7 +117,7 @@ class FirstView: UIView {
         notificationCenter.post(name: .settingButtonTapped, object: nil)
     }
     
-    func logFirstLanch() {
+    func logFirstLaunch() {
         return UserDefaults.standard.set(true, forKey: STORED_KEY)
     }
     

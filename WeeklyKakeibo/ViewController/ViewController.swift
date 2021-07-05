@@ -8,14 +8,13 @@
 import UIKit
 import RealmSwift
 
-
 class ViewController: UIViewController {
     private lazy var date = getDate()
     private var realm: Realm!
     private var token: NotificationToken!
     private let current = Calendar.current
     private var monthCounter: Int = 0
-    private let STORED_KEY = "lanched"
+    private let STORED_KEY = "launched"
     let notificationCenter = NotificationCenter.default
     private var firstView = FirstView()
     
@@ -32,14 +31,26 @@ class ViewController: UIViewController {
         nextMonth()
     }
     
+    @IBOutlet weak var settingButton: UIButton! {
+        didSet {
+            settingButton.imageView?.contentMode = .scaleAspectFit
+            settingButton.contentHorizontalAlignment = .fill
+            settingButton.contentVerticalAlignment = .fill
+        }
+    }
+
     @IBOutlet weak var plusButton: UIButton! {
         didSet {
-            plusButton.setTitleColor(UIColor.white, for: .normal)
-            plusButton.backgroundColor = UIColor {_ in return #colorLiteral(red: 0.3450980392, green: 0.737254902, blue: 0.7098039216, alpha: 1)}
+            plusButton.setTitleColor(.white, for: .normal)
+            plusButton.backgroundColor = #colorLiteral(red: 0.3450980392, green: 0.737254902, blue: 0.7098039216, alpha: 1)
             plusButton.layer.cornerRadius = 40.0
         }
     }
     @IBOutlet weak var tableView: UITableView!
+
+    @IBAction func settingButtonTapped(_ sender: Any) {
+        toSettingView()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +60,7 @@ class ViewController: UIViewController {
         tableViewSettings()
         setNavBar()
         
-        if lanchIsFirstTime() {
+        if launchIsFirstTime() {
             setFirstView()
         }
         reload()
@@ -73,6 +84,7 @@ class ViewController: UIViewController {
     private func tableViewSettings() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
         tableView.register(TableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
     }
@@ -97,6 +109,7 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         setNavTitle()
         self.navigationController?.setNavigationBarHidden(false, animated:true)
     }
@@ -112,10 +125,15 @@ class ViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated:true)
     }
     
-    private func lanchIsFirstTime() -> Bool {
+    private func launchIsFirstTime() -> Bool {
         return !UserDefaults.standard.bool(forKey: STORED_KEY)
     }
     
+    private func toSettingView() {
+        let vc = SettingViewController.init(nibName: nil, bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     private func nextMonth() {
         monthCounter += 1
         reload()

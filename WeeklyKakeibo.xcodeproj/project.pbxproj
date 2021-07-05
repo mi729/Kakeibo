@@ -256,10 +256,10 @@
 		146432842688689E00163864 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1464326A2688688E00163864 /* ViewController+TableViewDelegate.swift */,
 				146432692688688E00163864 /* Date+Addition.swift */,
 				145704E7269143E600213945 /* UITextField+Addition.swift */,
 				146432682688688E00163864 /* NSPredicate+Initializers.swift */,
+				1464326A2688688E00163864 /* ViewController+TableViewDelegate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";

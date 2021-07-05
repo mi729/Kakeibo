@@ -44,7 +44,7 @@ class SetSavingAmountViewController: UIViewController {
     @IBOutlet weak var okButton: CustomButton!
     
     let notificationCenter = NotificationCenter.default
-    private let STORED_KEY = "lanched"
+    private let STORED_KEY = "launched"
     
     override func loadView() {
         if let view = UINib(nibName: "SetSavingAmountViewController", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
@@ -66,15 +66,15 @@ class SetSavingAmountViewController: UIViewController {
     
     private func skipButtonTapped() {
         self.backToView()
-        self.logFirstLanch()
+        self.logFirstLaunch()
     }
     
     private func okButtonTapped() {
         setCosts()
-        self.logFirstLanch()
+        self.logFirstLaunch()
     }
     
-    private func logFirstLanch() {
+    private func logFirstLaunch() {
         return UserDefaults.standard.set(true, forKey: STORED_KEY)
     }
     

@@ -14,7 +14,7 @@ import UIKit
             let label = UILabel()
             label.text = "Week"
             label.font = .systemFont(ofSize: 22, weight: .semibold)
-            label.textColor = UIColor.darkGray
+            label.textColor = .darkGray
             label.textAlignment = .left
             return label
         }()
@@ -23,7 +23,7 @@ import UIKit
             let label = UILabel()
             label.text = "10000円"
             label.font = .systemFont(ofSize: 22, weight: .semibold)
-            label.textColor = UIColor.darkGray
+            label.textColor = .darkGray
             label.textAlignment = .right
             return label
         }()

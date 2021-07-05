@@ -38,6 +38,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let item = weekItemList[indexPath.row]
             cell.nameLabel.text = item.title
             cell.costLabel.text = "¥\(item.cost)"
+            cell.backgroundColor = .clear
             return cell
         }
         return UITableViewCell()
@@ -45,7 +46,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 44
-        }
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let week = indexPath.section + 1

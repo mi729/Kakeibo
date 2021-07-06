@@ -79,30 +79,39 @@ class SetSavingAmountViewController: UIViewController {
     }
     
     private func setCosts() {
-        let money = Money()
         guard !(incomeTextField.text ?? "").isEmpty else {
-        alert(message: "手取りが未入力です")
+            alert(message: "手取りが未入力です")
             return
         }
-        money.income = incomeTextField.textToInt
-        money.savings = savingsTextField.textToInt
-        money.rent = rentTextField.textToInt
-        money.utility = utilityTextField.textToInt
-        money.water = waterTextField.textToInt
-        money.internet = netTextField.textToInt
-        money.other1 = otherTextField.textToInt
-        money.other2 = otherTextField2.textToInt
-
-        do{
-            let realm = try Realm()
-            try realm.write({ () -> Void in
-                realm.add(money)
-                print("item saved")
-                alert()
-            })
-        }catch {
-            print("save failed")
+        var amounts: [String:Amount] = [:]
+         
+        let income = Amount(name: "手取り", amount: incomeTextField.textToInt)
+        let savings = Amount(name: "貯金額", amount: savingsTextField.textToInt)
+        let rent = Amount(name: "家賃", amount: rentTextField.textToInt)
+        let utility = Amount(name: "光熱費", amount: utilityTextField.textToInt)
+        let water = Amount(name: "水道代", amount: waterTextField.textToInt)
+        let internet = Amount(name: "スマホ・ネット代", amount: netTextField.textToInt)
+        let other1 = Amount(name: "その他①", amount: otherTextField.textToInt)
+        let other2 = Amount(name: "その他②", amount: otherTextField2.textToInt)
+        
+        amounts["income"] = income
+        amounts["savings"] = savings
+        amounts["rent"] = rent
+        amounts["utility"] = utility
+        amounts["water"] = water
+        amounts["internet"] = internet
+        amounts["other1"] = other1
+        amounts["other2"] = other2
+        
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
+        for amount in amounts {
+            guard let data = try? jsonEncoder.encode(amount.value) else {
+                return
+            }
+            UserDefaults.standard.set(data, forKey: amount.key)
         }
+        alert()
     }
 
     private func alert(message: String) {

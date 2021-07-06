@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class AlertViewController: UIViewController {
-
+    
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var alertView: UIView!{
         didSet {
@@ -30,12 +30,9 @@ class AlertViewController: UIViewController {
     }
     
     let notificationCenter = NotificationCenter.default
-    let money: Money? = {
-            let realm = try! Realm()
-            let results = realm.objects(Money.self)
-            let money = results.first
-            return money
-    }()
+    let globalVar = GlobalVar.shared
+    var income: Int = 0
+    var fixedCost: Int = 0
     var weeklyMoney: Int = 0
     
     override func viewDidLoad() {
@@ -50,11 +47,20 @@ class AlertViewController: UIViewController {
     }
     
     private func calcMoney() {
-        guard let money = money else {
-            return
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        for (index, amount) in globalVar.amounts.enumerated() {
+            guard let data = UserDefaults.standard.data(forKey: amount),
+                let decodedData = try? jsonDecoder.decode(Amount.self, from: data) else {
+                continue
+            }
+            if index == 0 {
+                income += decodedData.amount
+                continue
+            }
+            fixedCost += decodedData.amount
         }
-        let fixedCosts: Int = money.rent + money.utility + money.water + money.internet + money.insurance + money.other1 + money.other2 + money.savings
-        let income = money.income
-        weeklyMoney = (income - fixedCosts) / 5
+        weeklyMoney = (income - fixedCost) / 5
+        UserDefaults.standard.set(weeklyMoney, forKey: "weeklyMoney")
     }
 }

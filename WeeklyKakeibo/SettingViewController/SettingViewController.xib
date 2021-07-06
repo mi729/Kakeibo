@@ -19,17 +19,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSs-b2-BOi">
+                    <rect key="frame" x="16" y="44" width="382" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="hze-VI-dXc"/>
+                    </constraints>
+                </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FSH-oF-jim">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <rect key="frame" x="0.0" y="108" width="414" height="788"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="FSH-oF-jim" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ABI-k9-xUe"/>
+                <constraint firstItem="PSs-b2-BOi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="9vz-uR-fBA"/>
+                <constraint firstItem="FSH-oF-jim" firstAttribute="top" secondItem="PSs-b2-BOi" secondAttribute="bottom" id="Brv-Zf-Rca"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PSs-b2-BOi" secondAttribute="trailing" constant="16" id="Diw-yZ-0Bn"/>
                 <constraint firstItem="FSH-oF-jim" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ID3-Xy-4aB"/>
                 <constraint firstItem="FSH-oF-jim" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nk6-Hi-Gq1"/>
+                <constraint firstItem="PSs-b2-BOi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Q2U-as-gLI"/>
                 <constraint firstAttribute="bottom" secondItem="FSH-oF-jim" secondAttribute="bottom" id="SZu-5X-9tC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

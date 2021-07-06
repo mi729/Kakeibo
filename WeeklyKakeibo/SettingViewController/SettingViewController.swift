@@ -14,21 +14,18 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var settingTableView: UITableView!
     
     private var realm: Realm!
+
+    private let weeklyMoney = UserDefaults.standard.integer(forKey: "weeklyMoney")
+    private let globalVar = GlobalVar.shared
     
-    let money: Money? = {
-            let realm = try! Realm()
-            let results = realm.objects(Money.self)
-            let money = results.first
-            return money
-    }()
-    
-    lazy var base: KeyValuePairs = ["1ヶ月の手取り":money?.income, "貯金額":money?.savings]
-    lazy var cost: KeyValuePairs =  ["家賃":money?.rent, "光熱費":money?.utility, "水道代":money?.water, "ネット・スマホ代":money?.internet, "保険":money?.insurance, "その他1":money?.other1, "その他2":money?.other2]
+    var base: [[String: Int]] = []
+    var cost: [[String: Int]] =  []
         
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSettings()
         setNavBar()
+        setBaseCost()
     }
 
     private func tableViewSettings() {
@@ -38,6 +35,22 @@ class SettingViewController: UIViewController {
         settingTableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
     }
     
+    private func setBaseCost() {
+    
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        for (index, amount) in globalVar.amounts.enumerated() {
+            guard let data = UserDefaults.standard.data(forKey: amount),
+                let decodedData = try? jsonDecoder.decode(Amount.self, from: data) else {
+                continue
+            }
+            if index <= 1 {
+                base.append([decodedData.name:decodedData.amount])
+                continue
+            }
+            cost.append([decodedData.name:decodedData.amount])
+        }
+    }
 
     private func setNavBar() {
         self.navigationController?.navigationBar.tintColor = .white
@@ -63,17 +76,19 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let isBase = indexPath.section == 0
-        let array = isBase ? base : cost
+        let isBaseSection = indexPath.section == 0
+        let array = isBaseSection ? base : cost
         
         var keyArray: [String] = []
         var valueArray: [Int] = []
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? ItemCell {
-            for (key,value) in array {
-                keyArray.append(key)
-                valueArray.append(value ?? 0)
+            for amount in array {
+                keyArray.append(contentsOf: amount.keys)
+                valueArray.append(contentsOf: amount.values)
             }
+            print(keyArray,valueArray)
+            print(indexPath.row)
             cell.nameLabel.text = keyArray[indexPath.row]
             cell.costLabel.text = "¥\(valueArray[indexPath.row])"
             cell.backgroundColor = .clear

@@ -33,6 +33,8 @@
 		14643298268868CC00163864 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14643296268868CC00163864 /* ItemCell.xib */; };
 		14643299268868CC00163864 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14643297268868CC00163864 /* ItemCell.swift */; };
 		146432C92688793B00163864 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146432C82688793B00163864 /* CustomButton.swift */; };
+		1466A31E269490060093FC7D /* GlobalVar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466A31D269490060093FC7D /* GlobalVar.swift */; };
+		1466A32626949AC80093FC7D /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1466A32526949AC80093FC7D /* Amount.swift */; };
 		14A05F34268A180A00431FE7 /* SetSavingAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A05F33268A180A00431FE7 /* SetSavingAmountViewController.swift */; };
 		14E5FA24268603EB0052A92E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FA23268603EB0052A92E /* Keyboard.swift */; };
 		14EB88E926836F91009A93EE /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB88E826836F91009A93EE /* FirstView.swift */; };
@@ -89,6 +91,8 @@
 		14643296268868CC00163864 /* ItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		14643297268868CC00163864 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		146432C82688793B00163864 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		1466A31D269490060093FC7D /* GlobalVar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVar.swift; sourceTree = "<group>"; };
+		1466A32526949AC80093FC7D /* Amount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amount.swift; sourceTree = "<group>"; };
 		14A05F33268A180A00431FE7 /* SetSavingAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSavingAmountViewController.swift; sourceTree = "<group>"; };
 		14E5FA23268603EB0052A92E /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		14EB88E826836F91009A93EE /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				1424CB90266F99AB00B90411 /* AppDelegate.swift */,
 				1424CB92266F99AB00B90411 /* SceneDelegate.swift */,
 				1424CB96266F99AB00B90411 /* Main.storyboard */,
+				1466A31D269490060093FC7D /* GlobalVar.swift */,
 				146432842688689E00163864 /* Extension */,
 				146432A026886A4C00163864 /* Model */,
 				146432592688674C00163864 /* ViewController */,
@@ -238,8 +243,8 @@
 		145705002691573800213945 /* SetSavingAmountViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1457051A2691586B00213945 /* SetSavingAmountViewController.xib */,
 				14A05F33268A180A00431FE7 /* SetSavingAmountViewController.swift */,
+				1457051A2691586B00213945 /* SetSavingAmountViewController.xib */,
 			);
 			path = SetSavingAmountViewController;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				143C65F226762C56008856A2 /* Models.swift */,
+				1466A32526949AC80093FC7D /* Amount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -559,6 +565,8 @@
 			files = (
 				14643299268868CC00163864 /* ItemCell.swift in Sources */,
 				1424CB95266F99AB00B90411 /* ViewController.swift in Sources */,
+				1466A31E269490060093FC7D /* GlobalVar.swift in Sources */,
+				1466A32626949AC80093FC7D /* Amount.swift in Sources */,
 				14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */,
 				145704E8269143E600213945 /* UITextField+Addition.swift in Sources */,
 				143029F4267F0F080039B31E /* TableHeaderView.swift in Sources */,

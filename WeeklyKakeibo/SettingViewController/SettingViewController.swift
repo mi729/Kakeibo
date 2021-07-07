@@ -13,6 +13,9 @@ class SettingViewController: UIViewController {
 
     @IBOutlet weak var settingTableView: UITableView!
     
+    @IBOutlet weak var yosanLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var yenLabel: UILabel!
     private var realm: Realm!
 
     private let weeklyMoney = UserDefaults.standard.integer(forKey: "weeklyMoney")
@@ -24,7 +27,7 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSettings()
-        setNavBar()
+        setUI()
         setBaseCost()
     }
 
@@ -52,8 +55,11 @@ class SettingViewController: UIViewController {
         }
     }
 
-    private func setNavBar() {
+    private func setUI() {
         self.navigationController?.navigationBar.tintColor = .white
+        yosanLabel.text = "1週間の予算"
+        amountLabel.text = "\(weeklyMoney)"
+        yenLabel.text = "円"
     }
     
 }
@@ -90,7 +96,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             print(keyArray,valueArray)
             print(indexPath.row)
             cell.nameLabel.text = keyArray[indexPath.row]
-            cell.costLabel.text = "¥\(valueArray[indexPath.row])"
+            cell.costLabel.text = "\(valueArray[indexPath.row]) 円"
             cell.backgroundColor = .clear
             return cell
         }

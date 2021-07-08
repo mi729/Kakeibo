@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="WeeklyKakeibo" customModuleProvider="target">
             <connections>
                 <outlet property="amountLabel" destination="Cor-Cp-JC5" id="935-hS-rFg"/>
+                <outlet property="editButton" destination="H8U-aw-1jS" id="Y0N-cK-989"/>
                 <outlet property="settingTableView" destination="FSH-oF-jim" id="gbc-1w-YDi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yenLabel" destination="v2l-nd-ffk" id="JXi-jm-GcY"/>
@@ -60,8 +61,18 @@
                     </subviews>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8U-aw-1jS" customClass="CustomButton" customModule="WeeklyKakeibo" customModuleProvider="target">
+                    <rect key="frame" x="147" y="800" width="120" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="f5u-aj-4Yw"/>
+                    </constraints>
+                    <state key="normal" title="編集する"/>
+                    <connections>
+                        <action selector="editButtonTapped:" destination="-1" eventType="touchUpInside" id="I6L-iZ-nua"/>
+                    </connections>
+                </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FSH-oF-jim">
-                    <rect key="frame" x="0.0" y="128.5" width="414" height="767.5"/>
+                    <rect key="frame" x="0.0" y="128.5" width="414" height="639.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -72,15 +83,22 @@
                 <constraint firstItem="3bs-Sf-nOF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="3hT-Yo-JX7"/>
                 <constraint firstItem="FSH-oF-jim" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="84.5" id="4EK-uw-sW7"/>
                 <constraint firstItem="3bs-Sf-nOF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="520-rG-iyC"/>
+                <constraint firstItem="H8U-aw-1jS" firstAttribute="top" secondItem="FSH-oF-jim" secondAttribute="bottom" constant="32" id="933-Lw-MXb"/>
                 <constraint firstItem="FSH-oF-jim" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ID3-Xy-4aB"/>
                 <constraint firstItem="FSH-oF-jim" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nk6-Hi-Gq1"/>
-                <constraint firstAttribute="bottom" secondItem="FSH-oF-jim" secondAttribute="bottom" id="SZu-5X-9tC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="H8U-aw-1jS" secondAttribute="bottom" constant="32" id="Zfd-cf-6ET"/>
+                <constraint firstItem="H8U-aw-1jS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uzp-Ut-orV"/>
                 <constraint firstItem="FSH-oF-jim" firstAttribute="top" secondItem="3bs-Sf-nOF" secondAttribute="bottom" constant="16" id="zBp-tg-HR8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-149.27536231884059" y="48.883928571428569"/>
         </view>
     </objects>
+    <designables>
+        <designable name="H8U-aw-1jS">
+            <size key="intrinsicContentSize" width="62" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

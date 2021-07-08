@@ -16,6 +16,16 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var yosanLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var yenLabel: UILabel!
+    @IBOutlet weak var editButton: CustomButton! {
+        didSet {
+            editButton.setTitle("編集する", for: .normal)
+        }
+    }
+    
+    @IBAction func editButtonTapped(_ sender: Any) {
+        moveToEditView()
+    }
+    
     private var realm: Realm!
 
     private let weeklyMoney = UserDefaults.standard.integer(forKey: "weeklyMoney")
@@ -60,6 +70,11 @@ class SettingViewController: UIViewController {
         amountLabel.text = "\(weeklyMoney)"
         yenLabel.text = "円"
     }
+    private func moveToEditView() {
+        let vc = SetSavingAmountViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil) 
+    }
     
 }
 
@@ -102,9 +117,5 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 44
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
     }
 }

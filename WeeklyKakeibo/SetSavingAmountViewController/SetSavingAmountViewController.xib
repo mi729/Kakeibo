@@ -236,7 +236,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1w-iX-mc0" customClass="CustomButton" customModule="WeeklyKakeibo" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="8" width="183" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="スキップ"/>
+                                            <state key="normal" title="キャンセル"/>
                                             <connections>
                                                 <action selector="skipButton:" destination="-1" eventType="touchUpInside" id="ioC-Xz-snD"/>
                                             </connections>
@@ -334,7 +334,7 @@
             <size key="intrinsicContentSize" width="37" height="34"/>
         </designable>
         <designable name="k1w-iX-mc0">
-            <size key="intrinsicContentSize" width="74" height="34"/>
+            <size key="intrinsicContentSize" width="92" height="34"/>
         </designable>
     </designables>
     <resources>

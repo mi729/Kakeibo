@@ -10,7 +10,8 @@ import Foundation
 
 struct Amount: Equatable {
     let name: String
-    let amount: Int
+    let value: Int
+    var key: String = ""
 }
 
 extension Amount: Codable {}

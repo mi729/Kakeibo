@@ -39,7 +39,6 @@ class SettingViewController: UIViewController {
     }
     
     private func setBaseCost() {
-    
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         for (index, amount) in globalVar.amounts.enumerated() {
@@ -48,10 +47,10 @@ class SettingViewController: UIViewController {
                 continue
             }
             if index <= 1 {
-                base.append([decodedData.name:decodedData.amount])
+                base.append([decodedData.name:decodedData.value])
                 continue
             }
-            cost.append([decodedData.name:decodedData.amount])
+            cost.append([decodedData.name:decodedData.value])
         }
     }
 
@@ -93,8 +92,6 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
                 keyArray.append(contentsOf: amount.keys)
                 valueArray.append(contentsOf: amount.values)
             }
-            print(keyArray,valueArray)
-            print(indexPath.row)
             cell.nameLabel.text = keyArray[indexPath.row]
             cell.costLabel.text = "\(valueArray[indexPath.row]) 円"
             cell.backgroundColor = .clear
@@ -105,5 +102,9 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 44
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
     }
 }

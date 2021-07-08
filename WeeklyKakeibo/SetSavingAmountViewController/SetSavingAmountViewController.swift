@@ -85,23 +85,23 @@ class SetSavingAmountViewController: UIViewController {
         }
         var amounts: [String:Amount] = [:]
          
-        let income = Amount(name: "手取り", amount: incomeTextField.textToInt)
-        let savings = Amount(name: "貯金額", amount: savingsTextField.textToInt)
-        let rent = Amount(name: "家賃", amount: rentTextField.textToInt)
-        let utility = Amount(name: "光熱費", amount: utilityTextField.textToInt)
-        let water = Amount(name: "水道代", amount: waterTextField.textToInt)
-        let internet = Amount(name: "スマホ・ネット代", amount: netTextField.textToInt)
-        let other1 = Amount(name: "その他①", amount: otherTextField.textToInt)
-        let other2 = Amount(name: "その他②", amount: otherTextField2.textToInt)
+        let income = Amount(name: "手取り", value: incomeTextField.textToInt)
+        let savings = Amount(name: "貯金額", value: savingsTextField.textToInt)
+        let rent = Amount(name: "家賃", value: rentTextField.textToInt)
+        let utility = Amount(name: "光熱費", value: utilityTextField.textToInt)
+        let water = Amount(name: "水道代", value: waterTextField.textToInt)
+        let internet = Amount(name: "スマホ・ネット代", value: netTextField.textToInt)
+        let other1 = Amount(name: "その他①", value: otherTextField.textToInt)
+        let other2 = Amount(name: "その他②", value: otherTextField2.textToInt)
         
-        amounts["income"] = income
-        amounts["savings"] = savings
-        amounts["rent"] = rent
-        amounts["utility"] = utility
-        amounts["water"] = water
-        amounts["internet"] = internet
-        amounts["other1"] = other1
-        amounts["other2"] = other2
+        amounts[Constants.Amount.income.rawValue] = income
+        amounts[Constants.Amount.savings.rawValue] = savings
+        amounts[Constants.Amount.rent.rawValue] = rent
+        amounts[Constants.Amount.utility.rawValue] = utility
+        amounts[Constants.Amount.water.rawValue] = water
+        amounts[Constants.Amount.internet.rawValue] = internet
+        amounts[Constants.Amount.other1.rawValue] = other1
+        amounts[Constants.Amount.other2.rawValue] = other2
         
         let jsonEncoder = JSONEncoder()
         jsonEncoder.keyEncodingStrategy = .convertToSnakeCase

@@ -37,7 +37,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? ItemCell {
             let item = weekItemList[indexPath.row]
             cell.nameLabel.text = item.title
-            cell.costLabel.text = "¥\(item.cost)"
+            cell.costLabel.text = "\(item.cost) 円"
             cell.backgroundColor = .clear
             return cell
         }

@@ -55,10 +55,10 @@ class AlertViewController: UIViewController {
                 continue
             }
             if index == 0 {
-                income += decodedData.amount
+                income += decodedData.value
                 continue
             }
-            fixedCost += decodedData.amount
+            fixedCost += decodedData.value
         }
         weeklyMoney = (income - fixedCost) / 5
         UserDefaults.standard.set(weeklyMoney, forKey: "weeklyMoney")

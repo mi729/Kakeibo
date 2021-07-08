@@ -41,7 +41,7 @@ import UIKit
         
         func configure(title: String, sum: Int) {
             titleLabel.text = title
-            sumLabel.text = "¥\(sum)"
+            sumLabel.text = "\(sum) 円"
         }
         
         override func layoutSubviews() {

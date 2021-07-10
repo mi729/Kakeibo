@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class SettingViewController: UIViewController {
 
@@ -25,8 +24,6 @@ class SettingViewController: UIViewController {
     @IBAction func editButtonTapped(_ sender: Any) {
         moveToEditView()
     }
-    
-    private var realm: Realm!
 
     private let weeklyMoney = UserDefaults.standard.integer(forKey: "weeklyMoney")
     private let globalVar = GlobalVar.shared

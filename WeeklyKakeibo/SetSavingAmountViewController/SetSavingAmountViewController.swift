@@ -45,6 +45,8 @@ class SetSavingAmountViewController: UIViewController {
     
     let notificationCenter = NotificationCenter.default
     private let STORED_KEY = "launched"
+    private let globalVar = GlobalVar.shared
+    private var texts: [String] = []
     
     override func loadView() {
         if let view = UINib(nibName: "SetSavingAmountViewController", bundle: nil).instantiate(withOwner: self, options: nil).first as? UIView {
@@ -56,6 +58,7 @@ class SetSavingAmountViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
+        setTextFields()
         
         notificationCenter.addObserver(self, selector: #selector(backToView), name: .okButtonTapped, object: nil)
         
@@ -70,7 +73,7 @@ class SetSavingAmountViewController: UIViewController {
     }
     
     private func okButtonTapped() {
-        setCosts()
+        setUserDefaults()
         self.logFirstLaunch()
     }
     
@@ -78,7 +81,34 @@ class SetSavingAmountViewController: UIViewController {
         return UserDefaults.standard.set(true, forKey: STORED_KEY)
     }
     
-    private func setCosts() {
+    private func setTextFields() {
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+        for amount in globalVar.amounts {
+            guard let data = UserDefaults.standard.data(forKey: amount),
+                let decodedData = try? jsonDecoder.decode(Amount.self, from: data) else {
+                continue
+            }
+            texts.append(String(decodedData.value))
+        }
+        
+        let textFields = [incomeTextField,
+                          savingsTextField,
+                          rentTextField,
+                          utilityTextField,
+                          netTextField,
+                          waterTextField,
+                          otherTextField,
+                          otherTextField2]
+        for (index, textField) in textFields.enumerated() {
+            guard texts.indices.contains(index) else {
+                continue
+            }
+            textField?.text = texts[index]
+        }
+    }
+    
+    private func setUserDefaults() {
         guard !(incomeTextField.text ?? "").isEmpty else {
             alert(message: "手取りが未入力です")
             return
@@ -131,7 +161,7 @@ class SetSavingAmountViewController: UIViewController {
     }
     
     @objc func backToView() {
-        self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func dismissKeyboard() {

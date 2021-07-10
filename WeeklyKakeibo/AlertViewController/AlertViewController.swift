@@ -43,7 +43,7 @@ class AlertViewController: UIViewController {
 
     private func notify() {
         notificationCenter.post(name: .okButtonTapped, object: nil)
-        notificationCenter.post(name: .startButtonTapped, object: nil)
+        notificationCenter.post(name: .showKakeiboView, object: nil)
     }
     
     private func calcMoney() {

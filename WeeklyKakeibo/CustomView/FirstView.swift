@@ -16,8 +16,6 @@ class FirstView: UIView {
     var startButton: CustomButton!
     let notificationCenter = NotificationCenter.default
     
-    private let STORED_KEY = "launched"
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -103,28 +101,22 @@ class FirstView: UIView {
     }
     
     @objc func startButtonTapped(_ sender: UIButton) {
-        notificationCenter.post(name: .startButtonTapped, object: nil)
+        notificationCenter.post(name: .showKakeiboView, object: nil)
         
         UIView.animate(withDuration: 0.3, delay: 0.0, options: [.curveEaseIn], animations: {
             self.backgroundView.center.y += self.frame.height
         }, completion: {_ in
             self.removeFromSuperview()
-            self.logFirstLaunch()
         })
     }
     
     @objc func settingButtonTapped(_ sender: UIButton) {
         notificationCenter.post(name: .settingButtonTapped, object: nil)
     }
-    
-    func logFirstLaunch() {
-        return UserDefaults.standard.set(true, forKey: STORED_KEY)
-    }
-    
 }
 
 extension Notification.Name {
-    static let startButtonTapped = Notification.Name("startButtonTapped")
+    static let showKakeiboView = Notification.Name("showKakeiboView")
     static let settingButtonTapped = Notification.Name("settingButtonTapped")
     static let okButtonTapped = Notification.Name("okButtonTapped")
 }

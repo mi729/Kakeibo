@@ -44,7 +44,6 @@ class SetSavingAmountViewController: UIViewController {
     @IBOutlet weak var okButton: CustomButton!
     
     let notificationCenter = NotificationCenter.default
-    private let STORED_KEY = "launched"
     private let globalVar = GlobalVar.shared
     private var texts: [String] = []
     
@@ -69,18 +68,12 @@ class SetSavingAmountViewController: UIViewController {
     
     private func skipButtonTapped() {
         self.backToView()
-        self.logFirstLaunch()
     }
     
     private func okButtonTapped() {
         setUserDefaults()
-        self.logFirstLaunch()
     }
-    
-    private func logFirstLaunch() {
-        return UserDefaults.standard.set(true, forKey: STORED_KEY)
-    }
-    
+
     private func setTextFields() {
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -162,6 +155,7 @@ class SetSavingAmountViewController: UIViewController {
     
     @objc func backToView() {
         self.navigationController?.popViewController(animated: true)
+        notificationCenter.post(name: .showKakeiboView, object: nil)
     }
     
     @objc func dismissKeyboard() {

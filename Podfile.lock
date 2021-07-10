@@ -92,6 +92,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (7.4.1):
     - GoogleUtilities/Logger
+  - Instructions (2.1.0)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -107,6 +108,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Crashlytics
+  - Instructions (~> 2.1.0)
   - RealmSwift
 
 SPEC REPOS:
@@ -120,6 +122,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - Instructions
     - nanopb
     - PromisesObjC
     - Realm
@@ -135,11 +138,12 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 31c7d7655818784b7dd34bdf6884f75b465d5f6c
   GoogleDataTransport: 04c3e9a480bbcaa2ec3f5d27f1cdeb6a92f20c8d
   GoogleUtilities: f8a43108b38a68eebe8b3540e1f4f2d28843ce20
+  Instructions: 2465e321dde23f7c8fc26fe8efddf605df80dfba
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Realm: ed860452717c8db8f4bf832b6807f7f2ce708839
   RealmSwift: e31c4ddbcc42ac879313d656b86f9ca539f6f4f4
 
-PODFILE CHECKSUM: 677255cc60adbec0ad7167e3afb02ed341e0a961
+PODFILE CHECKSUM: a92547d85fc9f6a0a91a8a914b29a74176149679
 
 COCOAPODS: 1.10.1

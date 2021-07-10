@@ -37,13 +37,13 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAm-GI-OnZ">
                                 <rect key="frame" x="299" y="781" width="32" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="lYH-xy-Nam"/>
-                                    <constraint firstAttribute="height" constant="32" id="syi-yV-IJO"/>
+                                    <constraint firstAttribute="width" constant="40" id="lYH-xy-Nam"/>
+                                    <constraint firstAttribute="height" constant="40" id="syi-yV-IJO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="tintColor" systemColor="systemGrayColor"/>
                                 <state key="normal">
-                                    <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
+                                    <imageReference key="image" image="wallet.pass" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
                                     <action selector="settingButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WAC-pc-FFt"/>
@@ -264,7 +264,7 @@
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
+        <image name="wallet.pass" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

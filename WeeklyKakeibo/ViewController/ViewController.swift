@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Instructions
 
 class ViewController: UIViewController {
     private lazy var date = getDate()
@@ -15,11 +16,17 @@ class ViewController: UIViewController {
     private let current = Calendar.current
     private var monthCounter: Int = 0
     private let STORED_KEY = "launched"
-    let notificationCenter = NotificationCenter.default
     private var firstView = FirstView()
     
+    let addKakeiboExplainText = "タップして記録できます"
+    let settingExplainText = "予算を確認・編集できます"
+    
     var itemList: Results<Item>!
+    let notificationCenter = NotificationCenter.default
     let sectionTitleList = ["1週目", "2週目", "3週目", "4週目", "5週目"]
+    
+    let coachMarksController = CoachMarksController()
+    var pointOfInterest: UIView!
     
     @IBOutlet weak var navTitle: UINavigationItem!
     
@@ -55,9 +62,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        notificationCenter.addObserver(self, selector: #selector(updateUI), name: .startButtonTapped, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(moveToSettingView), name: .settingButtonTapped, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(updateUI), name: .showKakeiboView, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(toSetAmountView), name: .settingButtonTapped, object: nil)
+        
         tableViewSettings()
+        coachMarkSettings()
         setNavBar()
         
         if launchIsFirstTime() {
@@ -74,11 +83,20 @@ class ViewController: UIViewController {
             self.navigationController?.setNavigationBarHidden(false, animated:true)
         }
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.coachMarksController.stop(immediately: true)
+    }
     
     override func viewDidDisappear(_ animated: Bool) {
         if firstView.isDescendant(of: self.view) {
             self.firstView.removeFromSuperview()
         }
+    }
+    
+    private func logFirstLaunch() {
+        return UserDefaults.standard.set(true, forKey: STORED_KEY)
     }
     
     private func tableViewSettings() {
@@ -87,6 +105,10 @@ class ViewController: UIViewController {
         tableView.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
         tableView.register(TableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
+    }
+    
+    private func coachMarkSettings() {
+        self.coachMarksController.dataSource = self
     }
     
     private func reload() {
@@ -169,10 +191,58 @@ class ViewController: UIViewController {
     
     @objc func updateUI() {
         self.navigationController?.setNavigationBarHidden(false, animated:false)
+        if launchIsFirstTime() {
+            self.coachMarksController.start(in: .window(over: self))
+            self.coachMarksController.overlay.isUserInteractionEnabled = true
+            logFirstLaunch()
+        }
     }
     
-    @objc func moveToSettingView() {
+    @objc func toSetAmountView() {
         let vc = SetSavingAmountViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension ViewController: CoachMarksControllerDataSource,
+                          CoachMarksControllerDelegate {
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
+        2
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkAt index: Int) -> CoachMark {
+        switch index {
+        case 0:
+            self.pointOfInterest = self.plusButton
+        case 1:
+            self.pointOfInterest = self.settingButton
+        default:
+            break
+        }
+        return coachMarksController.helper.makeCoachMark(for: pointOfInterest)
+    }
+
+    func coachMarksController(
+        _ coachMarksController: CoachMarksController,
+        coachMarkViewsAt index: Int,
+        madeFrom coachMark: CoachMark
+    ) -> (bodyView: UIView & CoachMarkBodyView, arrowView: (UIView & CoachMarkArrowView)?) {
+        var hintText = ""
+        
+        switch index {
+        case 0:
+            hintText = self.addKakeiboExplainText
+        case 1:
+            hintText = self.settingExplainText
+        default:
+            break
+        }
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(
+            withArrow: true,
+            arrowOrientation: coachMark.arrowOrientation,
+            hintText: hintText,
+            nextText: nil
+        )
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
     }
 }

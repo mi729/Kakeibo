@@ -25,7 +25,7 @@ class SettingViewController: UIViewController {
         moveToEditView()
     }
 
-    private let weeklyMoney = UserDefaults.standard.integer(forKey: "weeklyMoney")
+    private var weeklyMoney = 0
     private let globalVar = GlobalVar.shared
     
     var base: [[String: Int]] = []
@@ -37,6 +37,12 @@ class SettingViewController: UIViewController {
         setUI()
         setBaseCost()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setUI()
+        setBaseCost()
+        settingTableView.reloadData()
+    }
 
     private func tableViewSettings() {
         settingTableView.delegate = self
@@ -46,6 +52,8 @@ class SettingViewController: UIViewController {
     }
     
     private func setBaseCost() {
+        base = []
+        cost = []
         let jsonDecoder = JSONDecoder()
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         for (index, amount) in globalVar.amounts.enumerated() {
@@ -62,6 +70,7 @@ class SettingViewController: UIViewController {
     }
 
     private func setUI() {
+        weeklyMoney = UserDefaults.standard.integer(forKey: "weeklyMoney")
         self.navigationController?.navigationBar.tintColor = .white
         yosanLabel.text = "1週間の予算"
         amountLabel.text = "\(weeklyMoney)"

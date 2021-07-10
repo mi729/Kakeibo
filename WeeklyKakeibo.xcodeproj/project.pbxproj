@@ -15,6 +15,7 @@
 		1424CB9D266F99AB00B90411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1424CB9B266F99AB00B90411 /* LaunchScreen.storyboard */; };
 		1424CBA8266F99AB00B90411 /* WeeklyKakeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CBA7266F99AB00B90411 /* WeeklyKakeiboTests.swift */; };
 		1424CBB3266F99AB00B90411 /* WeeklyKakeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CBB2266F99AB00B90411 /* WeeklyKakeiboUITests.swift */; };
+		1426216526998D02001A4D4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1426216426998D02001A4D4A /* GoogleService-Info.plist */; };
 		143029F4267F0F080039B31E /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143029F3267F0F080039B31E /* TableHeaderView.swift */; };
 		14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14386A5C2677A3AD002EDA51 /* InputViewController.swift */; };
 		143C65F326762C56008856A2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143C65F226762C56008856A2 /* Models.swift */; };
@@ -24,9 +25,6 @@
 		145704F2269156B800213945 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145704F0269156B800213945 /* SettingViewController.swift */; };
 		145704F3269156B800213945 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145704F1269156B800213945 /* SettingViewController.xib */; };
 		1457051B2691586B00213945 /* SetSavingAmountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1457051A2691586B00213945 /* SetSavingAmountViewController.xib */; };
-		145A200826821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
-		145A200926821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
-		145A200A26821E82009A585B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145A200726821E81009A585B /* GoogleService-Info.plist */; };
 		1464326B2688688E00163864 /* NSPredicate+Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146432682688688E00163864 /* NSPredicate+Initializers.swift */; };
 		1464326C2688688E00163864 /* Date+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146432692688688E00163864 /* Date+Addition.swift */; };
 		1464326D2688688E00163864 /* ViewController+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1464326A2688688E00163864 /* ViewController+TableViewDelegate.swift */; };
@@ -77,6 +75,7 @@
 		1424CBAE266F99AB00B90411 /* WeeklyKakeiboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeeklyKakeiboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1424CBB2266F99AB00B90411 /* WeeklyKakeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyKakeiboUITests.swift; sourceTree = "<group>"; };
 		1424CBB4266F99AB00B90411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1426216426998D02001A4D4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		143029F3267F0F080039B31E /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		14386A5C2677A3AD002EDA51 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		143C65F226762C56008856A2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -86,7 +85,6 @@
 		145704F0269156B800213945 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		145704F1269156B800213945 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		1457051A2691586B00213945 /* SetSavingAmountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetSavingAmountViewController.xib; sourceTree = "<group>"; };
-		145A200726821E81009A585B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		146432682688688E00163864 /* NSPredicate+Initializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPredicate+Initializers.swift"; sourceTree = "<group>"; };
 		146432692688688E00163864 /* Date+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Addition.swift"; sourceTree = "<group>"; };
 		1464326A2688688E00163864 /* ViewController+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableViewDelegate.swift"; sourceTree = "<group>"; };
@@ -155,7 +153,7 @@
 		1424CB84266F99AB00B90411 = {
 			isa = PBXGroup;
 			children = (
-				145A200726821E81009A585B /* GoogleService-Info.plist */,
+				1426216426998D02001A4D4A /* GoogleService-Info.plist */,
 				1424CB8F266F99AB00B90411 /* WeeklyKakeibo */,
 				1424CBA6266F99AB00B90411 /* WeeklyKakeiboTests */,
 				1424CBB1266F99AB00B90411 /* WeeklyKakeiboUITests */,
@@ -414,7 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1424CB9D266F99AB00B90411 /* LaunchScreen.storyboard in Resources */,
-				145A200826821E82009A585B /* GoogleService-Info.plist in Resources */,
+				1426216526998D02001A4D4A /* GoogleService-Info.plist in Resources */,
 				14643298268868CC00163864 /* ItemCell.xib in Resources */,
 				1457051B2691586B00213945 /* SetSavingAmountViewController.xib in Resources */,
 				1424CB9A266F99AB00B90411 /* Assets.xcassets in Resources */,
@@ -428,7 +426,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				145A200926821E82009A585B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,7 +433,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				145A200A26821E82009A585B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,7 +692,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -752,7 +748,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

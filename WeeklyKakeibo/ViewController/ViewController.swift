@@ -243,6 +243,10 @@ extension ViewController: CoachMarksControllerDataSource,
             hintText: hintText,
             nextText: nil
         )
+        
+        coachViews.bodyView.background.innerColor = #colorLiteral(red: 0.3470028212, green: 0.3599076705, blue: 0.3486330877, alpha: 1)
+        coachViews.bodyView.hintLabel.textColor = .white
+        coachViews.arrowView?.background.innerColor = #colorLiteral(red: 0.3470028212, green: 0.3599076705, blue: 0.3486330877, alpha: 1)
         return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
     }
 }

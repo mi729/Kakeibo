@@ -47,7 +47,7 @@ class SettingViewController: UIViewController {
     private func tableViewSettings() {
         settingTableView.delegate = self
         settingTableView.dataSource = self
-        settingTableView.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
+        settingTableView.backgroundColor = UIColor(named: "Background")
         settingTableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
     }
     

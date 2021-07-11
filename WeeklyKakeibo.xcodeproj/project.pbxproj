@@ -16,6 +16,7 @@
 		1424CBA8266F99AB00B90411 /* WeeklyKakeiboTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CBA7266F99AB00B90411 /* WeeklyKakeiboTests.swift */; };
 		1424CBB3266F99AB00B90411 /* WeeklyKakeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CBB2266F99AB00B90411 /* WeeklyKakeiboUITests.swift */; };
 		1426216526998D02001A4D4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1426216426998D02001A4D4A /* GoogleService-Info.plist */; };
+		14262170269AF693001A4D4A /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1426216F269AF693001A4D4A /* Color.xcassets */; };
 		143029F4267F0F080039B31E /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143029F3267F0F080039B31E /* TableHeaderView.swift */; };
 		14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14386A5C2677A3AD002EDA51 /* InputViewController.swift */; };
 		143C65F326762C56008856A2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143C65F226762C56008856A2 /* Models.swift */; };
@@ -76,6 +77,7 @@
 		1424CBB2266F99AB00B90411 /* WeeklyKakeiboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyKakeiboUITests.swift; sourceTree = "<group>"; };
 		1424CBB4266F99AB00B90411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1426216426998D02001A4D4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1426216F269AF693001A4D4A /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		143029F3267F0F080039B31E /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		14386A5C2677A3AD002EDA51 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		143C65F226762C56008856A2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				145704EC2691568100213945 /* AlertViewController */,
 				14643295268868CC00163864 /* ItemCell */,
 				1424CB99266F99AB00B90411 /* Assets.xcassets */,
+				1426216F269AF693001A4D4A /* Color.xcassets */,
 				1424CB9B266F99AB00B90411 /* LaunchScreen.storyboard */,
 				1424CB9E266F99AB00B90411 /* Info.plist */,
 			);
@@ -419,6 +422,7 @@
 				145704C8268F350300213945 /* Alert.storyboard in Resources */,
 				1424CB98266F99AB00B90411 /* Main.storyboard in Resources */,
 				145704F3269156B800213945 /* SettingViewController.xib in Resources */,
+				14262170269AF693001A4D4A /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

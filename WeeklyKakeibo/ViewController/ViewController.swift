@@ -102,7 +102,7 @@ class ViewController: UIViewController {
     private func tableViewSettings() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
+        tableView.backgroundColor = UIColor(named: "Background")
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
         tableView.register(TableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
     }
@@ -127,7 +127,7 @@ class ViewController: UIViewController {
     
     private func setNavBar() {
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .bold)]
-        self.navigationController?.navigationBar.barTintColor = UIColor {_ in return #colorLiteral(red: 0.3445842266, green: 0.7374812961, blue: 0.7090910673, alpha: 1)}
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "Navigation")
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barStyle = .black
         self.navigationController?.navigationBar.shadowImage = UIImage()

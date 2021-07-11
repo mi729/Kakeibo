@@ -2,9 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,7 +32,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRg-QA-ELE">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="871.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1046"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1週間に使える金額を決めましょう" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-uZ-dWZ">
                                     <rect key="frame" x="16" y="32" width="382" height="26.5"/>
@@ -39,271 +40,265 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1ヶ月の手取りを入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glA-jY-fZo">
+                                    <rect key="frame" x="16" y="74.5" width="382" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="貯金額を設定します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhS-MR-cDE">
-                                    <rect key="frame" x="16" y="201" width="382" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <rect key="frame" x="16" y="192" width="382" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おすすめ：手取りの1割" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7L-Fs-s2j">
-                                    <rect key="frame" x="16" y="233" width="382" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="16" y="221.5" width="382" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="固定費を設定します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4j-W9-pxB">
-                                    <rect key="frame" x="16" y="327.5" width="382" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J9A-1w-RVA">
-                                    <rect key="frame" x="16" y="127" width="382" height="34"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J9A-1w-RVA" userLabel="手取り">
+                                    <rect key="frame" x="16" y="112" width="382" height="40"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gNw-qC-0da">
-                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="34"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gNw-qC-0da" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gL9-Uv-WAc">
-                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="34"/>
+                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="bVh-kR-iGd"/>
+                                    </constraints>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K9s-05-igv">
-                                    <rect key="frame" x="16" y="261.5" width="382" height="34"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K9s-05-igv" userLabel="貯金額">
+                                    <rect key="frame" x="16" y="246.5" width="382" height="40"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZZ-S3-2h0">
-                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="34"/>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZZ-S3-2h0" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="rbc-Wg-Ygo"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNI-lL-QVW">
-                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="34"/>
+                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1ヶ月の手取りを入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glA-jY-fZo">
-                                    <rect key="frame" x="16" y="90.5" width="382" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="f8z-3U-a7S">
-                                    <rect key="frame" x="16" y="383.5" width="382" height="40"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="KzT-iD-fye" userLabel="固定費">
+                                    <rect key="frame" x="152" y="335.5" width="382" height="423.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家賃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-zR-xhK">
-                                            <rect key="frame" x="0.0" y="0.0" width="35" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="固定費を設定します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4j-W9-pxB">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gn4-Sj-mjW">
-                                            <rect key="frame" x="43" y="0.0" width="313.5" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5f-td-HVl">
-                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="f8z-3U-a7S" userLabel="家賃">
+                                            <rect key="frame" x="0.0" y="37.5" width="382" height="40"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家賃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-zR-xhK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="35" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gn4-Sj-mjW" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                    <rect key="frame" x="43" y="0.0" width="313.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5f-td-HVl">
+                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="mse-hO-hZ0"/>
+                                            </constraints>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="I3m-EI-WRh" userLabel="光熱費">
+                                            <rect key="frame" x="0.0" y="93.5" width="382" height="40"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="光熱費" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWc-Gr-e9J">
+                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXN-ND-ih0" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                    <rect key="frame" x="60" y="0.0" width="296.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slC-CE-jNc">
+                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fdZ-K8-zkv" userLabel="水道代">
+                                            <rect key="frame" x="0.0" y="149.5" width="382" height="40"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水道代" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Na-uk-54L">
+                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VW4-2b-8in" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                    <rect key="frame" x="60" y="0.0" width="296.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-Kb-k7O">
+                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8ft-4C-pkV" userLabel="ネット・スマホ代">
+                                            <rect key="frame" x="0.0" y="205.5" width="382" height="40"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ネット・スマホ代" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-aN-aHT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="139" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B5Z-tr-SV7" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                    <rect key="frame" x="147" y="0.0" width="209.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsG-NI-NDC">
+                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D51-af-Bxu" userLabel="その他1">
+                                            <rect key="frame" x="0.0" y="261.5" width="382" height="40"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その他①" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyT-v9-9mm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OZU-rL-Dvt" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                    <rect key="frame" x="75.5" y="0.0" width="281" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utq-NU-Atd">
+                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rsj-i6-yY3" userLabel="その他2">
+                                            <rect key="frame" x="0.0" y="317.5" width="382" height="40"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その他②" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHu-Jt-nFx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="67.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1el-99-bgI" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                    <rect key="frame" x="75.5" y="0.0" width="281" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNn-78-qpb">
+                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="eyc-kC-nMv" userLabel="ボタン">
+                                            <rect key="frame" x="0.0" y="373.5" width="382" height="50"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1w-iX-mc0" customClass="CustomButton" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="8" width="183" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="キャンセル"/>
+                                                    <connections>
+                                                        <action selector="skipButton:" destination="-1" eventType="touchUpInside" id="ioC-Xz-snD"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87Z-D8-ZBQ" customClass="CustomButton" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                    <rect key="frame" x="199" y="8" width="183" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="決定"/>
+                                                    <connections>
+                                                        <action selector="okButton:" destination="-1" eventType="touchUpInside" id="7V3-kL-h0z"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="4hJ-BN-1Q5"/>
+                                            </constraints>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="vfe-Wn-EKt"/>
-                                    </constraints>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="I3m-EI-WRh">
-                                    <rect key="frame" x="16" y="455.5" width="382" height="40"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="光熱費" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWc-Gr-e9J">
-                                            <rect key="frame" x="0.0" y="0.0" width="52" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXN-ND-ih0">
-                                            <rect key="frame" x="60" y="0.0" width="296.5" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slC-CE-jNc">
-                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fdZ-K8-zkv">
-                                    <rect key="frame" x="16" y="527.5" width="382" height="40"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水道代" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Na-uk-54L">
-                                            <rect key="frame" x="0.0" y="0.0" width="52" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VW4-2b-8in">
-                                            <rect key="frame" x="60" y="0.0" width="296.5" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-Kb-k7O">
-                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8ft-4C-pkV">
-                                    <rect key="frame" x="16" y="599.5" width="382" height="40"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ネット・スマホ代" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-aN-aHT">
-                                            <rect key="frame" x="0.0" y="0.0" width="139" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B5Z-tr-SV7">
-                                            <rect key="frame" x="147" y="0.0" width="209.5" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsG-NI-NDC">
-                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D51-af-Bxu">
-                                    <rect key="frame" x="16" y="671.5" width="382" height="34"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その他①" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyT-v9-9mm">
-                                            <rect key="frame" x="0.0" y="0.0" width="67.5" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OZU-rL-Dvt">
-                                            <rect key="frame" x="75.5" y="0.0" width="281" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utq-NU-Atd">
-                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rsj-i6-yY3">
-                                    <rect key="frame" x="16" y="737.5" width="382" height="40"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その他②" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHu-Jt-nFx">
-                                            <rect key="frame" x="0.0" y="0.0" width="67.5" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1el-99-bgI">
-                                            <rect key="frame" x="75.5" y="0.0" width="281" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNn-78-qpb">
-                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="eyc-kC-nMv">
-                                    <rect key="frame" x="16" y="809.5" width="382" height="50"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1w-iX-mc0" customClass="CustomButton" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="8" width="183" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="キャンセル"/>
-                                            <connections>
-                                                <action selector="skipButton:" destination="-1" eventType="touchUpInside" id="ioC-Xz-snD"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87Z-D8-ZBQ" customClass="CustomButton" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                            <rect key="frame" x="199" y="8" width="183" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="決定"/>
-                                            <connections>
-                                                <action selector="okButton:" destination="-1" eventType="touchUpInside" id="7V3-kL-h0z"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="4hJ-BN-1Q5"/>
+                                        <constraint firstItem="rsj-i6-yY3" firstAttribute="height" secondItem="f8z-3U-a7S" secondAttribute="height" id="3JZ-Yo-0tg"/>
+                                        <constraint firstItem="D51-af-Bxu" firstAttribute="height" secondItem="f8z-3U-a7S" secondAttribute="height" id="IOK-HT-xzW"/>
+                                        <constraint firstItem="fdZ-K8-zkv" firstAttribute="height" secondItem="f8z-3U-a7S" secondAttribute="height" id="aMd-Kd-2g4"/>
+                                        <constraint firstItem="I3m-EI-WRh" firstAttribute="height" secondItem="f8z-3U-a7S" secondAttribute="height" id="atN-18-Fyk"/>
+                                        <constraint firstItem="8ft-4C-pkV" firstAttribute="height" secondItem="f8z-3U-a7S" secondAttribute="height" id="kT9-2t-cTo"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="8ft-4C-pkV" firstAttribute="height" secondItem="f8z-3U-a7S" secondAttribute="height" id="0f2-of-LtJ"/>
-                                <constraint firstItem="Y4j-W9-pxB" firstAttribute="top" secondItem="K9s-05-igv" secondAttribute="bottom" constant="32" id="1Lg-9P-zPz"/>
-                                <constraint firstItem="I3m-EI-WRh" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="1ut-7x-mWX"/>
                                 <constraint firstAttribute="trailing" secondItem="WEi-uZ-dWZ" secondAttribute="trailing" constant="16" id="50c-2P-fMj"/>
-                                <constraint firstItem="glA-jY-fZo" firstAttribute="top" secondItem="WEi-uZ-dWZ" secondAttribute="bottom" constant="32" id="53j-3D-Czy"/>
-                                <constraint firstAttribute="trailing" secondItem="eyc-kC-nMv" secondAttribute="trailing" constant="16" id="7bu-qM-2vG"/>
-                                <constraint firstItem="8ft-4C-pkV" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="8ML-rf-bmn"/>
-                                <constraint firstItem="I3m-EI-WRh" firstAttribute="top" secondItem="f8z-3U-a7S" secondAttribute="bottom" constant="32" id="8Pu-sn-IC0"/>
-                                <constraint firstAttribute="trailing" secondItem="D51-af-Bxu" secondAttribute="trailing" constant="16" id="9z2-Ar-37s"/>
-                                <constraint firstAttribute="trailing" secondItem="8ft-4C-pkV" secondAttribute="trailing" constant="16" id="AEF-dm-tN0"/>
-                                <constraint firstAttribute="trailing" secondItem="f8z-3U-a7S" secondAttribute="trailing" constant="16" id="AIP-QH-plU"/>
-                                <constraint firstItem="fdZ-K8-zkv" firstAttribute="height" secondItem="f8z-3U-a7S" secondAttribute="height" id="AXt-ET-hfF"/>
+                                <constraint firstItem="glA-jY-fZo" firstAttribute="top" secondItem="WEi-uZ-dWZ" secondAttribute="bottom" constant="16" id="53j-3D-Czy"/>
+                                <constraint firstItem="KzT-iD-fye" firstAttribute="centerX" secondItem="LRg-QA-ELE" secondAttribute="centerX" id="5Ma-0A-BQv"/>
+                                <constraint firstItem="K9s-05-igv" firstAttribute="height" secondItem="J9A-1w-RVA" secondAttribute="height" id="908-Zp-sFq"/>
                                 <constraint firstItem="J9A-1w-RVA" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="BPR-pg-AM1"/>
                                 <constraint firstAttribute="trailing" secondItem="K9s-05-igv" secondAttribute="trailing" constant="16" id="CFn-Vj-N1R"/>
                                 <constraint firstItem="q7L-Fs-s2j" firstAttribute="top" secondItem="QhS-MR-cDE" secondAttribute="bottom" constant="8" id="Cei-Wa-Qox"/>
                                 <constraint firstAttribute="trailing" secondItem="glA-jY-fZo" secondAttribute="trailing" constant="16" id="EtU-ra-fjs"/>
-                                <constraint firstItem="D51-af-Bxu" firstAttribute="top" secondItem="8ft-4C-pkV" secondAttribute="bottom" constant="32" id="F2r-op-SzV"/>
                                 <constraint firstItem="K9s-05-igv" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="FSi-sI-SAs"/>
-                                <constraint firstItem="rsj-i6-yY3" firstAttribute="top" secondItem="D51-af-Bxu" secondAttribute="bottom" constant="32" id="HaY-fr-Yqd"/>
                                 <constraint firstItem="QhS-MR-cDE" firstAttribute="top" secondItem="J9A-1w-RVA" secondAttribute="bottom" constant="40" id="JdJ-05-T7B"/>
-                                <constraint firstAttribute="trailing" secondItem="fdZ-K8-zkv" secondAttribute="trailing" constant="16" id="KRH-af-lVK"/>
                                 <constraint firstItem="q7L-Fs-s2j" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="N2W-1h-End"/>
-                                <constraint firstAttribute="trailing" secondItem="I3m-EI-WRh" secondAttribute="trailing" constant="16" id="Qz2-Hg-vme"/>
+                                <constraint firstItem="KzT-iD-fye" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="QcG-vS-GiQ"/>
+                                <constraint firstItem="KzT-iD-fye" firstAttribute="top" secondItem="K9s-05-igv" secondAttribute="bottom" constant="16" id="UAL-J2-6Sc"/>
                                 <constraint firstItem="glA-jY-fZo" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="UBU-ju-42I"/>
                                 <constraint firstAttribute="trailing" secondItem="QhS-MR-cDE" secondAttribute="trailing" constant="16" id="Ury-sm-rsZ"/>
                                 <constraint firstAttribute="trailing" secondItem="J9A-1w-RVA" secondAttribute="trailing" constant="16" id="VwP-E1-2O3"/>
                                 <constraint firstItem="QhS-MR-cDE" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="WUe-D4-q8d"/>
-                                <constraint firstItem="eyc-kC-nMv" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="b7T-9I-Fx4"/>
-                                <constraint firstItem="D51-af-Bxu" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="dlp-fn-Ldp"/>
                                 <constraint firstItem="K9s-05-igv" firstAttribute="top" secondItem="q7L-Fs-s2j" secondAttribute="bottom" constant="8" id="fvY-49-Hr1"/>
-                                <constraint firstItem="rsj-i6-yY3" firstAttribute="height" secondItem="f8z-3U-a7S" secondAttribute="height" id="fx6-ue-lkr"/>
                                 <constraint firstAttribute="trailing" secondItem="q7L-Fs-s2j" secondAttribute="trailing" constant="16" id="gPO-G2-s7g"/>
                                 <constraint firstItem="WEi-uZ-dWZ" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="ho1-1a-EQw"/>
-                                <constraint firstItem="f8z-3U-a7S" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="iKd-i0-aXx"/>
-                                <constraint firstAttribute="trailing" secondItem="rsj-i6-yY3" secondAttribute="trailing" constant="16" id="pKU-WB-Vwj"/>
-                                <constraint firstItem="rsj-i6-yY3" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="qBx-bI-AvG"/>
-                                <constraint firstItem="eyc-kC-nMv" firstAttribute="top" secondItem="rsj-i6-yY3" secondAttribute="bottom" constant="32" id="sg6-zx-PaT"/>
+                                <constraint firstAttribute="bottom" secondItem="KzT-iD-fye" secondAttribute="bottom" constant="320" id="kGj-V1-7od"/>
                                 <constraint firstItem="J9A-1w-RVA" firstAttribute="top" secondItem="glA-jY-fZo" secondAttribute="bottom" constant="16" id="t9O-Kd-zcE"/>
                                 <constraint firstItem="WEi-uZ-dWZ" firstAttribute="top" secondItem="LRg-QA-ELE" secondAttribute="top" constant="32" id="tgO-3U-2c0"/>
-                                <constraint firstItem="fdZ-K8-zkv" firstAttribute="top" secondItem="I3m-EI-WRh" secondAttribute="bottom" constant="32" id="tyg-Uv-7Ep"/>
-                                <constraint firstAttribute="trailing" secondItem="Y4j-W9-pxB" secondAttribute="trailing" constant="16" id="ujl-2H-vDQ"/>
-                                <constraint firstItem="fdZ-K8-zkv" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="vE9-zD-U1u"/>
-                                <constraint firstItem="f8z-3U-a7S" firstAttribute="top" secondItem="Y4j-W9-pxB" secondAttribute="bottom" constant="32" id="vP8-M5-z4Q"/>
-                                <constraint firstAttribute="height" constant="871.5" id="vT6-ZV-a90"/>
-                                <constraint firstItem="8ft-4C-pkV" firstAttribute="top" secondItem="fdZ-K8-zkv" secondAttribute="bottom" constant="32" id="yfQ-6E-PAP"/>
-                                <constraint firstItem="Y4j-W9-pxB" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="z61-f7-Sk9"/>
-                                <constraint firstItem="I3m-EI-WRh" firstAttribute="height" secondItem="f8z-3U-a7S" secondAttribute="height" id="znc-I8-a5l"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -318,7 +313,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="Background"/>
             <constraints>
                 <constraint firstItem="WFk-1E-s6I" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9bB-mW-Vu8"/>
                 <constraint firstItem="WFk-1E-s6I" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="Ddd-Yz-Dkq"/>
@@ -338,8 +333,8 @@
         </designable>
     </designables>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="Background">
+            <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

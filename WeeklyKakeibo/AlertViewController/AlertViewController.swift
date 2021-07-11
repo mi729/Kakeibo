@@ -14,7 +14,6 @@ class AlertViewController: UIViewController {
     @IBOutlet weak var moneyLabel: UILabel!
     @IBOutlet weak var alertView: UIView!{
         didSet {
-            alertView.backgroundColor = .white
             alertView.layer.cornerRadius = 10.0
         }
     }

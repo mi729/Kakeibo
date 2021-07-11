@@ -55,8 +55,6 @@ class SetSavingAmountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = #colorLiteral(red: 0.9607843137, green: 0.9607843137, blue: 0.9607843137, alpha: 1)
         setTextFields()
         
         notificationCenter.addObserver(self, selector: #selector(backToView), name: .okButtonTapped, object: nil)

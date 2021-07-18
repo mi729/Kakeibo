@@ -32,78 +32,78 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRg-QA-ELE">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1568.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1282.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1週間に使える金額を決めましょう" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-uZ-dWZ">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1週間に使える金額を決めましょう" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-uZ-dWZ">
                                     <rect key="frame" x="16" y="32" width="382" height="26.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2W9-da-4rA">
-                                    <rect key="frame" x="0.0" y="90.5" width="414" height="474.5"/>
+                                    <rect key="frame" x="0.0" y="90.5" width="414" height="188.5"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TaJ-in-oIi" userLabel="Images">
-                                            <rect key="frame" x="32" y="0.0" width="382" height="386"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TaJ-in-oIi" userLabel="Images">
+                                            <rect key="frame" x="8" y="0.0" width="398" height="100"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qYb-nE-9pH">
-                                                    <rect key="frame" x="0.0" y="172.5" width="57" height="41"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="221.5" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qYb-nE-9pH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="100"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="income" id="6xo-Fu-lNe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="57" height="193"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="104" height="87"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月収" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJc-X6-fyQ" userLabel="月収">
-                                                            <rect key="frame" x="11" y="20.5" width="35" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月収" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJc-X6-fyQ" userLabel="月収" customClass="CustomLabel" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                            <rect key="frame" x="34.5" y="95" width="35" height="5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-(" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2W-9O-P2R" userLabel="マイナス">
-                                                    <rect key="frame" x="65" y="180" width="57" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="26.5" text="-(" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2W-9O-P2R" userLabel="マイナス">
+                                                    <rect key="frame" x="112" y="37" width="24.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kHT-a7-9sz">
-                                                    <rect key="frame" x="130" y="0.0" width="57" height="386"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="221.5" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kHT-a7-9sz">
+                                                    <rect key="frame" x="144.5" y="0.0" width="103.5" height="100"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="savemoney" translatesAutoresizingMaskIntoConstraints="NO" id="HXc-Nt-NhD">
-                                                            <rect key="frame" x="0.0" y="0.0" width="57" height="193"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="103.5" height="87"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="貯金額" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cls-3D-wfV" userLabel="貯金額">
-                                                            <rect key="frame" x="2.5" y="193" width="52" height="193"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="貯金額" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cls-3D-wfV" userLabel="貯金額" customClass="CustomLabel" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                            <rect key="frame" x="25.5" y="95" width="52" height="5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8a-2l-OB9" userLabel="+">
-                                                    <rect key="frame" x="195" y="180" width="57" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="26.5" text="+" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8a-2l-OB9" userLabel="+">
+                                                    <rect key="frame" x="256" y="37" width="22.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Con-gK-9Zw">
-                                                    <rect key="frame" x="260" y="0.0" width="57" height="386"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="221.5" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Con-gK-9Zw">
+                                                    <rect key="frame" x="286.5" y="0.0" width="103.5" height="100"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="koteihi" translatesAutoresizingMaskIntoConstraints="NO" id="Em8-ZL-Vok">
-                                                            <rect key="frame" x="0.0" y="0.0" width="57" height="193"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="103.5" height="87"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="固定費" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xm-RY-BZA" userLabel="固定費">
-                                                            <rect key="frame" x="2.5" y="193" width="52" height="193"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="固定費" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xm-RY-BZA" userLabel="固定費" customClass="CustomLabel" customModule="WeeklyKakeibo" customModuleProvider="target">
+                                                            <rect key="frame" x="26" y="95" width="52" height="5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=")" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uM-mK-TXj" userLabel=")">
-                                                    <rect key="frame" x="325" y="180" width="57" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="26.5" text=")" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uM-mK-TXj" userLabel=")">
+                                                    <rect key="frame" x="398" y="37" width="0.0" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -113,13 +113,13 @@
                                             </constraints>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="÷5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7z-2d-ted">
-                                            <rect key="frame" x="16" y="402" width="382" height="36"/>
+                                            <rect key="frame" x="16" y="116" width="382" height="36"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=1週間に使えるお金" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9b-dw-SoG">
-                                            <rect key="frame" x="16" y="454" width="382" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="= 1週間に使えるお金" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9b-dw-SoG">
+                                            <rect key="frame" x="16" y="168" width="382" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -130,44 +130,47 @@
                                         <constraint firstItem="J9b-dw-SoG" firstAttribute="leading" secondItem="2W9-da-4rA" secondAttribute="leading" constant="16" id="89d-Wy-Yu3"/>
                                         <constraint firstItem="TaJ-in-oIi" firstAttribute="top" secondItem="2W9-da-4rA" secondAttribute="top" id="8gI-6p-Sn7"/>
                                         <constraint firstItem="J9b-dw-SoG" firstAttribute="centerX" secondItem="2W9-da-4rA" secondAttribute="centerX" id="Dur-J2-8ef"/>
+                                        <constraint firstAttribute="trailing" secondItem="TaJ-in-oIi" secondAttribute="trailing" constant="8" id="OLQ-zD-3UW"/>
                                         <constraint firstItem="A7z-2d-ted" firstAttribute="centerX" secondItem="2W9-da-4rA" secondAttribute="centerX" id="Txp-UC-oeX"/>
+                                        <constraint firstItem="kHT-a7-9sz" firstAttribute="width" secondItem="2W9-da-4rA" secondAttribute="width" multiplier="0.25" id="Yg3-Jn-5tz"/>
                                         <constraint firstAttribute="trailing" secondItem="J9b-dw-SoG" secondAttribute="trailing" constant="16" id="dfN-Yv-TN6"/>
                                         <constraint firstAttribute="trailing" secondItem="A7z-2d-ted" secondAttribute="trailing" constant="16" id="hhU-TF-bzG"/>
                                         <constraint firstItem="J9b-dw-SoG" firstAttribute="top" secondItem="A7z-2d-ted" secondAttribute="bottom" constant="16" id="jak-Tz-B8y"/>
+                                        <constraint firstItem="Con-gK-9Zw" firstAttribute="width" secondItem="2W9-da-4rA" secondAttribute="width" multiplier="0.25" id="peR-Pb-Ykn"/>
+                                        <constraint firstItem="TaJ-in-oIi" firstAttribute="leading" secondItem="2W9-da-4rA" secondAttribute="leading" constant="8" id="qoJ-FN-Zeh"/>
                                         <constraint firstItem="A7z-2d-ted" firstAttribute="leading" secondItem="2W9-da-4rA" secondAttribute="leading" constant="16" id="shb-Ai-S36"/>
-                                        <constraint firstItem="TaJ-in-oIi" firstAttribute="leading" secondItem="2W9-da-4rA" secondAttribute="leading" constant="32" id="wyq-jy-Een"/>
                                         <constraint firstAttribute="bottom" secondItem="J9b-dw-SoG" secondAttribute="bottom" id="ymf-7w-RlO"/>
                                         <constraint firstItem="A7z-2d-ted" firstAttribute="top" secondItem="TaJ-in-oIi" secondAttribute="bottom" constant="16" id="z7L-QB-gqv"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1ヶ月の手取りを入力してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glA-jY-fZo">
-                                    <rect key="frame" x="16" y="597" width="382" height="21.5"/>
+                                    <rect key="frame" x="32" y="311" width="350" height="21.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="貯金額を設定します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhS-MR-cDE">
-                                    <rect key="frame" x="16" y="714.5" width="382" height="21.5"/>
+                                    <rect key="frame" x="32" y="428.5" width="350" height="21.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おすすめ：手取りの1割" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7L-Fs-s2j">
-                                    <rect key="frame" x="16" y="744" width="382" height="17"/>
+                                    <rect key="frame" x="32" y="458" width="350" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="J9A-1w-RVA" userLabel="手取り">
-                                    <rect key="frame" x="16" y="634.5" width="382" height="40"/>
+                                    <rect key="frame" x="32" y="348.5" width="350" height="40"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gNw-qC-0da" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="324.5" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gL9-Uv-WAc">
-                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                            <rect key="frame" x="332.5" y="0.0" width="17.5" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -178,10 +181,10 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="K9s-05-igv" userLabel="貯金額">
-                                    <rect key="frame" x="16" y="769" width="382" height="40"/>
+                                    <rect key="frame" x="32" y="483" width="350" height="40"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mZZ-S3-2h0" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="356.5" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="324.5" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="rbc-Wg-Ygo"/>
                                             </constraints>
@@ -189,7 +192,7 @@
                                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNI-lL-QVW">
-                                            <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                            <rect key="frame" x="332.5" y="0.0" width="17.5" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -197,16 +200,16 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="KzT-iD-fye" userLabel="固定費">
-                                    <rect key="frame" x="16" y="825" width="382" height="423.5"/>
+                                    <rect key="frame" x="32" y="539" width="350" height="423.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="固定費を設定します" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4j-W9-pxB">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="21.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="21.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="f8z-3U-a7S" userLabel="家賃">
-                                            <rect key="frame" x="0.0" y="37.5" width="382" height="40"/>
+                                            <rect key="frame" x="0.0" y="37.5" width="350" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="家賃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-zR-xhK">
                                                     <rect key="frame" x="0.0" y="0.0" width="35" height="40"/>
@@ -215,12 +218,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gn4-Sj-mjW" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                                    <rect key="frame" x="43" y="0.0" width="313.5" height="40"/>
+                                                    <rect key="frame" x="43" y="0.0" width="281.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5f-td-HVl">
-                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <rect key="frame" x="332.5" y="0.0" width="17.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -231,7 +234,7 @@
                                             </constraints>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="I3m-EI-WRh" userLabel="光熱費">
-                                            <rect key="frame" x="0.0" y="93.5" width="382" height="40"/>
+                                            <rect key="frame" x="0.0" y="93.5" width="350" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="光熱費" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWc-Gr-e9J">
                                                     <rect key="frame" x="0.0" y="0.0" width="52" height="40"/>
@@ -240,12 +243,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXN-ND-ih0" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                                    <rect key="frame" x="60" y="0.0" width="296.5" height="40"/>
+                                                    <rect key="frame" x="60" y="0.0" width="264.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slC-CE-jNc">
-                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <rect key="frame" x="332.5" y="0.0" width="17.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -253,7 +256,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fdZ-K8-zkv" userLabel="水道代">
-                                            <rect key="frame" x="0.0" y="149.5" width="382" height="40"/>
+                                            <rect key="frame" x="0.0" y="149.5" width="350" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="水道代" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Na-uk-54L">
                                                     <rect key="frame" x="0.0" y="0.0" width="52" height="40"/>
@@ -262,12 +265,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VW4-2b-8in" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                                    <rect key="frame" x="60" y="0.0" width="296.5" height="40"/>
+                                                    <rect key="frame" x="60" y="0.0" width="264.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-Kb-k7O">
-                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <rect key="frame" x="332.5" y="0.0" width="17.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -275,7 +278,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8ft-4C-pkV" userLabel="ネット・スマホ代">
-                                            <rect key="frame" x="0.0" y="205.5" width="382" height="40"/>
+                                            <rect key="frame" x="0.0" y="205.5" width="350" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ネット・スマホ代" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rN-aN-aHT">
                                                     <rect key="frame" x="0.0" y="0.0" width="139" height="40"/>
@@ -284,12 +287,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B5Z-tr-SV7" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                                    <rect key="frame" x="147" y="0.0" width="209.5" height="40"/>
+                                                    <rect key="frame" x="147" y="0.0" width="177.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsG-NI-NDC">
-                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <rect key="frame" x="332.5" y="0.0" width="17.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -297,7 +300,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D51-af-Bxu" userLabel="その他1">
-                                            <rect key="frame" x="0.0" y="261.5" width="382" height="40"/>
+                                            <rect key="frame" x="0.0" y="261.5" width="350" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その他①" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyT-v9-9mm">
                                                     <rect key="frame" x="0.0" y="0.0" width="67.5" height="40"/>
@@ -306,12 +309,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OZU-rL-Dvt" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                                    <rect key="frame" x="75.5" y="0.0" width="281" height="40"/>
+                                                    <rect key="frame" x="75.5" y="0.0" width="249" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utq-NU-Atd">
-                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <rect key="frame" x="332.5" y="0.0" width="17.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -319,7 +322,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rsj-i6-yY3" userLabel="その他2">
-                                            <rect key="frame" x="0.0" y="317.5" width="382" height="40"/>
+                                            <rect key="frame" x="0.0" y="317.5" width="350" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="その他②" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHu-Jt-nFx">
                                                     <rect key="frame" x="0.0" y="0.0" width="67.5" height="40"/>
@@ -328,12 +331,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1el-99-bgI" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                                    <rect key="frame" x="75.5" y="0.0" width="281" height="40"/>
+                                                    <rect key="frame" x="75.5" y="0.0" width="249" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="円" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNn-78-qpb">
-                                                    <rect key="frame" x="364.5" y="0.0" width="17.5" height="40"/>
+                                                    <rect key="frame" x="332.5" y="0.0" width="17.5" height="40"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -341,10 +344,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="eyc-kC-nMv" userLabel="ボタン">
-                                            <rect key="frame" x="0.0" y="373.5" width="382" height="50"/>
+                                            <rect key="frame" x="0.0" y="373.5" width="350" height="50"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1w-iX-mc0" customClass="CustomButton" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="8" width="183" height="34"/>
+                                                    <rect key="frame" x="0.0" y="8" width="167" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="キャンセル"/>
                                                     <connections>
@@ -352,7 +355,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87Z-D8-ZBQ" customClass="CustomButton" customModule="WeeklyKakeibo" customModuleProvider="target">
-                                                    <rect key="frame" x="199" y="8" width="183" height="34"/>
+                                                    <rect key="frame" x="183" y="8" width="167" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="決定"/>
                                                     <connections>
@@ -380,25 +383,24 @@
                                 <constraint firstItem="KzT-iD-fye" firstAttribute="centerX" secondItem="LRg-QA-ELE" secondAttribute="centerX" id="5Ma-0A-BQv"/>
                                 <constraint firstItem="2W9-da-4rA" firstAttribute="centerX" secondItem="LRg-QA-ELE" secondAttribute="centerX" id="5We-sQ-lla"/>
                                 <constraint firstItem="K9s-05-igv" firstAttribute="height" secondItem="J9A-1w-RVA" secondAttribute="height" id="908-Zp-sFq"/>
-                                <constraint firstItem="J9A-1w-RVA" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="BPR-pg-AM1"/>
-                                <constraint firstAttribute="trailing" secondItem="K9s-05-igv" secondAttribute="trailing" constant="16" id="CFn-Vj-N1R"/>
+                                <constraint firstItem="J9A-1w-RVA" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="32" id="BPR-pg-AM1"/>
+                                <constraint firstAttribute="trailing" secondItem="K9s-05-igv" secondAttribute="trailing" constant="32" id="CFn-Vj-N1R"/>
                                 <constraint firstItem="q7L-Fs-s2j" firstAttribute="top" secondItem="QhS-MR-cDE" secondAttribute="bottom" constant="8" id="Cei-Wa-Qox"/>
-                                <constraint firstAttribute="trailing" secondItem="glA-jY-fZo" secondAttribute="trailing" constant="16" id="EtU-ra-fjs"/>
-                                <constraint firstItem="K9s-05-igv" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="FSi-sI-SAs"/>
+                                <constraint firstAttribute="trailing" secondItem="glA-jY-fZo" secondAttribute="trailing" constant="32" id="EtU-ra-fjs"/>
+                                <constraint firstItem="K9s-05-igv" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="32" id="FSi-sI-SAs"/>
                                 <constraint firstItem="QhS-MR-cDE" firstAttribute="top" secondItem="J9A-1w-RVA" secondAttribute="bottom" constant="40" id="JdJ-05-T7B"/>
                                 <constraint firstItem="2W9-da-4rA" firstAttribute="top" secondItem="WEi-uZ-dWZ" secondAttribute="bottom" constant="32" id="JvT-h5-G8p"/>
-                                <constraint firstItem="q7L-Fs-s2j" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="N2W-1h-End"/>
+                                <constraint firstItem="q7L-Fs-s2j" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="32" id="N2W-1h-End"/>
                                 <constraint firstItem="glA-jY-fZo" firstAttribute="top" secondItem="2W9-da-4rA" secondAttribute="bottom" constant="32" id="OUe-Rm-lIR"/>
-                                <constraint firstItem="KzT-iD-fye" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="QcG-vS-GiQ"/>
+                                <constraint firstItem="KzT-iD-fye" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="32" id="QcG-vS-GiQ"/>
                                 <constraint firstItem="KzT-iD-fye" firstAttribute="top" secondItem="K9s-05-igv" secondAttribute="bottom" constant="16" id="UAL-J2-6Sc"/>
-                                <constraint firstItem="glA-jY-fZo" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="UBU-ju-42I"/>
-                                <constraint firstAttribute="trailing" secondItem="QhS-MR-cDE" secondAttribute="trailing" constant="16" id="Ury-sm-rsZ"/>
+                                <constraint firstItem="glA-jY-fZo" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="32" id="UBU-ju-42I"/>
+                                <constraint firstAttribute="trailing" secondItem="QhS-MR-cDE" secondAttribute="trailing" constant="32" id="Ury-sm-rsZ"/>
                                 <constraint firstItem="2W9-da-4rA" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" id="Vnm-2i-wDF"/>
-                                <constraint firstAttribute="trailing" secondItem="J9A-1w-RVA" secondAttribute="trailing" constant="16" id="VwP-E1-2O3"/>
-                                <constraint firstItem="QhS-MR-cDE" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="WUe-D4-q8d"/>
-                                <constraint firstAttribute="trailing" secondItem="TaJ-in-oIi" secondAttribute="trailing" id="eST-st-NW6"/>
+                                <constraint firstAttribute="trailing" secondItem="J9A-1w-RVA" secondAttribute="trailing" constant="32" id="VwP-E1-2O3"/>
+                                <constraint firstItem="QhS-MR-cDE" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="32" id="WUe-D4-q8d"/>
                                 <constraint firstItem="K9s-05-igv" firstAttribute="top" secondItem="q7L-Fs-s2j" secondAttribute="bottom" constant="8" id="fvY-49-Hr1"/>
-                                <constraint firstAttribute="trailing" secondItem="q7L-Fs-s2j" secondAttribute="trailing" constant="16" id="gPO-G2-s7g"/>
+                                <constraint firstAttribute="trailing" secondItem="q7L-Fs-s2j" secondAttribute="trailing" constant="32" id="gPO-G2-s7g"/>
                                 <constraint firstItem="WEi-uZ-dWZ" firstAttribute="leading" secondItem="LRg-QA-ELE" secondAttribute="leading" constant="16" id="ho1-1a-EQw"/>
                                 <constraint firstItem="2W9-da-4rA" firstAttribute="width" secondItem="LRg-QA-ELE" secondAttribute="width" id="iEE-nh-3rr"/>
                                 <constraint firstAttribute="bottom" secondItem="KzT-iD-fye" secondAttribute="bottom" constant="320" id="kGj-V1-7od"/>
@@ -433,6 +435,15 @@
         <designable name="87Z-D8-ZBQ">
             <size key="intrinsicContentSize" width="37" height="34"/>
         </designable>
+        <designable name="9Xm-RY-BZA">
+            <size key="intrinsicContentSize" width="52" height="20.5"/>
+        </designable>
+        <designable name="Cls-3D-wfV">
+            <size key="intrinsicContentSize" width="52" height="20.5"/>
+        </designable>
+        <designable name="JJc-X6-fyQ">
+            <size key="intrinsicContentSize" width="35" height="20.5"/>
+        </designable>
         <designable name="k1w-iX-mc0">
             <size key="intrinsicContentSize" width="92" height="34"/>
         </designable>
@@ -442,7 +453,7 @@
         <image name="koteihi" width="193" height="193"/>
         <image name="savemoney" width="193" height="193"/>
         <namedColor name="Background">
-            <color red="0.9691236892623919" green="0.96444193230943343" blue="0.97380544621535026" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.96899998188018799" green="0.96399998664855957" blue="0.97399997711181641" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

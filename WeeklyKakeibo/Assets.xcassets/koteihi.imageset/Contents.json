@@ -1,10 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
-      "color" : {
-        "platform" : "ios",
-        "reference" : "systemBackgroundColor"
-      },
+      "filename" : "koteihi.pdf",
       "idiom" : "universal"
     },
     {
@@ -14,15 +11,7 @@
           "value" : "light"
         }
       ],
-      "color" : {
-        "color-space" : "display-p3",
-        "components" : {
-          "alpha" : "1.000",
-          "blue" : "0.974",
-          "green" : "0.964",
-          "red" : "0.969"
-        }
-      },
+      "filename" : "koteihi-1.pdf",
       "idiom" : "universal"
     },
     {
@@ -32,10 +21,7 @@
           "value" : "dark"
         }
       ],
-      "color" : {
-        "platform" : "ios",
-        "reference" : "systemBackgroundColor"
-      },
+      "filename" : "koteihi_dark.pdf",
       "idiom" : "universal"
     }
   ],

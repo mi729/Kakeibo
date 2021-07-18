@@ -8,26 +8,35 @@
 import UIKit
 import RealmSwift
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitleList.count
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? TableHeader
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(sectionHeaderDidTap(_:)))
+        header?.addGestureRecognizer(gesture)
+        header?.tag = section
+        
         let sum = getSumOfWeeks()[section]
         header?.configure(title: sectionTitleList[section], sum: sum)
         return header
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return getSumOfWeeks()[section] != 0 ? 50 : 0
+        return getSumOfWeeks()[section] != 0 ? 44 : 0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let week = section + 1
-        let weekItemList = self.getWeekItemList(week: week)
-        return weekItemList.count
+        if openedSections.contains(section) {
+            let week = section + 1
+            let weekItemList = self.getWeekItemList(week: week)
+            return weekItemList.count
+        } else {
+            return 0
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,7 +54,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 44
+            return 38
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -59,6 +68,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
             tableView.reloadData()
+        }
+    }
+    
+    @objc func sectionHeaderDidTap(_ sender: UIGestureRecognizer) {
+        if let section = sender.view?.tag {
+            if openedSections.contains(section) {
+                openedSections.remove(section)
+            } else {
+                openedSections.insert(section)
+            }
+
+            tableView.reloadSections(IndexSet(integer: section), with: .fade)
         }
     }
 }

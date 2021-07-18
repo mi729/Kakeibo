@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 import Instructions
 
-class ViewController: UIViewController {
+class KakeiboListViewController: UIViewController {
     private lazy var date = getDate()
     private var realm: Realm!
     private var token: NotificationToken!
@@ -27,6 +27,8 @@ class ViewController: UIViewController {
     
     let coachMarksController = CoachMarksController()
     var pointOfInterest: UIView!
+    
+    var openedSections = Set<Int>()
     
     @IBOutlet weak var navTitle: UINavigationItem!
     
@@ -204,7 +206,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: CoachMarksControllerDataSource,
+extension KakeiboListViewController: CoachMarksControllerDataSource,
                           CoachMarksControllerDelegate {
     func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
         2

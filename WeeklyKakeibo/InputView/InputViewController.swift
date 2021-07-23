@@ -15,12 +15,6 @@ class InputViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var weekTextField: DoneTextFierd! {
-        didSet {
-            weekTextField.keyboardType = UIKeyboardType.numberPad
-        }
-    }
-    
     @IBOutlet weak var naiyouLabel: UILabel! {
         didSet {
             naiyouLabel.text = "内容"
@@ -62,9 +56,11 @@ class InputViewController: UIViewController {
         addItem()
     }
     
+    
+    let inputViewModel = InputViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        weekTextField.delegate = self
         titleTextField.delegate = self
         let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tapGR.cancelsTouchesInView = false
@@ -73,14 +69,14 @@ class InputViewController: UIViewController {
 
     private func addItem() {
         let newItem = Item()
-        guard !(titleTextField.text ?? "").isEmpty, !(weekTextField.text ?? "").isEmpty, !(costTextField.text ?? "").isEmpty else {
+        guard !(titleTextField.text ?? "").isEmpty, !(costTextField.text ?? "").isEmpty else {
         alert(message: "未入力です")
             return
         }
         newItem.title = titleTextField.text!
         newItem.date = selectedDate.date
-        newItem.week = Int(weekTextField.text!)!
-        newItem.cost = Int(costTextField.text!)!
+        newItem.week = inputViewModel.getWeekNumber(date: selectedDate.date)
+        newItem.cost = costTextField.textToInt
         
         do{
             let realm = try Realm()

@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -41,7 +41,7 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="Background"/>
             <constraints>
                 <constraint firstItem="4Cp-r2-gKu" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="14H-g9-a9e"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="4Cp-r2-gKu" secondAttribute="trailing" constant="16" id="Snk-CW-Dw3"/>
@@ -56,8 +56,8 @@
     </objects>
     <resources>
         <image name="nokori" width="413" height="402"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="Background">
+            <color red="0.96899998188018799" green="0.96399998664855957" blue="0.97399997711181641" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

@@ -37,7 +37,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" name="ContentBackground"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Mxx-xt-laq" secondAttribute="bottom" id="0hy-f4-RLG"/>
                     <constraint firstItem="Mxx-xt-laq" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="U52-ZG-Mk6"/>
@@ -48,6 +48,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="ContentBackground"/>
             <connections>
                 <outlet property="costLabel" destination="hjE-pp-OYL" id="rwU-c3-brS"/>
                 <outlet property="nameLabel" destination="Ntv-SM-EyT" id="XPn-xb-H6b"/>
@@ -56,6 +57,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="ContentBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Text">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>

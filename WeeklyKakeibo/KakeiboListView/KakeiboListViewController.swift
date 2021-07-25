@@ -16,8 +16,7 @@ class KakeiboListViewController: UIViewController {
     private var monthCounter: Int = 0
     private let STORED_KEY = "launched"
     private var firstView = FirstView()
-    
-    private lazy var displayDate = kakeiboListViewModel.getDisplayDate(monthCounter: monthCounter)
+
     let addKakeiboExplainText = "タップして記録できます"
     let settingExplainText = "予算を確認・編集できます"
     
@@ -126,8 +125,7 @@ class KakeiboListViewController: UIViewController {
     }
     
     private func reload() {
-//        let displayDate = kakeiboListViewModel.getDisplayDate(monthCounter: monthCounter)
-        
+        let displayDate = kakeiboListViewModel.getDisplayDate(monthCounter: monthCounter)
         let firstDay: NSDate? = displayDate.startOfMonth as NSDate?
         let lastDay: NSDate? = displayDate.endOfMonth as NSDate?
         
@@ -151,6 +149,7 @@ class KakeiboListViewController: UIViewController {
     }
     
     private func setNavTitle() {
+        let displayDate = kakeiboListViewModel.getDisplayDate(monthCounter: monthCounter)
         let month = current.component(.month, from: displayDate)
         navTitle.title = "\(month)月"
     }

@@ -93,6 +93,12 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         return 24
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 24))
+        headerView.backgroundColor =  UIColor(named: "Background")
+        return headerView
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return base.count

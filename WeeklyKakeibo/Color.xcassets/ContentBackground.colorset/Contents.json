@@ -38,8 +38,13 @@
         }
       ],
       "color" : {
-        "platform" : "osx",
-        "reference" : "controlBackgroundColor"
+        "color-space" : "srgb",
+        "components" : {
+          "alpha" : "1.000",
+          "blue" : "30",
+          "green" : "30",
+          "red" : "30"
+        }
       },
       "idiom" : "universal"
     }

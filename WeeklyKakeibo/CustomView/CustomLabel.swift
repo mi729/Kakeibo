@@ -51,7 +51,7 @@ class CustomLabel: UILabel {
 
 
     private func setupAttributes() {
-        self.backgroundColor = .white
+        self.backgroundColor = UIColor(named: "ContentBackground")
         self.layer.cornerRadius = 10.0
         self.clipsToBounds = true
         self.heightAnchor.constraint(equalToConstant: 24).isActive = true

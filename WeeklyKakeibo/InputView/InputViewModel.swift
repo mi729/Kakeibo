@@ -12,8 +12,7 @@ class InputViewModel {
     func getWeekNumber(date: Date) -> Int {
         let calendar = Calendar.current
         let weekNumber = calendar.component(.weekOfMonth, from: date)
-        
-        // 週の数 (日曜始まり)
+
         guard let numberOfWeeks = calendar.range(of: .weekOfMonth, in: .month, for: date)?.count else {
             return 0
         }

@@ -30,6 +30,8 @@ class KakeiboListViewController: UIViewController {
     
     var openedSections = Set<Int>()
     
+    let viewModel = InputViewModel()
+    
     @IBOutlet weak var navTitle: UINavigationItem!
     
     @IBAction func prevButton(_ sender: Any) {
@@ -97,6 +99,15 @@ class KakeiboListViewController: UIViewController {
         }
     }
     
+    private func openCurrentSectionWeek() {
+        if monthCounter != 0 {
+            openedSections.removeAll()
+            return
+        }
+        let section = viewModel.getWeekNumber(date: Date()) - 1
+        openedSections.insert(section)
+    }
+
     private func logFirstLaunch() {
         return UserDefaults.standard.set(true, forKey: STORED_KEY)
     }
@@ -123,6 +134,7 @@ class KakeiboListViewController: UIViewController {
         let predicate = NSPredicate("date", fromDate: firstDay, toDate:  lastDay)
         itemList = realm.objects(Item.self).filter(predicate)
         
+        openCurrentSectionWeek()
         setNavTitle()
         tableView.reloadData()
     }

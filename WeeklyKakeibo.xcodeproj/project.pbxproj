@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		140B6F1326AAE50C0084D65D /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B6F1226AAE50C0084D65D /* InputViewModel.swift */; };
+		140B6F2026AD55140084D65D /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140B6F1F26AD55140084D65D /* TableHeaderView.xib */; };
+		140B6F2526AD5B5B0084D65D /* KakeiboListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B6F2426AD5B5B0084D65D /* KakeiboListViewModel.swift */; };
 		1424CB91266F99AB00B90411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CB90266F99AB00B90411 /* AppDelegate.swift */; };
 		1424CB93266F99AB00B90411 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CB92266F99AB00B90411 /* SceneDelegate.swift */; };
 		1424CB95266F99AB00B90411 /* KakeiboListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CB94266F99AB00B90411 /* KakeiboListViewController.swift */; };
@@ -65,6 +67,8 @@
 
 /* Begin PBXFileReference section */
 		140B6F1226AAE50C0084D65D /* InputViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
+		140B6F1F26AD55140084D65D /* TableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
+		140B6F2426AD5B5B0084D65D /* KakeiboListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakeiboListViewModel.swift; sourceTree = "<group>"; };
 		1424CB8D266F99AB00B90411 /* WeeklyKakeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeklyKakeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1424CB90266F99AB00B90411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1424CB92266F99AB00B90411 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				1424CB94266F99AB00B90411 /* KakeiboListViewController.swift */,
+				140B6F2426AD5B5B0084D65D /* KakeiboListViewModel.swift */,
 			);
 			path = KakeiboListView;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			children = (
 				14E5FA23268603EB0052A92E /* Keyboard.swift */,
 				143029F3267F0F080039B31E /* TableHeaderView.swift */,
+				140B6F1F26AD55140084D65D /* TableHeaderView.xib */,
 				146432C82688793B00163864 /* CustomButton.swift */,
 				144961F226A41DA9004F2342 /* CustomLabel.swift */,
 				14EB88E826836F91009A93EE /* FirstView.swift */,
@@ -436,6 +442,7 @@
 				145704C8268F350300213945 /* Alert.storyboard in Resources */,
 				1424CB98266F99AB00B90411 /* Main.storyboard in Resources */,
 				145704F3269156B800213945 /* SettingViewController.xib in Resources */,
+				140B6F2026AD55140084D65D /* TableHeaderView.xib in Resources */,
 				14262170269AF693001A4D4A /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +601,7 @@
 				14708FFC2697275000D43ACB /* UserDefaults+Addition.swift in Sources */,
 				146432C92688793B00163864 /* CustomButton.swift in Sources */,
 				1424CB91266F99AB00B90411 /* AppDelegate.swift in Sources */,
+				140B6F2526AD5B5B0084D65D /* KakeiboListViewModel.swift in Sources */,
 				1424CB93266F99AB00B90411 /* SceneDelegate.swift in Sources */,
 				143C65F326762C56008856A2 /* Models.swift in Sources */,
 				14E5FA24268603EB0052A92E /* Keyboard.swift in Sources */,

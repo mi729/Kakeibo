@@ -10,7 +10,6 @@ import RealmSwift
 import Instructions
 
 class KakeiboListViewController: UIViewController {
-    private lazy var date = getDate()
     private var realm: Realm!
     private var token: NotificationToken!
     private let current = Calendar.current
@@ -18,6 +17,7 @@ class KakeiboListViewController: UIViewController {
     private let STORED_KEY = "launched"
     private var firstView = FirstView()
     
+    private lazy var displayDate = kakeiboListViewModel.getDisplayDate(monthCounter: monthCounter)
     let addKakeiboExplainText = "タップして記録できます"
     let settingExplainText = "予算を確認・編集できます"
     
@@ -30,7 +30,8 @@ class KakeiboListViewController: UIViewController {
     
     var openedSections = Set<Int>()
     
-    let viewModel = InputViewModel()
+    let kakeiboListViewModel = KakeiboListViewModel()
+    let inputViewModel = InputViewModel()
     
     @IBOutlet weak var navTitle: UINavigationItem!
     
@@ -104,7 +105,7 @@ class KakeiboListViewController: UIViewController {
             openedSections.removeAll()
             return
         }
-        let section = viewModel.getWeekNumber(date: Date()) - 1
+        let section = inputViewModel.getWeekNumber(date: Date()) - 1
         openedSections.insert(section)
     }
 
@@ -125,10 +126,10 @@ class KakeiboListViewController: UIViewController {
     }
     
     private func reload() {
-        date = getDate()
+//        let displayDate = kakeiboListViewModel.getDisplayDate(monthCounter: monthCounter)
         
-        let firstDay: NSDate? = date.startOfMonth as NSDate?
-        let lastDay: NSDate? = date.endOfMonth as NSDate?
+        let firstDay: NSDate? = displayDate.startOfMonth as NSDate?
+        let lastDay: NSDate? = displayDate.endOfMonth as NSDate?
         
         realm = try! Realm()
         let predicate = NSPredicate("date", fromDate: firstDay, toDate:  lastDay)
@@ -150,7 +151,7 @@ class KakeiboListViewController: UIViewController {
     }
     
     private func setNavTitle() {
-        let month = current.component(.month, from: date)
+        let month = current.component(.month, from: displayDate)
         navTitle.title = "\(month)月"
     }
     
@@ -177,29 +178,6 @@ class KakeiboListViewController: UIViewController {
     private func prevMonth() {
         monthCounter -= 1
         reload()
-    }
-    
-    private func getDate() -> Date {
-        let currentDate = Date()
-        let displayDate = Calendar.current.date(byAdding: .month, value: monthCounter, to: currentDate)!
-        return displayDate
-    }
-    
-    func getSumOfWeeks() -> [Int] {
-        var sumOfWeeks:[Int] = []
-        for (index, _) in sectionTitleList.enumerated() {
-            let weekItemList = self.getWeekItemList(week: index + 1)
-            let sum: Int = weekItemList.sum(ofProperty: "cost")
-            sumOfWeeks.append(sum)
-        }
-        return sumOfWeeks
-    }
-
-    func getWeekItemList(week: Int) -> Results<Item> {
-        self.realm = try! Realm()
-        let predicate = NSPredicate(format: "week == %d", week)
-        let weekItemList = itemList.filter(predicate)
-        return weekItemList
     }
     
     @objc func updateUI() {

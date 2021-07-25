@@ -20,33 +20,52 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
         header?.addGestureRecognizer(gesture)
         header?.tag = section
         
-        let sum = getSumOfWeeks()[section]
-        header?.configure(title: sectionTitleList[section], sum: sum)
+        let weeklyMoney = UserDefaults.standard.integer(forKey: "weeklyMoney")
+        let remaining = weeklyMoney - kakeiboListViewModel.getSumOfWeeks(sectionTitleList: sectionTitleList, itemList: itemList)[section]
+        header?.configure(title: sectionTitleList[section], remaining: remaining)
         return header
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return getSumOfWeeks()[section] != 0 ? 44 : 0
+        let sum = kakeiboListViewModel.getSumOfWeeks(sectionTitleList: sectionTitleList, itemList: itemList)[section]
+        return sum != 0 ? 44 : 0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if openedSections.contains(section) {
             let week = section + 1
-            let weekItemList = self.getWeekItemList(week: week)
-            return weekItemList.count
+            let weekItemList = kakeiboListViewModel.getWeekItemList(week: week, itemList: itemList)
+            return weekItemList.count + 1
         } else {
             return 0
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let week = indexPath.section + 1
-        let weekItemList = self.getWeekItemList(week: week)
+        let nameText: String
+        let costText: String
+        let font: UIFont
+        
+        let totalRows = tableView.numberOfRows(inSection: indexPath.section)
+        if indexPath.row == totalRows - 1 {
+            let sum = kakeiboListViewModel.getSumOfWeeks(sectionTitleList: sectionTitleList, itemList: itemList)[indexPath.section]
+            nameText = "合計"
+            costText = "\(sum) 円"
+            font = .systemFont(ofSize: 16, weight: .semibold)
+        } else {
+            let week = indexPath.section + 1
+            let weekItemList = kakeiboListViewModel.getWeekItemList(week: week, itemList: itemList)
+            let item = weekItemList[indexPath.row]
+            nameText = item.title
+            costText = "\(item.cost) 円"
+            font = .systemFont(ofSize: 16, weight: .regular)
+        }
 
         if let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell") as? ItemCell {
-            let item = weekItemList[indexPath.row]
-            cell.nameLabel.text = item.title
-            cell.costLabel.text = "\(item.cost) 円"
+            cell.nameLabel.text = nameText
+            cell.nameLabel.font = font
+            cell.costLabel.text = costText
+            cell.costLabel.font = font
             cell.backgroundColor = .clear
             return cell
         }
@@ -59,7 +78,7 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let week = indexPath.section + 1
-        let weekItemList = self.getWeekItemList(week: week)
+        let weekItemList = kakeiboListViewModel.getWeekItemList(week: week, itemList: itemList)
         let targetItem = weekItemList[indexPath.row]
         if editingStyle == UITableViewCell.EditingStyle.delete {
             let realm = try! Realm()

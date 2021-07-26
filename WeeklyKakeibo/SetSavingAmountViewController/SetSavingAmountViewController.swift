@@ -18,6 +18,12 @@ class SetSavingAmountViewController: UIViewController {
         okButtonTapped()
     }
     
+    @IBOutlet weak var descriptionView: UIView! {
+        didSet {
+            descriptionView.layer.cornerRadius = 10.0
+            descriptionView.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var incomeTextField: UITextField!
     
     @IBOutlet weak var savingsTextField: UITextField!

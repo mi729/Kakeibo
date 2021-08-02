@@ -41,6 +41,8 @@
 		14708FF72697261400D43ACB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14708FF62697261400D43ACB /* Constants.swift */; };
 		14708FFC2697275000D43ACB /* UserDefaults+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14708FFB2697275000D43ACB /* UserDefaults+Addition.swift */; };
 		14A05F34268A180A00431FE7 /* SetSavingAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A05F33268A180A00431FE7 /* SetSavingAmountViewController.swift */; };
+		14CF498626B834EF0056B44E /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CF498526B834EF0056B44E /* EditView.swift */; };
+		14CF498B26B835030056B44E /* EditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14CF498A26B835030056B44E /* EditView.xib */; };
 		14E5FA24268603EB0052A92E /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E5FA23268603EB0052A92E /* Keyboard.swift */; };
 		14EB88E926836F91009A93EE /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB88E826836F91009A93EE /* FirstView.swift */; };
 		295C10C9EE1CA18460A7E549 /* Pods_WeeklyKakeibo_WeeklyKakeiboUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13285BDFED5C78FB66CA20F /* Pods_WeeklyKakeibo_WeeklyKakeiboUITests.framework */; };
@@ -106,6 +108,8 @@
 		14708FF62697261400D43ACB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		14708FFB2697275000D43ACB /* UserDefaults+Addition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Addition.swift"; sourceTree = "<group>"; };
 		14A05F33268A180A00431FE7 /* SetSavingAmountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSavingAmountViewController.swift; sourceTree = "<group>"; };
+		14CF498526B834EF0056B44E /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		14CF498A26B835030056B44E /* EditView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditView.xib; sourceTree = "<group>"; };
 		14E5FA23268603EB0052A92E /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		14EB88E826836F91009A93EE /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		25FBED0D05EE882E45632900 /* Pods-WeeklyKakeibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeeklyKakeibo.debug.xcconfig"; path = "Target Support Files/Pods-WeeklyKakeibo/Pods-WeeklyKakeibo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				145704FB269156DD00213945 /* CustomView */,
 				144961EE26A3FE1A004F2342 /* KakeiboListView */,
 				146432592688674C00163864 /* InputView */,
+				14CF497B26B8329C0056B44E /* EditView */,
 				145705002691573800213945 /* SetSavingAmountViewController */,
 				145704FA269156C000213945 /* SettingViewController */,
 				145704EC2691568100213945 /* AlertViewController */,
@@ -312,6 +317,15 @@
 				1466A32526949AC80093FC7D /* Amount.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		14CF497B26B8329C0056B44E /* EditView */ = {
+			isa = PBXGroup;
+			children = (
+				14CF498526B834EF0056B44E /* EditView.swift */,
+				14CF498A26B835030056B44E /* EditView.xib */,
+			);
+			path = EditView;
 			sourceTree = "<group>";
 		};
 		C2A7CE3E7E76B9464196700C /* Frameworks */ = {
@@ -440,6 +454,7 @@
 				1457051B2691586B00213945 /* SetSavingAmountViewController.xib in Resources */,
 				1424CB9A266F99AB00B90411 /* Assets.xcassets in Resources */,
 				145704C8268F350300213945 /* Alert.storyboard in Resources */,
+				14CF498B26B835030056B44E /* EditView.xib in Resources */,
 				1424CB98266F99AB00B90411 /* Main.storyboard in Resources */,
 				145704F3269156B800213945 /* SettingViewController.xib in Resources */,
 				140B6F2026AD55140084D65D /* TableHeaderView.xib in Resources */,
@@ -591,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14643299268868CC00163864 /* ItemCell.swift in Sources */,
+				14CF498626B834EF0056B44E /* EditView.swift in Sources */,
 				1424CB95266F99AB00B90411 /* KakeiboListViewController.swift in Sources */,
 				1466A31E269490060093FC7D /* GlobalVar.swift in Sources */,
 				1466A32626949AC80093FC7D /* Amount.swift in Sources */,

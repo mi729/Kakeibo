@@ -96,7 +96,7 @@
     <resources>
         <image name="check" width="945" height="945"/>
         <namedColor name="Background">
-            <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96899998188018799" green="0.96399998664855957" blue="0.97399997711181641" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

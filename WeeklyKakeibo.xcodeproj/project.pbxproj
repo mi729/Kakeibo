@@ -10,6 +10,7 @@
 		140B6F1326AAE50C0084D65D /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B6F1226AAE50C0084D65D /* InputViewModel.swift */; };
 		140B6F2026AD55140084D65D /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 140B6F1F26AD55140084D65D /* TableHeaderView.xib */; };
 		140B6F2526AD5B5B0084D65D /* KakeiboListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140B6F2426AD5B5B0084D65D /* KakeiboListViewModel.swift */; };
+		1423CF3926B96E0D00C40117 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1423CF3826B96E0D00C40117 /* CustomTextField.swift */; };
 		1424CB91266F99AB00B90411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CB90266F99AB00B90411 /* AppDelegate.swift */; };
 		1424CB93266F99AB00B90411 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CB92266F99AB00B90411 /* SceneDelegate.swift */; };
 		1424CB95266F99AB00B90411 /* KakeiboListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CB94266F99AB00B90411 /* KakeiboListViewController.swift */; };
@@ -71,6 +72,7 @@
 		140B6F1226AAE50C0084D65D /* InputViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
 		140B6F1F26AD55140084D65D /* TableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
 		140B6F2426AD5B5B0084D65D /* KakeiboListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakeiboListViewModel.swift; sourceTree = "<group>"; };
+		1423CF3826B96E0D00C40117 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		1424CB8D266F99AB00B90411 /* WeeklyKakeibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeeklyKakeibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1424CB90266F99AB00B90411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1424CB92266F99AB00B90411 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				140B6F1F26AD55140084D65D /* TableHeaderView.xib */,
 				146432C82688793B00163864 /* CustomButton.swift */,
 				144961F226A41DA9004F2342 /* CustomLabel.swift */,
+				1423CF3826B96E0D00C40117 /* CustomTextField.swift */,
 				14EB88E826836F91009A93EE /* FirstView.swift */,
 			);
 			path = CustomView;
@@ -609,6 +612,7 @@
 				14CF498626B834EF0056B44E /* EditView.swift in Sources */,
 				1424CB95266F99AB00B90411 /* KakeiboListViewController.swift in Sources */,
 				1466A31E269490060093FC7D /* GlobalVar.swift in Sources */,
+				1423CF3926B96E0D00C40117 /* CustomTextField.swift in Sources */,
 				1466A32626949AC80093FC7D /* Amount.swift in Sources */,
 				14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */,
 				145704E8269143E600213945 /* UITextField+Addition.swift in Sources */,

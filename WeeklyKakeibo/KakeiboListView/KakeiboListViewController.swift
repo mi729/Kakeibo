@@ -16,6 +16,7 @@ class KakeiboListViewController: UIViewController {
     private var monthCounter: Int = 0
     private let STORED_KEY = "launched"
     private var firstView = FirstView()
+    private var editView = EditView()
 
     let addKakeiboExplainText = "タップして記録できます"
     let settingExplainText = "予算を確認・編集できます"
@@ -94,8 +95,21 @@ class KakeiboListViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        if firstView.isDescendant(of: self.view) {
-            self.firstView.removeFromSuperview()
+        removeView(firstView)
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    func showEditView() {
+        editView = EditView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        self.view.addSubview(editView)
+    }
+
+    private func removeView(_ view: UIView) {
+        if view.isDescendant(of: self.view) {
+            view.removeFromSuperview()
         }
     }
     
@@ -181,6 +195,7 @@ class KakeiboListViewController: UIViewController {
     
     @objc func updateUI() {
         self.navigationController?.setNavigationBarHidden(false, animated:false)
+        removeView(editView)
         if launchIsFirstTime() {
             self.coachMarksController.start(in: .window(over: self))
             self.coachMarksController.overlay.isUserInteractionEnabled = true

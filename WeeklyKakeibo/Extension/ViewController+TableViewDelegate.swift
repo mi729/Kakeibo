@@ -90,6 +90,11 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //合計セル以外は編集させる
+        self.showEditView()
+    }
+    
     @objc func sectionHeaderDidTap(_ sender: UIGestureRecognizer) {
         if let section = sender.view?.tag {
             if openedSections.contains(section) {

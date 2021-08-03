@@ -9,6 +9,24 @@
 import UIKit
 
 class EditView: UIView {
+    let mainBoundSize: CGSize = UIScreen.main.bounds.size
+    let notificationCenter = NotificationCenter.default
+
+
+    @IBOutlet weak var titleTextField: DoneTextFierd! {
+        didSet {
+            titleTextField.borderStyle = .none
+        }
+    }
+    @IBOutlet weak var cancelButton: CustomButton! {
+        didSet {
+            cancelButton.backgroundColor = .systemGray2
+        }
+    }
+
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        notificationCenter.post(name: .showKakeiboView, object: nil)
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,7 +40,7 @@ class EditView: UIView {
 
     func loadNib() {
         let view = Bundle.main.loadNibNamed("EditView", owner: self, options: nil)?.first as! UIView
-        view.frame = self.bounds
+        view.frame.size = mainBoundSize
         self.addSubview(view)
     }
 }

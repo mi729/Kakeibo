@@ -23,10 +23,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgJ-9R-4iG">
-                    <rect key="frame" x="40" y="277.5" width="334" height="191"/>
+                    <rect key="frame" x="40" y="275.5" width="334" height="195"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="スーパー買い出し" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cyH-Th-s2O" customClass="DoneTextFierd" customModule="WeeklyKakeibo" customModuleProvider="target">
-                            <rect key="frame" x="87" y="16" width="160" height="34"/>
+                            <rect key="frame" x="87" y="24" width="160" height="34"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="160" id="rgi-Bh-jZT"/>
                             </constraints>
@@ -34,7 +34,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3000" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="okd-vi-exC" customClass="CustomTextField" customModule="WeeklyKakeibo" customModuleProvider="target">
-                            <rect key="frame" x="109" y="74" width="100" height="32"/>
+                            <rect key="frame" x="109" y="78" width="100" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="eph-Qd-LRn"/>
                                 <constraint firstAttribute="width" constant="100" id="poB-NC-SOJ"/>
@@ -49,7 +49,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqF-iR-oGj" customClass="CustomButton" customModule="WeeklyKakeibo" customModuleProvider="target">
-                            <rect key="frame" x="39" y="131" width="120" height="44"/>
+                            <rect key="frame" x="39" y="135" width="120" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="9sS-sw-xaC"/>
                                 <constraint firstAttribute="width" constant="120" id="qTN-wk-9IB"/>
@@ -60,7 +60,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Mu-As-88a" customClass="CustomButton" customModule="WeeklyKakeibo" customModuleProvider="target">
-                            <rect key="frame" x="175" y="131" width="120" height="44"/>
+                            <rect key="frame" x="175" y="135" width="120" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="9qO-rQ-QqH"/>
                                 <constraint firstAttribute="width" constant="120" id="ghS-DK-7pR"/>
@@ -78,12 +78,12 @@
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ffg-Rb-kbp" secondAttribute="trailing" constant="16" id="1BI-zP-KAw"/>
                         <constraint firstItem="ffg-Rb-kbp" firstAttribute="leading" secondItem="okd-vi-exC" secondAttribute="trailing" constant="16" id="3SI-8a-It2"/>
                         <constraint firstItem="ffg-Rb-kbp" firstAttribute="centerY" secondItem="okd-vi-exC" secondAttribute="centerY" id="6yf-LP-8bl"/>
-                        <constraint firstItem="okd-vi-exC" firstAttribute="top" secondItem="cyH-Th-s2O" secondAttribute="bottom" constant="24" id="A7S-t1-Jwi"/>
+                        <constraint firstItem="okd-vi-exC" firstAttribute="top" secondItem="cyH-Th-s2O" secondAttribute="bottom" constant="20" id="A7S-t1-Jwi"/>
                         <constraint firstAttribute="bottom" secondItem="PqF-iR-oGj" secondAttribute="bottom" constant="16" id="Bsn-tg-vvQ"/>
                         <constraint firstItem="PqF-iR-oGj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zgJ-9R-4iG" secondAttribute="leading" constant="8" id="CQT-9b-kur"/>
                         <constraint firstItem="okd-vi-exC" firstAttribute="centerX" secondItem="zgJ-9R-4iG" secondAttribute="centerX" constant="-8" id="DXx-Va-97V"/>
                         <constraint firstItem="8Mu-As-88a" firstAttribute="top" secondItem="ffg-Rb-kbp" secondAttribute="bottom" constant="32" id="Jd1-vX-gDG"/>
-                        <constraint firstItem="cyH-Th-s2O" firstAttribute="top" secondItem="zgJ-9R-4iG" secondAttribute="top" constant="16" id="cyl-pi-CUH"/>
+                        <constraint firstItem="cyH-Th-s2O" firstAttribute="top" secondItem="zgJ-9R-4iG" secondAttribute="top" constant="24" id="cyl-pi-CUH"/>
                         <constraint firstItem="PqF-iR-oGj" firstAttribute="trailing" secondItem="zgJ-9R-4iG" secondAttribute="centerX" constant="-8" id="mTP-uS-x3c"/>
                         <constraint firstItem="8Mu-As-88a" firstAttribute="leading" secondItem="zgJ-9R-4iG" secondAttribute="centerX" constant="8" id="nKP-3I-00f"/>
                         <constraint firstAttribute="bottom" secondItem="8Mu-As-88a" secondAttribute="bottom" constant="16" id="tDA-5G-gho"/>

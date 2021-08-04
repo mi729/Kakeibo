@@ -10,25 +10,20 @@ import RealmSwift
 import Instructions
 
 class KakeiboListViewController: UIViewController {
-    private var realm: Realm!
     private var token: NotificationToken!
     private let current = Calendar.current
-    private var monthCounter: Int = 0
     private let STORED_KEY = "launched"
     private var firstView = FirstView()
     private var editView = EditView()
 
     let addKakeiboExplainText = "タップして記録できます"
     let settingExplainText = "予算を確認・編集できます"
-    
-    var itemList: Results<Item>!
+
     let notificationCenter = NotificationCenter.default
     let sectionTitleList = ["1週目", "2週目", "3週目", "4週目", "5週目"]
     
     let coachMarksController = CoachMarksController()
     var pointOfInterest: UIView!
-    
-    var openedSections = Set<Int>()
     
     let kakeiboListViewModel = KakeiboListViewModel()
     let inputViewModel = InputViewModel()
@@ -36,11 +31,11 @@ class KakeiboListViewController: UIViewController {
     @IBOutlet weak var navTitle: UINavigationItem!
     
     @IBAction func prevButton(_ sender: Any) {
-        prevMonth()
+        nextMonth(-1)
     }
     
     @IBAction func nextButton(_ sender: Any) {
-        nextMonth()
+        nextMonth(1)
     }
     
     @IBOutlet weak var settingButton: UIButton! {
@@ -75,7 +70,7 @@ class KakeiboListViewController: UIViewController {
         setNavBar()
         
         if launchIsFirstTime() {
-            setFirstView()
+            showFirstView()
         }
         reload()
     }
@@ -113,15 +108,6 @@ class KakeiboListViewController: UIViewController {
             view.removeFromSuperview()
         }
     }
-    
-    private func openCurrentSectionWeek() {
-        if monthCounter != 0 {
-            openedSections.removeAll()
-            return
-        }
-        let section = inputViewModel.getWeekNumber(date: Date()) - 1
-        openedSections.insert(section)
-    }
 
     private func logFirstLaunch() {
         return UserDefaults.standard.set(true, forKey: STORED_KEY)
@@ -140,15 +126,10 @@ class KakeiboListViewController: UIViewController {
     }
     
     private func reload() {
-        let displayDate = kakeiboListViewModel.getDisplayDate(monthCounter: monthCounter)
-        let firstDay: NSDate? = displayDate.startOfMonth as NSDate?
-        let lastDay: NSDate? = displayDate.endOfMonth as NSDate?
+        kakeiboListViewModel.updateList()
+        let section = inputViewModel.getWeekNumber(date: Date()) - 1
+        kakeiboListViewModel.openCurrentSectionWeek(section: section)
         
-        realm = try! Realm()
-        let predicate = NSPredicate("date", fromDate: firstDay, toDate:  lastDay)
-        itemList = realm.objects(Item.self).filter(predicate)
-        
-        openCurrentSectionWeek()
         setNavTitle()
         tableView.reloadData()
     }
@@ -164,12 +145,12 @@ class KakeiboListViewController: UIViewController {
     }
     
     private func setNavTitle() {
-        let displayDate = kakeiboListViewModel.getDisplayDate(monthCounter: monthCounter)
+        let displayDate = kakeiboListViewModel.getDisplayDate()
         let month = current.component(.month, from: displayDate)
         navTitle.title = "\(month)月"
     }
     
-    private func setFirstView() {
+    private func showFirstView() {
         firstView = FirstView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         self.view.addSubview(firstView)
         self.navigationController?.setNavigationBarHidden(true, animated:true)
@@ -184,13 +165,8 @@ class KakeiboListViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    private func nextMonth() {
-        monthCounter += 1
-        reload()
-    }
-
-    private func prevMonth() {
-        monthCounter -= 1
+    private func nextMonth(_ constant: Int) {
+        kakeiboListViewModel.incrementMonth(constant: constant)
         reload()
     }
     

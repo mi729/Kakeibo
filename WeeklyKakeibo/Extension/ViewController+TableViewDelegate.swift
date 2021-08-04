@@ -21,20 +21,22 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
         header?.tag = section
         
         let weeklyMoney = UserDefaults.standard.integer(forKey: "weeklyMoney")
-        let remaining = weeklyMoney - kakeiboListViewModel.getSumOfWeeks(sectionTitleList: sectionTitleList, itemList: itemList)[section]
+        let remaining = weeklyMoney - kakeiboListViewModel.getSumOfWeeks(sectionTitleList: sectionTitleList)[section]
         header?.configure(title: sectionTitleList[section], remaining: remaining)
         return header
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let sum = kakeiboListViewModel.getSumOfWeeks(sectionTitleList: sectionTitleList, itemList: itemList)[section]
+        let sum = kakeiboListViewModel.getSumOfWeeks(sectionTitleList: sectionTitleList)[section]
         return sum != 0 ? 44 : 0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if openedSections.contains(section) {
-            let week = section + 1
-            let weekItemList = kakeiboListViewModel.getWeekItemList(week: week, itemList: itemList)
+        
+        let week = section + 1
+        let weekItemList = kakeiboListViewModel.getWeekItemList(week: week)
+        
+        if kakeiboListViewModel.openedSections.contains(section) && !weekItemList.isEmpty {
             return weekItemList.count + 1
         } else {
             return 0
@@ -46,14 +48,14 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
         let costText: String
         let font: UIFont
 
+        let sum = kakeiboListViewModel.getSumOfWeeks(sectionTitleList: sectionTitleList)[indexPath.section]
         if isLastRow(indexPath: indexPath) {
-            let sum = kakeiboListViewModel.getSumOfWeeks(sectionTitleList: sectionTitleList, itemList: itemList)[indexPath.section]
             nameText = "合計"
             costText = "\(sum) 円"
             font = .systemFont(ofSize: 16, weight: .semibold)
         } else {
             let week = indexPath.section + 1
-            let weekItemList = kakeiboListViewModel.getWeekItemList(week: week, itemList: itemList)
+            let weekItemList = kakeiboListViewModel.getWeekItemList(week: week)
             let item = weekItemList[indexPath.row]
             nameText = item.title
             costText = "\(item.cost) 円"
@@ -81,8 +83,9 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
         }
         
         let week = indexPath.section + 1
-        let weekItemList = kakeiboListViewModel.getWeekItemList(week: week, itemList: itemList)
+        let weekItemList = kakeiboListViewModel.getWeekItemList(week: week)
         let targetItem = weekItemList[indexPath.row]
+//        let isLastItem = isLastItemOfSection(week: week)
 
         if editingStyle == UITableViewCell.EditingStyle.delete {
             let realm = try! Realm()
@@ -90,18 +93,22 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
                 realm.delete(targetItem)
             }
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            
+//            セクションの最後のセルをDeleteするとクラッシュするので、最後のセルのときは合計セルも消したい
+//            if isLastItem {
+//                tableView.deleteRows(at: [indexPath + 1], with: UITableView.RowAnimation.fade)
+//            }
             tableView.reloadData()
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //合計セル以外は編集させる
         if isLastRow(indexPath: indexPath) {
             return
         }
         
         let week = indexPath.section + 1
-        let weekItemList = kakeiboListViewModel.getWeekItemList(week: week, itemList: itemList)
+        let weekItemList = kakeiboListViewModel.getWeekItemList(week: week)
         let targetItem = weekItemList[indexPath.row]
         
         
@@ -113,14 +120,13 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
         return indexPath.row == totalRows - 1
     }
     
+    func isLastItemOfSection(week: Int) -> Bool {
+        return kakeiboListViewModel.getWeekItemList(week: week).count == 1
+    }
+    
     @objc func sectionHeaderDidTap(_ sender: UIGestureRecognizer) {
         if let section = sender.view?.tag {
-            if openedSections.contains(section) {
-                openedSections.remove(section)
-            } else {
-                openedSections.insert(section)
-            }
-
+            kakeiboListViewModel.setOpenedSections(section: section)
             tableView.reloadSections(IndexSet(integer: section), with: .fade)
         }
     }

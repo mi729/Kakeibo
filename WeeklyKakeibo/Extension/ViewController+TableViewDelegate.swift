@@ -45,9 +45,8 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
         let nameText: String
         let costText: String
         let font: UIFont
-        
-        let totalRows = tableView.numberOfRows(inSection: indexPath.section)
-        if indexPath.row == totalRows - 1 {
+
+        if isLastRow(indexPath: indexPath) {
             let sum = kakeiboListViewModel.getSumOfWeeks(sectionTitleList: sectionTitleList, itemList: itemList)[indexPath.section]
             nameText = "合計"
             costText = "\(sum) 円"
@@ -77,9 +76,14 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if isLastRow(indexPath: indexPath) {
+            return
+        }
+        
         let week = indexPath.section + 1
         let weekItemList = kakeiboListViewModel.getWeekItemList(week: week, itemList: itemList)
         let targetItem = weekItemList[indexPath.row]
+
         if editingStyle == UITableViewCell.EditingStyle.delete {
             let realm = try! Realm()
             try! realm.write {
@@ -92,7 +96,21 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //合計セル以外は編集させる
-        self.showEditView()
+        if isLastRow(indexPath: indexPath) {
+            return
+        }
+        
+        let week = indexPath.section + 1
+        let weekItemList = kakeiboListViewModel.getWeekItemList(week: week, itemList: itemList)
+        let targetItem = weekItemList[indexPath.row]
+        
+        
+        self.showEditView(item: targetItem)
+    }
+
+    func isLastRow(indexPath: IndexPath) -> Bool {
+        let totalRows = tableView.numberOfRows(inSection: indexPath.section)
+        return indexPath.row == totalRows - 1
     }
     
     @objc func sectionHeaderDidTap(_ sender: UIGestureRecognizer) {

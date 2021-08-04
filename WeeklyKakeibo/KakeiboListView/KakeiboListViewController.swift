@@ -102,8 +102,9 @@ class KakeiboListViewController: UIViewController {
         return .lightContent
     }
     
-    func showEditView() {
+    func showEditView(item: Item) {
         editView = EditView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        editView.configure(item: item)
         self.view.addSubview(editView)
     }
 
@@ -201,6 +202,7 @@ class KakeiboListViewController: UIViewController {
             self.coachMarksController.overlay.isUserInteractionEnabled = true
             logFirstLaunch()
         }
+        tableView.reloadData()
     }
     
     @objc func toSetAmountView() {

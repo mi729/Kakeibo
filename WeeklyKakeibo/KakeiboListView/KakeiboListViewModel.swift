@@ -31,4 +31,15 @@ class KakeiboListViewModel {
         let weekItemList = itemList.filter(predicate)
         return weekItemList
     }
+    
+    func editItem(item: Item, newTitle: String, newCost: Int) {
+        if item.title == newTitle && item.cost == newCost {
+            return
+        }
+        let realm = try! Realm()
+        try! realm.write {
+            item.title = newTitle
+            item.cost = newCost
+        }
+    }
 }

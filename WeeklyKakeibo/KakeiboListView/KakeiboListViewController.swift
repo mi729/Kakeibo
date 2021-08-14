@@ -119,6 +119,8 @@ class KakeiboListViewController: UIViewController {
         tableView.backgroundColor = UIColor(named: "Background")
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
         tableView.register(TableHeader.self, forHeaderFooterViewReuseIdentifier: "header")
+        tableView.register(TableFooterView.self, forHeaderFooterViewReuseIdentifier: "footer")
+        tableView.separatorInset = .zero
     }
     
     private func coachMarkSettings() {

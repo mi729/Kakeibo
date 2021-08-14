@@ -21,6 +21,8 @@
 		1424CBB3266F99AB00B90411 /* WeeklyKakeiboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1424CBB2266F99AB00B90411 /* WeeklyKakeiboUITests.swift */; };
 		1426216526998D02001A4D4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1426216426998D02001A4D4A /* GoogleService-Info.plist */; };
 		14262170269AF693001A4D4A /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1426216F269AF693001A4D4A /* Color.xcassets */; };
+		1429FF2C26C7784B002E2CDD /* TableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429FF2B26C7784B002E2CDD /* TableFooterView.swift */; };
+		1429FF3326C782B3002E2CDD /* TableFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1429FF3226C782B3002E2CDD /* TableFooterView.xib */; };
 		143029F4267F0F080039B31E /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143029F3267F0F080039B31E /* TableHeaderView.swift */; };
 		14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14386A5C2677A3AD002EDA51 /* InputViewController.swift */; };
 		143C65F326762C56008856A2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143C65F226762C56008856A2 /* Models.swift */; };
@@ -89,6 +91,8 @@
 		1424CBB4266F99AB00B90411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1426216426998D02001A4D4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1426216F269AF693001A4D4A /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		1429FF2B26C7784B002E2CDD /* TableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableFooterView.swift; sourceTree = "<group>"; };
+		1429FF3226C782B3002E2CDD /* TableFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableFooterView.xib; sourceTree = "<group>"; };
 		143029F3267F0F080039B31E /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		14386A5C2677A3AD002EDA51 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		143C65F226762C56008856A2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 				146432592688674C00163864 /* InputView */,
 				14CF497B26B8329C0056B44E /* EditView */,
 				1429FF2826C77596002E2CDD /* TableHeaderView */,
+				1429FF2D26C7784F002E2CDD /* TableFooterView */,
 				145705002691573800213945 /* SetSavingAmountViewController */,
 				145704FA269156C000213945 /* SettingViewController */,
 				145704EC2691568100213945 /* AlertViewController */,
@@ -241,6 +246,15 @@
 				140B6F1F26AD55140084D65D /* TableHeaderView.xib */,
 			);
 			path = TableHeaderView;
+			sourceTree = "<group>";
+		};
+		1429FF2D26C7784F002E2CDD /* TableFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				1429FF2B26C7784B002E2CDD /* TableFooterView.swift */,
+				1429FF3226C782B3002E2CDD /* TableFooterView.xib */,
+			);
+			path = TableFooterView;
 			sourceTree = "<group>";
 		};
 		144961EE26A3FE1A004F2342 /* KakeiboListView */ = {
@@ -469,6 +483,7 @@
 				1424CB98266F99AB00B90411 /* Main.storyboard in Resources */,
 				145704F3269156B800213945 /* SettingViewController.xib in Resources */,
 				140B6F2026AD55140084D65D /* TableHeaderView.xib in Resources */,
+				1429FF3326C782B3002E2CDD /* TableFooterView.xib in Resources */,
 				14262170269AF693001A4D4A /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +640,7 @@
 				14386A5D2677A3AD002EDA51 /* InputViewController.swift in Sources */,
 				145704E8269143E600213945 /* UITextField+Addition.swift in Sources */,
 				143029F4267F0F080039B31E /* TableHeaderView.swift in Sources */,
+				1429FF2C26C7784B002E2CDD /* TableFooterView.swift in Sources */,
 				145704F2269156B800213945 /* SettingViewController.swift in Sources */,
 				14708FFC2697275000D43ACB /* UserDefaults+Addition.swift in Sources */,
 				146432C92688793B00163864 /* CustomButton.swift in Sources */,

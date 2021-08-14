@@ -203,6 +203,7 @@
 				144961EE26A3FE1A004F2342 /* KakeiboListView */,
 				146432592688674C00163864 /* InputView */,
 				14CF497B26B8329C0056B44E /* EditView */,
+				1429FF2826C77596002E2CDD /* TableHeaderView */,
 				145705002691573800213945 /* SetSavingAmountViewController */,
 				145704FA269156C000213945 /* SettingViewController */,
 				145704EC2691568100213945 /* AlertViewController */,
@@ -231,6 +232,15 @@
 				1424CBB4266F99AB00B90411 /* Info.plist */,
 			);
 			path = WeeklyKakeiboUITests;
+			sourceTree = "<group>";
+		};
+		1429FF2826C77596002E2CDD /* TableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				143029F3267F0F080039B31E /* TableHeaderView.swift */,
+				140B6F1F26AD55140084D65D /* TableHeaderView.xib */,
+			);
+			path = TableHeaderView;
 			sourceTree = "<group>";
 		};
 		144961EE26A3FE1A004F2342 /* KakeiboListView */ = {
@@ -264,8 +274,6 @@
 			isa = PBXGroup;
 			children = (
 				14E5FA23268603EB0052A92E /* Keyboard.swift */,
-				143029F3267F0F080039B31E /* TableHeaderView.swift */,
-				140B6F1F26AD55140084D65D /* TableHeaderView.xib */,
 				146432C82688793B00163864 /* CustomButton.swift */,
 				144961F226A41DA9004F2342 /* CustomLabel.swift */,
 				1423CF3826B96E0D00C40117 /* CustomTextField.swift */,

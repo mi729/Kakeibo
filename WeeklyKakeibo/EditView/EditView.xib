@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -72,7 +72,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    <color key="backgroundColor" name="PopUpBg"/>
                     <constraints>
                         <constraint firstItem="cyH-Th-s2O" firstAttribute="centerX" secondItem="zgJ-9R-4iG" secondAttribute="centerX" id="0ug-TU-l80"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ffg-Rb-kbp" secondAttribute="trailing" constant="16" id="1BI-zP-KAw"/>
@@ -115,8 +115,8 @@
         </designable>
     </designables>
     <resources>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="PopUpBg">
+            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

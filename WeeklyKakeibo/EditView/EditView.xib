@@ -14,6 +14,7 @@
                 <outlet property="cancelButton" destination="PqF-iR-oGj" id="pZr-uA-azD"/>
                 <outlet property="costTextField" destination="okd-vi-exC" id="Rk2-YT-34s"/>
                 <outlet property="editView" destination="zgJ-9R-4iG" id="mCZ-DZ-640"/>
+                <outlet property="okButton" destination="8Mu-As-88a" id="lgh-Gt-Pwv"/>
                 <outlet property="titleTextField" destination="cyH-Th-s2O" id="8qd-E7-3FM"/>
             </connections>
         </placeholder>
@@ -54,7 +55,7 @@
                                 <constraint firstAttribute="height" constant="44" id="9sS-sw-xaC"/>
                                 <constraint firstAttribute="width" constant="120" id="qTN-wk-9IB"/>
                             </constraints>
-                            <state key="normal" title="Button"/>
+                            <state key="normal" title="キャンセル"/>
                             <connections>
                                 <action selector="cancelButtonTapped:" destination="-1" eventType="touchUpInside" id="fPo-45-pXn"/>
                             </connections>
@@ -108,7 +109,7 @@
             <size key="intrinsicContentSize" width="30" height="36"/>
         </designable>
         <designable name="PqF-iR-oGj">
-            <size key="intrinsicContentSize" width="46" height="30"/>
+            <size key="intrinsicContentSize" width="77" height="30"/>
         </designable>
         <designable name="okd-vi-exC">
             <size key="intrinsicContentSize" width="65" height="34"/>
@@ -116,7 +117,7 @@
     </designables>
     <resources>
         <namedColor name="PopUpBg">
-            <color red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.86274509803921573" green="0.89411764705882346" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

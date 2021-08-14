@@ -52,7 +52,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" name="Background"/>
+                                <color key="backgroundColor" name="SubContentBg"/>
                                 <constraints>
                                     <constraint firstItem="jtU-4M-jiE" firstAttribute="top" secondItem="SvY-eY-EIn" secondAttribute="bottom" constant="16" id="4fb-h5-Z7K"/>
                                     <constraint firstItem="jtU-4M-jiE" firstAttribute="leading" secondItem="N3B-R8-HRT" secondAttribute="leading" constant="16" id="AoO-12-7Dn"/>
@@ -95,8 +95,8 @@
     </designables>
     <resources>
         <image name="check" width="945" height="945"/>
-        <namedColor name="Background">
-            <color red="0.96899998188018799" green="0.96399998664855957" blue="0.97399997711181641" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="SubContentBg">
+            <color red="0.80784313725490198" green="0.85098039215686272" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -29,9 +29,15 @@ class EditView: UIView {
     @IBOutlet weak var cancelButton: CustomButton! {
         didSet {
             cancelButton.backgroundColor = .systemGray2
+            cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         }
     }
-
+    @IBOutlet weak var okButton: CustomButton! {
+        didSet {
+            okButton.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        }
+    }
+    
     @IBAction func cancelButtonTapped(_ sender: Any) {
         notificationCenter.post(name: .showKakeiboView, object: nil)
     }

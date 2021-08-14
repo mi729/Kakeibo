@@ -27,7 +27,6 @@ class TableHeader: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         loadNib()
-        contentView.backgroundColor = UIColor(named: "ContentBackground")
     }
 
     required init?(coder aDecoder: NSCoder) {

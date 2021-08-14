@@ -73,6 +73,7 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
             cell.costLabel.text = costText
             cell.costLabel.font = font
             cell.backgroundColor = .clear
+            cell.contentView.backgroundColor = .clear
             return cell
         }
         return UITableViewCell()
@@ -99,21 +100,12 @@ extension KakeiboListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isLastRow(indexPath: indexPath) {
-            return
-        }
-        
         let week = indexPath.section + 1
         let weekItemList = kakeiboListViewModel.getWeekItemList(week: week)
         let targetItem = weekItemList[indexPath.row]
         
         
         self.showEditView(item: targetItem)
-    }
-
-    func isLastRow(indexPath: IndexPath) -> Bool {
-        let totalRows = tableView.numberOfRows(inSection: indexPath.section)
-        return indexPath.row == totalRows - 1
     }
     
     func isLastItemOfSection(week: Int) -> Bool {
